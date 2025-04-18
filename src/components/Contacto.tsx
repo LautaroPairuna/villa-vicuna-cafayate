@@ -1,131 +1,210 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-// Iconos para datos de contacto y redes
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFacebookF } from "react-icons/fa";
 
 export default function Contacto() {
   const t = useTranslations("contact");
 
-  // Title extraído desde el JSON
   const tituloHTML = t.raw("titulo");
-  const match = tituloHTML.match(/<h2><span>(.*?)<\/span>(.*?)<\/h2>/);
+  const match = tituloHTML.match(/<h2>(.*?)<span>(.*?)<\/span><\/h2>/);
   const tituloParte1 = match ? match[1] : "ERROR";
   const tituloParte2 = match ? match[2] : "";
+  const tituloCompleto = `${tituloParte1}${tituloParte2}`;
 
-  // Tracking dinámico (SOLO se usa en desktop)
+  const [screenWidth, setScreenWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
+  useEffect(() => {
+    const onResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const calculateTracking = (text: string) => {
     const length = text.length;
+    if (screenWidth <= 1500) {
+      if (length <= 5) return "tracking-[0.8em]";
+      if (length <= 8) return "tracking-[0.7em]";
+      if (length <= 10) return "tracking-[0.9em]";
+      if (length <= 12) return "tracking-[.75em]";
+      if (length <= 15) return "tracking-[0.5em]";
+      return "tracking-[0.6em]";
+    }
+    if (screenWidth <= 1300) {
+      if (length <= 5) return "tracking-[0.8em]";
+      if (length <= 8) return "tracking-[0.7em]";
+      if (length <= 10) return "tracking-[0.9em]";
+      if (length <= 12) return "tracking-[.70em]";
+      if (length <= 15) return "tracking-[0.5em]";
+      return "tracking-[0.6em]";
+    }
+    if (screenWidth > 1500) {
+      if (length <= 5) return "tracking-[0.8em]";
+      if (length <= 8) return "tracking-[0.7em]";
+      if (length <= 10) return "tracking-[0.9em]";
+      if (length <= 12) return "tracking-[.75em]";
+      if (length <= 15) return "tracking-[0.5em]";
+      return "tracking-[0.6em]";
+    }
     if (length <= 5) return "tracking-[1em]";
     if (length <= 8) return "tracking-[0.95em]";
     if (length <= 10) return "tracking-[1.1em]";
-    if (length <= 12) return "tracking-[0.90em]";
+    if (length <= 12) return "tracking-[0.70em]";
     if (length <= 15) return "tracking-[0.70em]";
     return "tracking-[0.40em]";
   };
 
-  // Título completo
-  const tituloCompleto = `${tituloParte1}${tituloParte2}`;
-
   return (
-    <section id="contact" className="relative bg-white text-black px-6 sm:px-12 lg:px-20 py-4">
-      <div className="max-w-[1400px] mx-auto relative">
-        {/* TÍTULO para pantallas pequeñas (todo negro, sin absoluto) */}
-        <h2 className="block md:hidden text-4xl text-center uppercase mb-6">
+    <section
+      id="contact"
+      className="relative bg-white text-black px-4 sm:px-12 lg:px-16 py-12 lg:py-20"
+    >
+      <div className="max-w-[1200px] mx-auto relative">
+        {/* Título móvil */}
+        <h2 className="block lg:hidden text-4xl text-center uppercase mb-6">
           {tituloCompleto}
         </h2>
 
-        {/* TÍTULO para pantallas grandes (con absoluto, tracking dinámico, parcial blanco/negro) */}
+        {/* Título desktop */}
         <h2
-          className={`
-            hidden md:block
-            absolute top-[20px] left-1/2
-            -translate-x-1/2
-            text-4xl md:text-6xl lg:text-6xl
-            uppercase
-            ${calculateTracking(tituloCompleto)}
-            text-center
-            z-10
-            w-full
-          `}
+          className={`hidden lg:block absolute top-[10%] left-1/2 -translate-x-1/2 text-[2.25em] lg:text-[4.8em] uppercase text-center z-10 w-full ${calculateTracking(
+            tituloCompleto
+          )}`}
         >
-          <span className="text-white drop-shadow-[0px_0px_4px_rgba(0,0,0,1)]">{tituloParte1}</span>
-          <span className="text-black">{tituloParte2}</span>
+          <span className="text-black">
+            {tituloParte1}
+          </span>
+          <span className="text-white">{tituloParte2}</span>
         </h2>
 
-        {/* CONTENEDOR PRINCIPAL */}
-        <div className="flex flex-col md:flex-row items-center md:items-end justify-center md:justify-end mt-4 md:mt-10">
-          {/* IMAGEN (más alta) */}
-          <div className="relative w-full md:w-1/2 flex justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+          {/* Bloque izquierdo: Botón móvil e información de contacto */}
+          <div>
+            {/* Botón mobile */}
+            <div className="block lg:hidden text-center">
+              <div className="relative w-full aspect-[4/4] flex justify-center items-center">
+                <Image
+                  src="/images/contactenos.jpg"
+                  alt="Hotel Interior"
+                  fill
+                  className="w-full object-cover"
+                />
+              </div>
+              <div className="relative w-[300px] h-[200px] mx-auto opacity-85">
+                <Image
+                  src="/images/fondo-carta-4.svg"
+                  alt="Fondo Carta 4"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <button className="bg-[#e1cd9b] text-black p-4 text-lg hover:bg-[#d6c3a2] transition-all rounded-full mt-4">
+                <a
+                  href="https://goo.su/4Nkqe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image 
+                    src="/images/icons/ico-reservar.svg" 
+                    alt=""
+                    width={64}
+                    height={64} 
+                  />
+                </a>
+              </button>
+            </div>
+
+            {/* Información de contacto */}
+            <div className="lg:px-4 lg:pb-16 lg:pt-72 p-2 flex flex-col justify-end md:mt-0 mt-4">
+              <div className="gap-4">
+                <div className="space-y-2 2xl:text-xl xl:text-lg sm:text-xl lg:text-base max-w-[350px]">
+                  <Image 
+                    src={"/images/logo-villa-vicuna-2.svg"} 
+                    alt="" 
+                    width={160} 
+                    height={160}
+                    className="mb-8 2xl:w-[192px] w-[160px]"
+                  >
+                  </Image>
+                  <div className="flex items-start gap-3">
+                    <Image 
+                      src="/images/icons/ico-whatsapp.svg" 
+                      alt=""
+                      width={24}
+                      height={24} 
+                    />
+                    <div className="flex flex-col items-center">
+                      <p className="text-left">{t("telefono")}</p>
+                      <p className="text-left">+54 9 387 6835535</p>
+                    </div>
+                  </div>
+                  <p className="flex items-center gap-3">
+                    <Image
+                      src="/images/icons/ico-email.svg" 
+                      alt=""
+                      width={24}
+                      height={24} 
+                    />
+                    {t("email")}
+                  </p>
+                  <p className="flex items-start gap-3" style={{ whiteSpace: "pre-line" }}>
+                    <Image
+                      src="/images/icons/ico-ubicacion.svg" 
+                      alt=""
+                      width={24}
+                      height={24} 
+                    />
+                    {t("direccion")}
+                  </p>
+                  <a
+                    href="https://instagram.com/villavicuñacafayate"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 hover:text-gray-500 transition"
+                  >
+                    <Image
+                      src="/images/icons/ico-instagram.svg" 
+                      alt=""
+                      width={24}
+                      height={24} 
+                    /> 
+                    villavicuñacafayate
+                  </a>
+                  <a
+                    href="https://facebook.com/villavicuñacafayate"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 hover:text-gray-500 transition"
+                  >
+                    <Image
+                      src="/images/icons/ico-facebook.svg" 
+                      alt=""
+                      width={24}
+                      height={24} 
+                    /> 
+                    villa vicuña cafayate
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bloque derecho: Imagen */}
+          <div className="relative w-full aspect-[6/7] justify-center items-center lg:flex hidden xl:ms-6 2xl:ms-10">
             <Image
               src="/images/contactenos.jpg"
               alt="Hotel Interior"
-              width={800}
-              height={1000} // Alto para ser más vertical
-              className="w-full max-w-lg object-cover shadow-lg rounded-lg"
+              fill
+              className="w-full object-cover"
             />
           </div>
-          {/* BOTÓN en pantallas pequeñas (bloque normal) */}
-          <div className="block md:hidden my-6 items-center mx-auto justify-center text-center">
-            {/* FONDO-CARTA-4 (visible SOLO en pantallas md+, oculto en móviles para simplificar) */}
-            <div className="flex flex-col top-[50%] left-[50%] translate-x-[10%] w-[300px] h-[200px] lg:w-[400px] lg:h-[300px] opacity-65 z-20 text-center items-center justify-center">
-              <Image
-                src="/images/fondo-carta-4.svg"
-                alt="Fondo Carta 4"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <button className="bg-[#e3d6b5] text-black px-6 py-2 text-lg font-semibold shadow-md hover:bg-[#d6c3a2] transition-all rounded-xl mt-4 items-center my-0 mx-auto justify-center text-center">
-              <a href="https://goo.su/4Nkqe" target="_blank">{t("boton")}</a>
-            </button>
-          </div>
-          {/* INFORMACIÓN de contacto */}
-          <div className="md:w-1/2 px-4 pb-16">
-            <div className="md:grid md:grid-cols-2 gap-8">
-              {/* Datos de contacto */}
-              <div className="space-y-4 text-lg sm:text-xl lg:text-lg mb-4">
-                <p className="flex items-center gap-3">
-                  <FaPhoneAlt className="text-2xl text-black" />
-                  <span className="font-medium">{t("telefono")}</span>
-                </p>
-                <p className="flex items-center gap-3">
-                  <FaEnvelope className="text-2xl text-black" />
-                  <span className="font-medium">{t("email")}</span>
-                </p>
-                <p className="flex items-center gap-3">
-                  <FaMapMarkerAlt className="text-2xl text-black" />
-                  <span className="font-medium">{t("direccion")}</span>
-                </p>
-              </div>
-
-              {/* Redes sociales */}
-              <div className="space-y-4 text-lg sm:text-xl lg:text-lg">
-                <a
-                  href="https://instagram.com/villavicunasalta"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 hover:text-gray-500 transition"
-                >
-                  <FaInstagram className="text-2xl text-black" />
-                  <span className="font-medium">Villa Vicuña Salta</span>
-                </a>
-                <a
-                  href="https://facebook.com/villavicunasalta"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 hover:text-gray-500 transition"
-                >
-                  <FaFacebookF className="text-2xl text-black" />
-                  <span className="font-medium">Villa Vicuña Salta</span>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
-        {/* FONDO-CARTA-4 (visible SOLO en pantallas md+, oculto en móviles para simplificar) */}
-        <div className="hidden md:block absolute bottom-[45%] left-[75%] -translate-x-1/2 w-[300px] h-[200px] lg:w-[400px] lg:h-[300px] opacity-55 z-20">
+
+        {/* Fondo carta (desktop) */}
+        <div className="hidden lg:block absolute bottom-[15%] xl:left-[56.5%] 2xl:left-[58%] -translate-x-1/2 w-[300px] h-[200px] lg:w-[600px] lg:h-[450px] opacity-55 z-20">
           <Image
             src="/images/fondo-carta-4.svg"
             alt="Fondo Carta 4"
@@ -134,10 +213,21 @@ export default function Contacto() {
           />
         </div>
 
-        {/* BOTÓN en pantallas grandes (absoluto) */}
-        <div className="hidden md:block absolute md:bottom-[35%] left-[73%] -translate-x-1/2 z-30">
-          <button className="bg-[#e3d6b5] text-black px-10 py-4 text-2xl font-semibold shadow-md hover:bg-[#d6c3a2] transition-all rounded-xl">
-            <a href="https://l.instagram.com/?u=https%3A%2F%2Fbit.ly%2FHotelVillaVicunaSalta%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaamd9CRPAuow6S4uxSlihGrS9YlCKqv1NJb6AKvkN9t-FrdzY0dV78iC_o_aem_uIWTqhxX6ty-fEk2j1ltuQ&e=AT3YvuML_9hdM51KtKLsk-0xSrMN9h8R4G7ARisMP6sFozHr3e8GbOYvNVMK4oThHsWuQS_5hDzlhSLzxLDW9OEykvBwXYaUVlojg1gYshfa-7PE7nk4gA" target="_blank">{t("boton")}</a>
+        {/* Botón desktop */}
+        <div className="hidden lg:block absolute bottom-[5%] xl:left-[53%] 2xl:left-[54%] -translate-x-1/2 z-30">
+          <button className="bg-[#e1cd9b] text-black p-4 text-xl font-semibold shadow-md hover:bg-[#d6c3a2] transition-all rounded-full">
+            <a
+              href="https://bit.ly/HotelVillaVicunaSalta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image 
+                src="/images/icons/ico-reservar.svg" 
+                alt=""
+                width={64}
+                height={64} 
+              />
+            </a>
           </button>
         </div>
       </div>

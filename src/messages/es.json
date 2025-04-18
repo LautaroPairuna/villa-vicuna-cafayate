@@ -15,14 +15,14 @@
     },
     "about_us": {
         "titulo": "A CERCA DE <span>NOSOTROS</span>",
-        "parrafo1": "Sobre el histórico ¨Corredor de la Fe¨ a pocos metros de la Catedral se alza el Hotel Boutique Villa Vicuña, una casona de principios del siglo XIII adecuada según su estilo e inspirada en una novela de la escritora Isabel Allende.",
-        "parrafo2": "Un lugar atípico con una exquisitez en detalles atemporales hacen inolvidable la estadía.",
-        "parrafo3": "Entre corredores, balcones y palmeras se van abriendo paso las 12 habitaciones que anteceden el jardín, un pequeño oasis en medio de la ciudad, donde el tiempo parece detenerse.",
+        "parrafo1": "Villa Vicuña Hotel Boutique Cafayate nace de  un anhelo familiar, como un lugarcito de descanso  para disfrutar de los médanos, los viñedos, paseos en bicicleta y las inolvidables  serenatas.",
+        "parrafo2": "Entre corredores, escaleras y viñas se van abriendo paso las  12 habitaciones que rodean los patios empedrados, donde las noches estrelladas se vuelven idílicas junto al fogón.",
+        "parrafo3": "A  pocos metros de la Catedral Cafayateña  se alza el Boutique Villa Vicuña  con el típico  estilo colonial salteño donde las  maderas lustradas y detalles exquisitos hacen plena la estadia.",
         "imagenAlt": "Imagen de nosotros"
     },
     "desayuno": {
-        "nombre": "El desa<span>yuno</span>",
-        "texto": "En Villa Vicuña entendemos la importancia de un desayuno completo, saludable con productos frescos de estación  realizados en casa. En nuestro menú encontrara una selección de cinco platos con  distintos sabores y texturas  sugeridos por el chef, además  del buffete  con otras delicias caseras. Ponemos a su disposición nuestras cartas que podrán ser consultadas cuando guste disfrutar de nuestros sabores durante su estadia.",
+        "nombre": "Desay<span>uno</span>",
+        "texto": "En nuestro buffete encontrara delicias caseras para todos los gustos, por que entendemos la importancia de un desayuno completo, saludable con productos frescos, realizados en casa. \n\nPonemos a su disposición nuestras cartas que podrán ser consultadas cuando guste disfrutar \nde nuestros sabores durante su estadia.",
         "reseñas": [
         "El mejor desayuno que he probado.",
         "Productos frescos y de gran calidad.",
@@ -31,7 +31,7 @@
     },
     "detalles": {
         "nombre": "Los det<span>alles</span>",
-        "texto": "Porque nos envuelven, nos desconectan y trasladan a otras epocas, en Villa Vicuña les damos una atencion especial a los detalles creando rincones para momentos inolvidables",
+        "texto": "Porque nos envuelven, nos desconectan y trasladan a otras epocas, en Villa Vicuña les damos una atención especial a los detalles creando rincones para momentos inolvidables.",
         "reseñas": [
         "Cada rincón es perfecto para relajarse.",
         "Se nota el cuidado en cada detalle.",
@@ -40,16 +40,17 @@
     },
     "personal": {
         "nombre": "El pers<span>onal</span>",
-        "texto": "Nuestro equipo...nuestra familia, los responsables de la excelente calidez y calidad de nuestros servicios, con su dedicación y amabilidad hacen que nuestros huéspedes se sientan como en casa.",
+        "texto": "Nuestro equipo...nuestra familia, los responsables de la excelente calidez y calidad de nuestros servicios, con su esmero y simpatia logran que nuestros huespedes se sientan como en casa.",
         "reseñas": [
-        "El personal es muy amable y atento.",
+        "Me he sentido muy a gusto, todo el personal esta atento a que vivamos una linda y cordial estadía. Excelentes desayunos y Santiago, en rescepcion, esta en todos los detalles y ayuda constante. Mi visita fue por tercera vez y volveré como siempre. ",
         "Me hicieron sentir como en casa.",
         "Servicio excepcional y muy cálido."
         ]
     },
     "reseñas": {
         "titulo": "RESEÑAS",
-        "descripcion": "En Villa Vicuña  nuestros huéspedes son el principal motor que impulsa el trabajo constante para alcanzar la excelencia en calidad y servicios, son sus reseñas las que atesoramos como fuente de inspiración. Gracias por elegirnos..."
+        "descripcion": "En Villa Vicuña  nuestros huéspedes son el principal motor que impulsa el trabajo constante para alcanzar la excelencia en calidad y servicios, son sus reseñas las que atesoramos como fuente de inspiración.",
+        "gracias": "Gracias por elegirnos..."
     },
     "menu": {
         "titulo": "NUESTRA CARTA",
@@ -59,51 +60,63 @@
         "menu_image_right": "Imagen de la derecha del menú"
     },
     "rooms": {
-        "titulo":"HABITACIONES",
+        "titulo": "HABITACIONES",
         "superior": "<h3>SUPER<span>IOR</span></h3",
         "standard": "<h3>STAND<span>ARD</span></h3",
-        "twin_interna": {
-            "nombre": "Twin Interna",
-            "descripcion": "Con dimensiones espectaculares propias de siglos pasados, esta magnífica habitación cuenta su historia a través de la boiserie, entablonados de pinotea y postigos con doble altura. Dos camas Twin complementan la atmósfera como si de otra época se tratase, la ventana colinda al pasillo interno.",
-            "detalles": "3 huéspedes / 2 camas / 1 habitación",
-            "boton": "Reservar",
-            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras descansa."
+        "departamento": "<h3>DEPARTAM<span>ENTO</span></h3",
+        "ver_mas": "Ver más",
+        "twin": {
+            "nombre": "Twin",
+            "descripcion": "Frente al patio empedrado, sobre los corredores rodeados de viñas se encuentran nuestras Twin, dos confortables camas comparten la  habitación resguardadas por los ya característicos postigones que distinguen nuestro hotel. \n Puede solicitar con o sin acceso mediante escaleras. ",
+            "detalles": "2 huéspedes / 2 camas / 1 habitación",
+            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras se relaja."
         },
         "matrimonial": {
             "nombre": "Matrimonial",
-            "descripcion": "Frente al corredor de palmeras, en el primer piso con acceso mediante escaleras, se encuentra este precioso recinto de 26m². Su espléndida cama matrimonial descansa sobre las ya características baldosas hidráulicas que identifican nuestro hotel.",
-            "detalles": "2 huéspedes / 1 habitación",
-            "boton": "Reservar",
-            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras descansa."
+            "descripcion": "Frente a la galeria pricipal, en la planta baja, se encuentra este precioso recinto de 28m2 Su esplendida cama matrimonial descansa bajo las cabriadas de madera lustrada.",
+            "detalles": "2 huéspedes / 1 cama / 1 habitación",
+            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras se relaja."
         },
         "triple": {
             "nombre": "Triple",
-            "descripcion": "Frente al corredor de palmeras, en planta baja, nuestra Triple Standard 26m² donde dos camas, una doble junto a una single descansan sobre las ya características baldosas hidráulicas que identifican nuestro hotel.",
+            "descripcion": "Frente al patio empedrado, sobre los corredores rodeados de viñas se encuentran nuestras habitaciones con capacidad para tres huéspedes,  una cama matrimonial y una single comparten la  habitación resguardadas por los ya característicos postigones que distinguen nuestro hotel.",
             "detalles": "3 huéspedes / 2 camas / 1 habitación",
             "boton": "Reservar",
-            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras descansa."
+            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras se relaja."
         },
+
         "balcon": {
             "nombre": "Balcón",
-            "descripcion": "Al final del corredor en el primer piso, con acceso mediante escaleras, este precioso recinto de 26m² balconea al jardín. Una cama con dosel descansa sobre las ya características baldosas hidráulicas que identifican nuestro hotel.",
+            "descripcion": "Dentro de la casona,  con acceso mediante escaleras, Se encuentra esta magnifica habitación balconeando a la fachada. \n Una habitación de grandes dimensiones con capacidad para tres huéspedes, consta de una cama doble y un divan single.",
+            "detalles": "3 huéspedes / 1 habitación",
+            "boton": "Reservar",
+            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras se relaja."
+        },
+        "antesala": {
+            "nombre": "Antesala",
             "detalles": "2 huéspedes / 1 habitación",
-            "boton": "Reservar",
-            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras descansa."
+            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras se relaja."
         },
-        "jardin": {
-            "nombre": "Jardín",
-            "descripcion": "Al final del corredor en planta baja, sobre lo que llamamos nuestra 'Ala Verde', este precioso recinto de 26m² colinda al jardín. Una amplia cama descansa sobre las ya características baldosas hidráulicas que identifican nuestro hotel.",
+        "antesala11": {
+            "nombre": "Antesala 11",
+            "descripcion": "Precedida por una antesala en el primer piso, con acceso mediante escaleras, se encuentran esta magnifica habitación con vistas a la fachada. \n Una  imponente cama con dosel descansa detrás de un pequeño estar.",
             "detalles": "2 huéspedes / 1 habitación",
-            "boton": "Reservar",
-            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras descansa."
+            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras se relaja."
         },
-        "twin_externa": {
-            "nombre": "Twin Externa",
-            "descripcion": "Con dimensiones espectaculares propias de siglos pasados, esta magnífica habitación cuenta su historia a través de la boiserie, entablonados de pinotea y postigos con doble altura. Dos camas Twin complementan la atmósfera como si de otra época se tratase, la ventana colinda al jardín interno.",
-            "detalles": "3 huéspedes / 2 camas / 1 habitación",
-            "boton": "Reservar",
-            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras descansa."
+        "antesala12": {
+            "nombre": "Antesala 12",
+            "descripcion": "Precedida por una antesala en el primer piso, con acceso mediante escaleras, se encuentran esta magnifica habitación  balconeando al patio empedrado. \n Una  imponente cama con dosel descansa detrás de un pequeño estar.",
+            "detalles": "2 huéspedes / 1 habitación",
+            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras se relaja."
         },
+
+        "familiar": {
+            "nombre": "Familiar",
+            "descripcion": "Dentro de la casona con  acceso mediante escaleras, se encuentra este pequeño departamento con capacidad para cinco huéspedes, un dormitorio con tres singles y otro con cama matrimonial comparten un cómodo baño en suite. \n Un recinto ideal para compartir en familia.",
+            "detalles": "5 huéspedes / 4 camas / 2 habitación",
+            "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras se relaja."
+        },
+
         "amenities": [
             "wifi",
             "aire",
@@ -117,10 +130,10 @@
         ]
     },
     "contact": {
-      "titulo": "<h2><span>CONTA</span>CTENOS</h2>",
-      "telefono": "+54 9 387 4649748",
-      "email": "salta@villavicuna.com.ar",
-      "direccion": "Caseros 266 - Salta Capital",
+      "titulo": "<h2>CONTAC<span>TENOS</span></h2>",
+      "telefono": "+54 9 386 8422145",
+      "email": "info@villavicuna.com.ar",
+      "direccion": "BELGRANO 76 - CAFAYATE \nPROV. DE .SALTA - C.P 4427 \nARGENTINA",
       "boton": "Reservar"
     }
   }

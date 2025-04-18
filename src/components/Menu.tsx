@@ -50,11 +50,11 @@ export default function Menu() {
   }, []);
 
   return (
-    <section id="menu" className="relative bg-white text-black py-8 px-4 md:py-16 md:px-8">
-      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center">
+    <section id="menu" className="relative bg-white text-black md:py-8 md:px-12 xl:py-16 xl:px-16">
+      <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center justify-center">
         {/* Título vertical en Desktop */}
-        <div className="hidden md:flex w-1/6 items-center justify-center relative">
-          <div className="absolute left-[20%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-[200px] h-[400px] lg:w-[550px] lg:h-[600px] opacity-55 pointer-events-none z-0">
+        <div className="hidden lg:flex w-1/6 items-center justify-center relative">
+          <div className="absolute 2xl:left-[30%] xl:left-[40%] -top-[10%] -translate-x-1/2 -translate-y-1/2 w-[200px] h-[300px] lg:w-[600px] lg:h-[300px] pointer-events-none z-0">
             <Image
               src="/images/fondo-carta-1.svg"
               alt="Fondo Carta"
@@ -62,26 +62,26 @@ export default function Menu() {
               className="object-contain -rotate-90"
             />
           </div>
-          <h2 className="text-4xl lg:text-5xl transform -rotate-90 whitespace-nowrap tracking-[0.45em] relative z-10">
+          <h2 className="text-4xl transform -rotate-90 whitespace-nowrap tracking-[0.68em] relative z-10 titulo-menu">
             {t("titulo")}
           </h2>
         </div>
 
         {/* Imágenes en Desktop */}
         <div className="md:w-5/6 w-full flex justify-center items-center">
-          <div className="hidden md:flex justify-between space-x-6">
-            <div className="cursor-pointer" onClick={() => openModal("/images/menu-foods.svg", t("menu_image_left"))}>
+          <div className="hidden lg:flex justify-between space-x-6">
+            <div className="cursor-pointer" onClick={() => openModal("/images/menu-foods-cafayate.svg", t("menu_image_left"))}>
               <Image
-                src="/images/menu-foods.svg"
+                src="/images/menu-foods-cafayate.svg"
                 alt={t("menu_image_left")}
                 width={600}
                 height={700}
                 className="shadow-lg max-w-full h-auto border-2 border-black"
               />
             </div>
-            <div className="cursor-pointer" onClick={() => openModal("/images/menu-drinks.svg", t("menu_image_right"))}>
+            <div className="cursor-pointer" onClick={() => openModal("/images/menu-drinks-cafayate.svg", t("menu_image_right"))}>
               <Image
-                src="/images/menu-drinks.svg"
+                src="/images/menu-drinks-cafayate.svg"
                 alt={t("menu_image_right")}
                 width={600}
                 height={700}
@@ -92,8 +92,8 @@ export default function Menu() {
         </div>
 
         {/* Versión móvil */}
-        <div className="md:hidden flex flex-col items-center text-center w-full mt-6 space-y-4 relative">
-          <div className="absolute left-1/2 -top-[75%] -translate-x-1/2 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] opacity-87 pointer-events-none z-0">
+        <div className="lg:hidden flex flex-col items-center text-center w-full mt-6 space-y-4 relative">
+          <div className="absolute left-[55%] -top-[130%] -translate-x-1/2 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] opacity-87 pointer-events-none z-0">
             <Image
               src="/images/fondo-carta-1.svg"
               alt="Fondo Carta"

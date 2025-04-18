@@ -1,87 +1,129 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { parseTitleWithSpan, getDynamicLetterSpacing } from "@/utils/utilsTitle";
+import { useWindowSize } from "@/utils/utilsTitle"; // Usamos el hook aquí
 
 export default function Nosotros() {
   const t = useTranslations("about_us");
-
-  // Extraemos el título en formato HTML (Ej: "ABOUT <span>US</span>")
   const tituloHTML = t.raw("titulo");
   const { tituloParte1, tituloParte2, tituloCompleto } = parseTitleWithSpan(tituloHTML);
 
-  // Estado para determinar si la pantalla es menor a 560px
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  // Usamos el hook para obtener el tamaño de la ventana
+  const { width: screenWidth } = useWindowSize();
+
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 560);
-    };
-
-    handleResize(); // Inicializamos
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    setMounted(true); // Esto asegura que el código solo se ejecute en el cliente
   }, []);
 
-  // Calculamos el letterSpacing solo para pantallas >= 560px; de lo contrario, usamos "normal"
-  const dynamicLetterSpacing = isMobile ? "normal" : getDynamicLetterSpacing(tituloCompleto);
+  const getDynamicLetterSpacing = (text: string, screenWidth: number): string => {
+    if (screenWidth < 768) return "normal";
+  
+    const length = text.length;
+    if (screenWidth >= 1490) {
+      if (length <= 5) return "1.2em";
+      if (length <= 8) return "1.1em";
+      if (length <= 10) return "1em";
+      if (length <= 12) return "0.85em";
+      if (length <= 15) return "0.65em";
+      return "0.75em";
+    }
+  
+    if (screenWidth >= 1281) {
+      if (length <= 5) return "1.15em";
+      if (length <= 8) return "1.05em";
+      if (length <= 10) return "0.95em";
+      if (length <= 12) return "0.8em";
+      if (length <= 15) return "0.6em";
+      return "0.75em";
+    }
+  
+    if (length <= 5) return "1em";
+    if (length <= 8) return "0.95em";
+    if (length <= 10) return "1em";
+    if (length <= 12) return "0.75em";
+    if (length <= 15) return "0.5em";
+    return "0.42em";
+  };
+  
+
+  const letterSpacing = mounted && screenWidth !== undefined
+    ? getDynamicLetterSpacing(tituloCompleto, screenWidth)
+    : undefined;
 
   return (
     <section
       id="about-us"
-      className="relative p-10 bg-white flex flex-col md:flex-row items-center text-black mx-auto"
+      className="relative md:py-16 py-8 px-4 md:px-12 bg-white flex flex-col lg:flex-row items-center text-black mx-auto overflow-hidden"
     >
-      <div className="grid grid-cols-12 max-w-[1400px] mx-auto text-lg relative">
-        {/* Título central con tracking dinámico aplicado inline (solo en desktop) */}
-        <h2
-          className={`
-            absolute md:top-[20px] -top-[10px] w-full text-center
-            text-4xl md:text-6xl z-20 uppercase
-          `}
-          style={{ letterSpacing: dynamicLetterSpacing }}
-        >
-          <span className="block md:inline text-black me-auto lg:me-10">{tituloParte1}</span>
-          <span className="block md:inline md:text-white text-black md:drop-shadow-[0px_0px_3px_rgba(0,0,0,1)] font-normal md:font-bold">
-            {tituloParte2}
-          </span>
-        </h2>
+      <h2
+        className="
+          2xl:absolute relative lg:top-[130px] -top-[10px] w-full text-center
+          text-4xl lg:text-5xl z-20 uppercase lg:me-20
+        "
+        style={{ letterSpacing }}
+      >
+        <span className="block lg:inline text-black me-auto lg:me-8">{tituloParte1}</span> 
+        <span className="block lg:inline text-black font-normal lg:me-8">{tituloParte2}</span>
+      </h2>
+      <div className="grid grid-cols-12 lg:max-w-[1200px] max-w-full mx-auto text-lg relative w-full min-w-0 lg:gap-0 gap-5">
+        {/* Título central */}
 
         {/* Contenido de texto */}
-        <div className="lg:col-span-6 md:col-span-8 col-span-12 relative z-10 bg-white pt-28 pb-10 ps-8">
-          {/* Fondo dinámico */}
+        <div className="lg:col-span-6 col-span-12 relative z-10 bg-white lg:pt-44 pt-2 md:pb-10 pb-0">
           <div
             className="
-              absolute left-[50%] md:left-[75%] bottom-[0%] md:bottom-[-20%] -translate-x-1/2
-              w-[350px] h-[300px] opacity-55 pointer-events-none -z-10
-              sm:w-[350px] sm:h-[280px] md:w-[500px] md:h-[380px] lg:w-[850px] lg:h-[700px]
+              absolute left-[50%] xl:left-[75%] 2xl:left-[74%]
+              bottom-[0%] md:bottom-[-0%] lg:bottom-[-25%] 2xl:bottom-[-22%]
+              -translate-x-1/2 w-[350px] h-[300px] opacity-100 pointer-events-none -z-10
+              sm:w-[350px] sm:h-[280px]
+              md:w-[500px] md:h-[380px]
+              xl:w-[1100px] xl:h-[750px]
+              2xl:w-[1100px] 2xl:h-[700px]
             "
           >
             <Image
               src="/images/fondo-carta-2.svg"
               alt="Fondo Carta 2"
               fill
-              className="object-contain"
+              className="object-contain w-[1150px] h-[700px]"
             />
           </div>
 
-          <p className="text-2xl leading-relaxed relative z-10">{t("parrafo1")}</p>
-          <p className="text-2xl leading-relaxed mt-4 relative z-10">{t("parrafo2")}</p>
-          <p className="text-2xl leading-relaxed mt-4 relative z-10">{t("parrafo3")}</p>
+          <div className="text-left">
+            <p className="text-xl leading-7 tracking-[0.12em] relative z-10 break-words">{t("parrafo1")}</p>
+            <p className="text-xl leading-7 tracking-[0.12em] mt-8 relative z-10 break-words">{t("parrafo2")}</p>
+            <p className="text-xl leading-7 tracking-[0.12em] mt-8 relative z-10 break-words">{t("parrafo3")}</p>
+          </div>
         </div>
 
         {/* Imagen */}
-        <div className="lg:col-span-6 md:col-span-4 col-span-12 flex justify-end items-center">
+        <div className="relative lg:col-span-6 col-span-12 h-[650px] sm:h-[600px] md:h-[725px] w-full lg:ms-12">
           <Image
             src="/images/nosotros.jpg"
             alt={t("imagenAlt")}
-            width={600}
-            height={720}
-            className="shadow-lg"
+            fill
+            className="object-cover shadow-lg"
           />
         </div>
       </div>
     </section>
   );
+}
+
+// Función para extraer partes del título
+function parseTitleWithSpan(tituloHTML: string): {
+  tituloParte1: string;
+  tituloParte2: string;
+  tituloCompleto: string;
+} {
+  const regex = /^(.*?)<span>(.*?)<\/span>/;
+  const match = tituloHTML.match(regex);
+  const tituloParte1 = match ? match[1].trim() : "ERROR";
+  const tituloParte2 = match ? match[2].trim() : "";
+  const tituloCompleto = `${tituloParte1} ${tituloParte2}`.trim();
+  return { tituloParte1, tituloParte2, tituloCompleto };
 }

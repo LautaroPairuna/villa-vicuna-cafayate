@@ -1,0 +1,123 @@
+{
+  "hero": {
+    "tituloParte1": "Bem-vindo à",
+    "tituloParte2": "Villa Vicuña",
+    "subtitulo": "Descubra a experiência única no nosso hotel boutique.",
+    "reservar": "Reserve agora"
+  },
+  "Navbar": {
+    "roomsNavbar": "Quartos",
+    "reviewsNavbar": "Avaliações",
+    "menuNavbar": "Menu",
+    "contactNavbar": "Contate-nos",
+    "aboutNavbar": "Sobre nós",
+    "bookNavbar": "Reservar"
+  },
+  "about_us": {
+    "titulo": "SOBRE <span>NÓS</span>",
+    "parrafo1": "Sobre a histórica 'Passagem da Fé' a poucos metros da Catedral, ergue-se o Hotel Boutique Villa Vicuña, uma residência do início do século XIII adaptada em seu estilo e inspirada por um romance da escritora Isabel Allende.",
+    "parrafo2": "Um lugar atípico, com uma atenção exímia aos detalhes atemporais, que torna a estadia inesquecível.",
+    "parrafo3": "Entre corredores, varandas e palmeiras se revelam os 12 quartos que antecedem o jardim, um pequeno oásis no coração da cidade, onde o tempo parece parar.",
+    "imagenAlt": "Imagem de nós"
+  },
+  "desayuno": {
+    "nombre": "O café da <span>manhã</span>",
+    "texto": "No Villa Vicuña, entendemos a importância de um café da manhã completo e saudável, composto por produtos frescos de temporada feitos em casa. Em nosso cardápio, você encontrará uma seleção de cinco pratos com sabores e texturas variados, sugeridos pelo chef, além do buffet que oferece outras delícias caseiras. Disponibilizamos nossos menus, que você poderá consultar sempre que desejar saborear nossos sabores durante sua estadia.",
+    "reseñas": [
+      "O melhor café da manhã que já provei.",
+      "Produtos frescos e de alta qualidade.",
+      "O buffet oferecia opções deliciosas."
+    ]
+  },
+  "detalles": {
+    "nombre": "Os deta<span>lhes</span>",
+    "texto": "Porque eles nos envolvem, nos desconectam e nos transportam para outras épocas, no Villa Vicuña damos uma atenção especial aos detalhes, criando cantos para momentos inesquecíveis.",
+    "reseñas": [
+      "Cada canto é perfeito para relaxar.",
+      "Nota-se o cuidado dedicado a cada detalhe.",
+      "Decoração magnífica e acolhedora."
+    ]
+  },
+  "personal": {
+    "nombre": "O pess<span>oal</span>",
+    "texto": "Nossa equipe... nossa família, aqueles que são responsáveis pela excelente cordialidade e pela qualidade dos nossos serviços, por meio de sua dedicação e simpatia, fazem com que nossos clientes se sintam em casa.",
+    "reseñas": [
+      "O pessoal é muito simpático e atencioso.",
+      "Eles me fizeram sentir em casa.",
+      "Serviço excepcional e muito caloroso."
+    ]
+  },
+  "reseñas": {
+    "titulo": "AVALIAÇÕES",
+    "descripcion": "No Villa Vicuña, nossos hóspedes são o principal motor que impulsiona nosso trabalho constante para alcançar a excelência em qualidade e serviços. São suas avaliações que valorizamos como fonte de inspiração. Obrigado por nos escolherem..."
+  },
+  "menu": {
+    "titulo": "NOSSO CARDÁPIO",
+    "boton": "Baixar o cardápio em PDF",
+    "menu_image_left": "Imagem à esquerda do cardápio",
+    "menu_image_right": "Imagem à direita do cardápio"
+  },
+  "rooms": {
+    "titulo": "QUARTOS",
+    "superior": "<h3>SUPER<span>IOR</span></h3>",
+    "standard": "<h3>STAND<span>ARD</span></h3>",
+    "twin_interna": {
+      "nombre": "Twin Interno",
+      "descripcion": "Com dimensões espetaculares próprias de séculos passados, este magnífico quarto conta sua história através da marcenaria, dos revestimentos de pinotea e das persianas de double altura. Duas camas gêmeas completam a atmosfera como se fosse de outra época, com a janela adjacente ao corredor interno.",
+      "detalles": "3 pessoas / 2 camas / 1 quarto",
+      "boton": "Reservar",
+      "parrafo_minibar": "Entre as comodidades, você encontrará um mini-bar reabastecido a partir do qual poderá servir uma infusão enquanto descansa."
+    },
+    "matrimonial": {
+      "nombre": "Quarto Matrimonial",
+      "descripcion": "Em frente ao corredor de palmeiras, no primeiro andar acessível por escada, encontra-se este magnífico espaço de 26 m². Sua esplêndida cama de casal repousa sobre os ladrilhos hidráulicos característicos que identificam nosso hotel.",
+      "detalles": "2 pessoas / 1 quarto",
+      "boton": "Reservar",
+      "parrafo_minibar": "Entre as comodidades, você encontrará um mini-bar reabastecido a partir do qual poderá servir uma infusão enquanto descansa."
+    },
+    "triple": {
+      "nombre": "Triplo",
+      "descripcion": "Em frente ao corredor de palmeiras, no rés-do-chão, nosso Triplo Standard de 26 m², onde duas camas, uma cama de casal e uma cama de solteiro repousam sobre os ladrilhos hidráulicos característicos que identificam nosso hotel.",
+      "detalles": "3 pessoas / 2 camas / 1 quarto",
+      "boton": "Reservar",
+      "parrafo_minibar": "Entre as comodidades, você encontrará um mini-bar reabastecido a partir do qual poderá servir uma infusão enquanto descansa."
+    },
+    "balcon": {
+      "nombre": "Varanda",
+      "descripcion": "No final do corredor, no primeiro andar acessível por escada, encontra-se este magnífico espaço de 26 m² com vista para o jardim. Uma cama com dossel repousa sobre os ladrilhos hidráulicos característicos que identificam nosso hotel.",
+      "detalles": "2 pessoas / 1 quarto",
+      "boton": "Reservar",
+      "parrafo_minibar": "Entre as comodidades, você encontrará um mini-bar reabastecido a partir do qual poderá servir uma infusão enquanto descansa."
+    },
+    "jardin": {
+      "nombre": "Jardim",
+      "descripcion": "No final do corredor, no rés-do-chão, no que chamamos de 'Ala Verde', encontra-se este magnífico espaço de 26 m² adjacente ao jardim. Uma cama grande repousa sobre os ladrilhos hidráulicos característicos que identificam nosso hotel.",
+      "detalles": "2 pessoas / 1 quarto",
+      "boton": "Reservar",
+      "parrafo_minibar": "Entre as comodidades, você encontrará um mini-bar reabastecido a partir do qual poderá servir uma infusão enquanto descansa."
+    },
+    "twin_externa": {
+      "nombre": "Twin Externo",
+      "descripcion": "Com dimensões espetaculares próprias de séculos passados, este magnífico quarto conta sua história através da marcenaria, dos revestimentos de pinotea e das persianas de double altura. Duas camas gêmeas completam a atmosfera como se fosse de outra época, com a janela adjacente ao jardim interior.",
+      "detalles": "3 pessoas / 2 camas / 1 quarto",
+      "boton": "Reservar",
+      "parrafo_minibar": "Entre as comodidades, você encontrará um mini-bar reabastecido a partir do qual poderá servir uma infusão enquanto descansa."
+    },
+    "amenities": {
+      "wifi": "WiFi",
+      "ac": "Ar-condicionado",
+      "tv": "TV Smart",
+      "minibar": "Mini-bar",
+      "bath": "Banheiro privativo",
+      "shower": "Chuveiro",
+      "balcony": "Varanda privativa"
+    }
+  },
+  "contact": {
+    "titulo": "<h2><span>CONTA</span>TE-NOS</h2>",
+    "telefono": "+54 9 387 4649748",
+    "email": "salta@villavicuna.com.ar",
+    "direccion": "BELGRANO 76 - CAFAYATE",
+    "boton": "Reservar"
+  }
+}
