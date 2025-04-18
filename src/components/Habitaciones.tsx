@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect, useMemo, useCallback, Fragment } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import {
   Habitaciones as getHabitaciones,
   Habitacion,              // TIPADO REUTILIZADO
-  SubHabitacion,
 } from "@/lib/habitaciones";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
@@ -258,7 +257,7 @@ export default function HabitacionesComponent() {
 
                   {hab.variantes?.length ? (
                     <div className="flex flex-wrap items-center p-0 m-0">
-                      {hab.variantes.map((v, idx) => (
+                      {hab.variantes.map((v) => (
                         <button
                           key={v.key}
                           className={`
