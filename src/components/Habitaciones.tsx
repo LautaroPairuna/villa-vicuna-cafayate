@@ -137,7 +137,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
           </div>
 
           {/* Carrusel */}
-          <div className="relative col-span-1 lg:col-span-5 w-full aspect-[4/3] lg:aspect-[2/3] flex items-center justify-center">
+          <div className="relative col-span-1 lg:col-span-5 w-full aspect-[4/3] lg:aspect-[5/7] flex items-center justify-center">
             <div className="relative w-full h-full overflow-hidden">
               <AnimatePresence custom={direction}>
                 <motion.div
