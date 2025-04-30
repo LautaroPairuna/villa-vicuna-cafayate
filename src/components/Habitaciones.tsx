@@ -95,7 +95,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
         <div className="grid grid-cols-1 md:grid-cols-12">
           {/* Texto + amenities */}
           <div className={`col-span-1 md:col-span-7 relative pt-2 lg:pt-36 lg:pe-[3.5rem]
-            ${habitacion.categoria === "departamento" ? "pt-2 lg:pt-28" : "pt-2 lg:pt-36"}
+            ${habitacion.categoria === "departamento" ? "pt-2 lg:pt-24" : "pt-2 lg:pt-36"}
           `}>
             <h4 className={`text-2xl uppercase text-gray-700 z-10 w-full text-center md:mt-6 mt-2 titulo-habitaciones-nombre
               ${habitacion.key === "antesala11" ? "tracking-[1.45em]" : "tracking-[.65em]"}
