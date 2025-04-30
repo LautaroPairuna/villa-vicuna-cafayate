@@ -106,7 +106,7 @@ export default function Nosotros() {
             src="/images/nosotros.jpg"
             alt={t("imagenAlt")}
             fill
-            className="object-cover shadow-lg"
+            className="object-cover"
           />
         </div>
       </div>

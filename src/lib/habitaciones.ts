@@ -39,7 +39,7 @@ export function Habitaciones(): Habitacion[] {
       key: "matrimonial",
       imagen: "standard-matrimonial.jpg",
       folder: "habitaciones-matrimonial",
-      carrusel: ["matrimonial-1.jpg", "matrimonial-2.jpg", "matrimonial-3.jpg"],
+      carrusel: ["matrimonial-1.jpeg", "matrimonial-2.jpeg", "matrimonial-3.jpg"],
       amenities: [
         { nombre: "wifi", icono: "ico-wifi.svg" },
         { nombre: "shampoo", icono: "ico-shampoo.svg" },
@@ -74,7 +74,7 @@ export function Habitaciones(): Habitacion[] {
       key: "triple",
       imagen: "standard-mat-triple.jpg",
       folder: "habitaciones-triple",
-      carrusel: ["triple-1.png", "triple-2.png", "triple-3.png"],
+      carrusel: ["triple-1.jpg", "triple-2.jpg", "triple-3.jpg"],
       amenities: [
         { nombre: "wifi", icono: "ico-wifi.svg" },
         { nombre: "aire", icono: "ico-aire.svg" },
@@ -99,7 +99,7 @@ export function Habitaciones(): Habitacion[] {
           slug: "11",
           key: "antesala11",
           folder: "antesala-11",
-          carrusel: ["11-1.jpg", "11-2.jpg", "11-3.jpg"],
+          carrusel: ["11-1.jpg", "11-2.jpg", "11-3.jpg", "11-4.jpg"],
           amenities: [
             { nombre: "wifi", icono: "ico-wifi.svg" },
             { nombre: "aire", icono: "ico-aire.svg" },
@@ -116,7 +116,7 @@ export function Habitaciones(): Habitacion[] {
           slug: "12",
           key: "antesala12",
           folder: "antesala-12",
-          carrusel: ["12-1.jpg", "12-2.jpg", "12-3.jpg"],
+          carrusel: ["12-1.jpg", "12-2.jpg", "12-3.jpg", "12-4.jpg"],
           amenities: [
             { nombre: "wifi", icono: "ico-wifi.svg" },
             { nombre: "aire", icono: "ico-aire.svg" },
@@ -137,7 +137,7 @@ export function Habitaciones(): Habitacion[] {
       key: "balcon",
       imagen: "superior-balcon.jpg",
       folder: "habitaciones-balcon",
-      carrusel: ["balcon-1.png", "balcon-2.jpeg", "balcon-3.jpeg"],
+      carrusel: ["balcon-1.jpeg", "balcon-2.jpeg", "balcon-3.jpeg", "balcon-4.jpeg"],
       amenities: [
         { nombre: "wifi", icono: "ico-wifi.svg" },
         { nombre: "aire", icono: "ico-aire.svg" },
@@ -156,7 +156,7 @@ export function Habitaciones(): Habitacion[] {
       key: "familiar",
       imagen: "departamento.jpg",
       folder: "habitaciones-departamento",
-      carrusel: ["departamento-1.png", "departamento-2.png", "departamento-3.png"],
+      carrusel: ["departamento-1.jpg", "departamento-2.jpeg", "departamento-3.png"],
       amenities: [
         { nombre: "wifi", icono: "ico-wifi.svg" },
         { nombre: "aire", icono: "ico-aire.svg" },
