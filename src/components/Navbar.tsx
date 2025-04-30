@@ -44,7 +44,7 @@ export default function Navbar() {
       { href: "#menu", label: t("menuNavbar") },
       { href: "#rooms", label: t("roomsNavbar") },
       { href: "#contact", label: t("contactNavbar") },
-      { href: "https://goo.su/4Nkqe", label: t("bookNavbar") },
+      { href: "https://goo.su/W7nPtu", label: t("bookNavbar") },
     ],
     [t]
   );

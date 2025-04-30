@@ -217,7 +217,7 @@ export default function Contacto() {
         <div className="hidden lg:block absolute bottom-[5%] xl:left-[53%] 2xl:left-[54%] -translate-x-1/2 z-30">
           <button className="bg-[#e1cd9b] text-black p-4 text-xl font-semibold shadow-md hover:bg-[#d6c3a2] transition-all rounded-full">
             <a
-              href="https://bit.ly/HotelVillaVicunaSalta"
+              href="https://goo.su/W7nPtu"
               target="_blank"
               rel="noopener noreferrer"
             >
