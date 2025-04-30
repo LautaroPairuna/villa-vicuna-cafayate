@@ -12,7 +12,6 @@ export const reseñas = [
       "desayuno-1.jpg",
       "desayuno-2.jpg",
       "desayuno-3.jpg",
-      "desayuno-4.jpg",
     ],
   },
   {
