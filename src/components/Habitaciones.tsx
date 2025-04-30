@@ -103,6 +103,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
               ${habitacion.key === "balcon" ? "tracking-[2.25em]" : "tracking-[.65em]"}
               ${habitacion.key === "triple" ? "tracking-[1.45em]" : "tracking-[.65em]"}
               ${habitacion.key === "twin" ? "tracking-[1.85em]" : "tracking-[.65em]"}
+              ${habitacion.key === "familiar" ? "tracking-[1em]" : "tracking-[.65em]"}
             `}>
               {t(`${habitacion.key}.nombre`)}
             </h4>
@@ -124,8 +125,8 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
                       <Image
                         src={`/images/icons/habitaciones/${am.icono}`}
                         alt={am.nombre}
-                        width={38}
-                        height={38}
+                        width={32}
+                        height={32}
                         className="object-contain"
                       />
                     </div>
