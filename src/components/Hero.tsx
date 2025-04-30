@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import React, { memo } from "react";
 
 const Hero = memo(() => {
-  const t = useTranslations("hero");
 
   return (
     <section
