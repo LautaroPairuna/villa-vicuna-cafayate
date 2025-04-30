@@ -64,7 +64,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
       onClick={onClose}
     >
       <div
-        className="bg-white pt-4 sm:pt-6 md:pt-8 lg:pt-10 pb-2 sm:pb-4 md:pb-6 lg:pb-8 px-4 sm:px-8 md:px-12 lg:px-20 pe-4 sm:pe-6 md:pe-10 lg:pe-16 w-full max-w-md md:max-w-7xl relative transform transition-transform duration-300 scale-95 animate-fadeIn max-h-screen mt-8 md:mt-0 overflow-y-auto md:overflow-visible"
+        className="bg-white pt-4 sm:pt-6 md:pt-8 lg:pt-10 pb-2 sm:pb-4 md:pb-6 lg:pb-8 px-4 sm:px-8 md:px-12 lg:px-20 pe-4 sm:pe-6 md:pe-10 lg:pe-16 w-full max-w-md md:max-w-6xl relative transform transition-transform duration-300 scale-95 animate-fadeIn max-h-screen mt-8 md:mt-0 overflow-y-auto md:overflow-visible"
         onClick={(e) => e.stopPropagation()}
       >
         {/* --- Cerrar --- */}
@@ -83,7 +83,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
             relative md:absolute md:top-[10%] md:left-1/2 md:-translate-x-1/2
             leading-tight md:leading-normal uppercase z-10 w-full text-center
             md:mt-0 mt-4 font-normal
-            ${habitacion.categoria === "standard" ? "tracking-[0.78em]" : "tracking-[0.88em]"}
+            ${habitacion.categoria === "standard" ? "tracking-[0.62em]" : "tracking-[0.72em]"}
             ${habitacion.categoria === "departamento" ? "md:text-6xl text-4xl" : "text-4xl md:text-8xl"}
           `}
         >
@@ -94,12 +94,15 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
         {/* --- Contenido --- */}
         <div className="grid grid-cols-1 md:grid-cols-12">
           {/* Texto + amenities */}
-          <div className={`col-span-1 md:col-span-7 relative pt-2 lg:pt-36 lg:pe-[3.5rem]
+          <div className={`col-span-1 md:col-span-7 relative lg:pe-[2.5rem]
             ${habitacion.categoria === "departamento" ? "pt-2 lg:pt-24" : "pt-2 lg:pt-36"}
           `}>
             <h4 className={`text-2xl uppercase text-gray-700 z-10 w-full text-center md:mt-6 mt-2 titulo-habitaciones-nombre
               ${habitacion.key === "antesala11" ? "tracking-[1.45em]" : "tracking-[.65em]"}
               ${habitacion.key === "antesala12" ? "tracking-[1.45em]" : "tracking-[.65em]"}
+              ${habitacion.key === "balcon" ? "tracking-[2.25em]" : "tracking-[.65em]"}
+              ${habitacion.key === "triple" ? "tracking-[1.45em]" : "tracking-[.65em]"}
+              ${habitacion.key === "twin" ? "tracking-[1.85em]" : "tracking-[.65em]"}
             `}>
               {t(`${habitacion.key}.nombre`)}
             </h4>
@@ -110,7 +113,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
               </div>
 
               <div className="relative z-10 space-y-6 leading-7" style={{ whiteSpace: "pre-line" }}>
-                <div className="space-y-6 lg:pe-[2.8em]">
+                <div className="space-y-6 lg:pe-[0em]">
                   <p className="text-left text-lg">{t(`${habitacion.key}.descripcion`)}</p>
                   <p className="text-left text-lg">{t(`${habitacion.key}.parrafo_minibar`)}</p>
                 </div>

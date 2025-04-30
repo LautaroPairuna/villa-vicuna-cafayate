@@ -37,7 +37,7 @@ export function Habitaciones(): Habitacion[] {
       id: 1,
       categoria: "standard",
       key: "matrimonial",
-      imagen: "standard-matrimonial.jpg",
+      imagen: "standard-matrimonial.jpeg",
       folder: "habitaciones-matrimonial",
       carrusel: ["matrimonial-1.jpeg", "matrimonial-2.jpeg", "matrimonial-3.jpg"],
       amenities: [
@@ -135,9 +135,9 @@ export function Habitaciones(): Habitacion[] {
       id: 5,
       categoria: "superior",
       key: "balcon",
-      imagen: "superior-balcon.jpg",
+      imagen: "superior-balcon.jpeg",
       folder: "habitaciones-balcon",
-      carrusel: ["balcon-1.jpeg", "balcon-2.jpeg", "balcon-3.jpeg", "balcon-4.jpeg"],
+      carrusel: ["balcon-1.jpeg", "balcon-2.jpeg", "balcon-3.jpeg", "balcon-4.jpg"],
       amenities: [
         { nombre: "wifi", icono: "ico-wifi.svg" },
         { nombre: "aire", icono: "ico-aire.svg" },
