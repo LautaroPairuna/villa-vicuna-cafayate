@@ -55,9 +55,9 @@ function splitTitle(raw: string): { part1: string; part2: string; full: string }
 
 function calculateTrackingBase(text: string): number {
   const length = text.length;
-  if (length <= 8) return 0.58;
-  if (length <= 11) return .82;
-  if (length <= 12) return .75;
+  if (length <= 8) return 0.48;
+  if (length <= 11) return 0.73;
+  if (length <= 12) return .65;
   if (length <= 15) return 0.65;
   return 0.4;
 }
@@ -179,7 +179,12 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
         onClick={onClose}
       >
         <motion.div
-          className="bg-white pt-4 sm:pt-6 md:pt-8 lg:pt-10 pb-2 sm:pb-4 md:pb-6 lg:pb-8 px-4 sm:px-8 md:px-12 lg:px-20 pe-4 sm:pe-6 md:pe-10 lg:pe-16 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-5xl xl:max-w-6xl relative transform overflow-hidden"
+          className="bg-white 
+          pt-4 sm:pt-6 md:pt-8 lg:pt-10 
+          pb-2 sm:pb-4 md:pb-6 lg:pb-8 
+          px-4 sm:px-8 md:px-12 lg:px-14
+          w-full 2xl:max-w-5xl lg:max-w-5xl 
+          relative transform overflow-hidden"
           variants={modalVariants}
           initial="hidden"
           animate="visible"
@@ -187,20 +192,12 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
           transition={{ duration: 0.3 }}
           onClick={(e) => e.stopPropagation()}
         >
+          {/* --- Cerrar --- */}
           <button
-            className="absolute lg:top-6 top-1 left-0 text-3xl sm:text-4xl lg:text-5xl text-[#9ea4ae] bg-[#941104] rounded-tr-full rounded-br-full lg:px-5 px-1 sm:py-3 py-2 flex items-center"
+            className="absolute md:top-6 top-1 left-0 text-xl sm:text-2xl md:text-4xl text-white bg-[#941104] rounded-tr-full rounded-br-full md:px-4 px-2 md:py-3 py-2 flex items-center"
             onClick={onClose}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path d="M18 6L6 18M6 6l12 12" />
             </svg>
           </button>
@@ -222,10 +219,10 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
             <div className={`flex flex-col col-span-1 lg:col-span-7 pt-2 
               ${
                 selectedReseña.folder === "reseñas-desayuno"
-                  ? "lg:pt-16 relative lg:pe-[2.34rem]"  // valor para desayuno
+                  ? "lg:pt-16 relative lg:pe-[2rem]"  // valor para desayuno
                   : "lg:pt-16 relative lg:pe-[4rem]"  // valor por defecto
               }`}>
-              <div className="absolute lg:top-[80%] top-[50%] lg:-left-[5%] left-[20%] inset-0 pointer-events-none z-10 flex justify-center items-center lg:w-[925px] w-[250px] h-[250px]">
+              <div className="absolute lg:top-[78%] top-[50%] lg:-left-[5%] left-[20%] inset-0 pointer-events-none z-10 flex justify-center items-center lg:w-[800px] w-[250px] h-[250px]">
                 <Image
                   src="/images/fondo-carta-5.svg"
                   alt="Personal Review Background"
@@ -235,11 +232,11 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
               </div>
               <p
                 className={`
-                  relative z-10 text-left  text-lg
+                  relative z-10 text-left text-base
                   ${
                     selectedReseña.folder === "reseñas-desayuno"
-                      ? "tracking-[0.09rem] leading-6 mt-2 lg:mt-32"  // valor para desayuno
-                      : "tracking-[0.08rem] leading-7 mt-2 lg:mt-24"  // valor por defecto
+                      ? "tracking-[0.09rem] leading-6 mt-2 lg:mt-24"  // valor para desayuno
+                      : "tracking-[0.08rem] leading-7 mt-2 lg:mt-16"  // valor por defecto
                   }
                 `}
                 style={{ whiteSpace: "pre-line" }}
