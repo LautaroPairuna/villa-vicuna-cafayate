@@ -24,7 +24,7 @@ export default function Navbar() {
   }, []);
 
   // Función auxiliar para quitar el segmento del idioma de la URL
-  const getPathWithoutLocale = (path: string) => path.replace(/^\/(es|en|fr)/, "");
+  const getPathWithoutLocale = (path: string) => path.replace(/^\/(es|en|pt)/, "");
 
   // Lista de idiomas disponibles.
   const languages = useMemo(

@@ -98,7 +98,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
             relative md:absolute md:top-[10%] md:left-1/2 md:-translate-x-1/2
             leading-tight md:leading-normal uppercase z-10 w-full text-center
             md:mt-0 mt-4 font-normal
-            ${habitacion.categoria === "standard" ? "2xl:tracking-[0.72em] xl:tracking-[0.55em] tracking-[0.48em]" : "2xl:tracking-[0.75em] xl:tracking-[0.60em] tracking-[0.53em]"}
+            ${habitacion.categoria === "standard" ? "2xl:tracking-[0.62em] xl:tracking-[0.55em] tracking-[0.48em]" : "2xl:tracking-[0.72em] xl:tracking-[0.60em] tracking-[0.53em]"}
             ${habitacion.categoria === "departamento" ? "md:text-6xl text-4xl" : "text-4xl md:text-8xl"}
           `}
         >
@@ -129,7 +129,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
               </div>
 
               <div className="relative z-10 space-y-6 leading-7" style={{ whiteSpace: "pre-line" }}>
-                <div className="space-y-6 2xl:pe-[1.5rem] lg:pe-[3.8rem]">
+                <div className="space-y-6 2xl:pe-[1rem] lg:pe-[3.8rem]">
                   <p className="text-left 2xl:text-lg text-base">{t(`${habitacion.key}.descripcion`)}</p>
                   <p className="text-left 2xl:text-lg text-base">{t(`${habitacion.key}.parrafo_minibar`)}</p>
                 </div>

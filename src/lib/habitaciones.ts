@@ -157,7 +157,7 @@ export function Habitaciones(): Habitacion[] {
       key: "familiar",
       imagen: "departamento.jpg",
       folder: "habitaciones-departamento",
-      carrusel: ["departamento-1.jpg", "departamento-2.jpeg", "departamento-3.png"],
+      carrusel: ["departamento-1.jpg", "departamento-2.jpeg", "departamento-3.jpeg", "departamento-4.jpeg"],
       amenities: [
         { nombre: "wifi", icono: "ico-wifi.svg" },
         { nombre: "aire", icono: "ico-aire.svg" },
@@ -165,7 +165,7 @@ export function Habitaciones(): Habitacion[] {
         { nombre: "shampoo", icono: "ico-shampoo.svg" },
         { nombre: "caja-fuerte", icono: "ico-caja-fuerte.svg" },
         { nombre: "minibar", icono: "ico-minibar.svg" },
-        { nombre: "banera", icono: "ico-banera.svg" },
+        { nombre: "ducha", icono: "ico-ducha.svg" },
         { nombre: "tetera", icono: "ico-tetera.svg" },
       ],
     },
