@@ -222,7 +222,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
                   ? "lg:pt-16 relative lg:pe-[2rem]"  // valor para desayuno
                   : "lg:pt-16 relative lg:pe-[4rem]"  // valor por defecto
               }`}>
-              <div className="absolute lg:top-[78%] top-[50%] lg:-left-[5%] left-[20%] inset-0 pointer-events-none z-10 flex justify-center items-center lg:w-[800px] w-[250px] h-[250px]">
+              <div className="absolute lg:top-[78%] top-[15%] lg:-left-[5%] left-[15%] inset-0 pointer-events-none z-10 flex justify-center items-center lg:w-[800px] w-[250px] h-[250px]">
                 <Image
                   src="/images/fondo-carta-5.svg"
                   alt="Personal Review Background"
@@ -243,7 +243,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
               >
                 {tGlobal(selectedReseña.textoKey)}
               </p>
-              <div className="mt-6 relative z-10 w-full overflow-hidden">
+              <div className="mt-6 relative z-10 w-full overflow-hidden mb-4">
                 <Slider {...commentsSliderSettings}>
                   {detalles.map((detalle, i) => (
                     <div key={i}>
