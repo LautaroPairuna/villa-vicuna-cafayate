@@ -8,6 +8,7 @@ import {
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { ImageWithFallback } from "@/components/ImageWithFallback";
+import { useWindowSize } from "@/hooks/useWindowSize";
 import Image from "next/image";
 
 /* ---------- Traducciones ---------- */
@@ -24,6 +25,12 @@ interface HabitacionModalProps {
 }
 
 function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
+  const { width: windowWidth } = useWindowSize();
+  const amenCount = habitacion.amenities.length;
+  const iconSize = Math.max(
+    40,
+    Math.min(42, Math.floor((windowWidth - 32) / amenCount))
+  );
   const { categoriaBlack, categoriaWhite } = useMemo(() => {
     const categoriaHTML = t.raw(habitacion.categoria);
     const regex = /<h3>(.*?)<span>(.*?)<\/span><\/h3>?/;
@@ -64,7 +71,15 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
       onClick={onClose}
     >
       <div
-        className="bg-white pt-4 sm:pt-6 md:pt-8 lg:pt-10 pb-2 sm:pb-4 md:pb-6 lg:pb-8 px-4 sm:px-8 md:px-12 lg:px-20 pe-4 sm:pe-6 md:pe-10 lg:pe-16 w-full max-w-md md:max-w-6xl relative transform transition-transform duration-300 scale-95 animate-fadeIn max-h-screen mt-8 md:mt-0 overflow-y-auto md:overflow-visible"
+        className="bg-white 
+        pt-4 sm:pt-6 md:pt-8 lg:pt-10 
+        pb-2 sm:pb-4 md:pb-6 lg:pb-8 
+        px-4 sm:px-8 md:px-12 xl:px-10 2xl:px-20 
+        pe-4 sm:pe-6 md:pe-10 lg:pe-16 
+        w-full 2xl:max-w-6xl lg:max-w-5xl 
+        relative transform transition-transform duration-300 scale-95 animate-fadeIn max-h-screen 
+        mt-8 md:mt-0 
+        overflow-y-auto md:overflow-visible"
         onClick={(e) => e.stopPropagation()}
       >
         {/* --- Cerrar --- */}
@@ -83,7 +98,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
             relative md:absolute md:top-[10%] md:left-1/2 md:-translate-x-1/2
             leading-tight md:leading-normal uppercase z-10 w-full text-center
             md:mt-0 mt-4 font-normal
-            ${habitacion.categoria === "standard" ? "tracking-[0.62em]" : "tracking-[0.72em]"}
+            ${habitacion.categoria === "standard" ? "2xl:tracking-[0.72em] xl:tracking-[0.55em] tracking-[0.48em]" : "2xl:tracking-[0.75em] xl:tracking-[0.60em] tracking-[0.53em]"}
             ${habitacion.categoria === "departamento" ? "md:text-6xl text-4xl" : "text-4xl md:text-8xl"}
           `}
         >
@@ -92,14 +107,14 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
         </h3>
 
         {/* --- Contenido --- */}
-        <div className="grid grid-cols-1 md:grid-cols-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-2">
           {/* Texto + amenities */}
-          <div className={`col-span-1 md:col-span-7 relative lg:pe-[2.5rem]
+          <div className={`col-span-1 md:col-span-7 relative 
             ${habitacion.categoria === "departamento" ? "pt-2 lg:pt-24" : "pt-2 lg:pt-36"}
           `}>
-            <h4 className={`text-2xl uppercase text-gray-700 z-10 w-full text-center md:mt-6 mt-2 titulo-habitaciones-nombre
-              ${habitacion.key === "antesala11" ? "tracking-[1.45em]" : "tracking-[.65em]"}
-              ${habitacion.key === "antesala12" ? "tracking-[1.45em]" : "tracking-[.65em]"}
+            <h4 className={`text-2xl uppercase text-gray-700 z-10 w-full text-center mt-4 titulo-habitaciones-nombre
+              ${habitacion.key === "antesala11" ? "2xl:tracking-[1.45em] tracking-[1.05em]" : "tracking-[.65em]"}
+              ${habitacion.key === "antesala12" ? "2xl:tracking-[1.45em] tracking-[1.05em]" : "tracking-[.65em]"}
               ${habitacion.key === "balcon" ? "tracking-[2.25em]" : "tracking-[.65em]"}
               ${habitacion.key === "triple" ? "tracking-[1.45em]" : "tracking-[.65em]"}
               ${habitacion.key === "twin" ? "tracking-[1.85em]" : "tracking-[.65em]"}
@@ -109,24 +124,31 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
             </h4>
 
             <div className="relative mt-2">
-              <div className="absolute top-[60%] left-[55%] md:w-[650px] w-[350px] lg:h-[250%] md:h-[160%] h-[110%] pointer-events-none -z-10 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="absolute top-[50%] left-[60%] md:w-[650px] w-[350px] lg:h-[300px] md:h-[160px] h-[110px] pointer-events-none -z-10 transform -translate-x-1/2 -translate-y-1/2">
                 <Image src="/images/fondo-carta-3.svg" alt="Fondo Carta" fill className="object-contain" />
               </div>
 
               <div className="relative z-10 space-y-6 leading-7" style={{ whiteSpace: "pre-line" }}>
-                <div className="space-y-6 lg:pe-[0em]">
-                  <p className="text-left text-lg">{t(`${habitacion.key}.descripcion`)}</p>
-                  <p className="text-left text-lg">{t(`${habitacion.key}.parrafo_minibar`)}</p>
+                <div className="space-y-6 2xl:pe-[1.5rem] lg:pe-[3.8rem]">
+                  <p className="text-left 2xl:text-lg text-base">{t(`${habitacion.key}.descripcion`)}</p>
+                  <p className="text-left 2xl:text-lg text-base">{t(`${habitacion.key}.parrafo_minibar`)}</p>
                 </div>
                 {/* amenities */}
-                <div className="flex flex-wrap justify-start items-center gap-4 md:gap-8 mt-4">
+                <div className="flex flex-wrap justify-start items-center gap-4 mt-4">
                   {habitacion.amenities.map((am, i) => (
-                    <div key={i} className="flex flex-col items-center">
+                    <div
+                      key={i}
+                      className="flex items-center justify-center"
+                      style={{
+                        width: iconSize,
+                        height: iconSize,
+                      }}
+                    >
                       <Image
                         src={`/images/icons/habitaciones/${am.icono}`}
                         alt={am.nombre}
-                        width={32}
-                        height={32}
+                        width={iconSize}
+                        height={iconSize}
                         className="object-contain"
                       />
                     </div>
@@ -137,7 +159,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
           </div>
 
           {/* Carrusel */}
-          <div className="relative col-span-1 lg:col-span-5 w-full aspect-[4/3] lg:aspect-[5/7] flex items-center justify-center">
+          <div className="relative col-span-1 lg:col-span-5 w-full aspect-[4/3] lg:aspect-[6/9] flex items-end justify-center">
             <div className="relative w-full h-full overflow-hidden">
               <AnimatePresence custom={direction}>
                 <motion.div
