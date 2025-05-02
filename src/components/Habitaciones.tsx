@@ -132,7 +132,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
 
               <div className="relative z-10 space-y-6 leading-7" style={{ whiteSpace: "pre-line" }}>
                 <div className={`space-y-6 
-                  ${habitacion.categoria === "departamento" ? "2xl:pe-[1rem] lg:pe-[2.5rem]" : "2xl:pe-[1rem] lg:pe-[3.8rem]"}
+                  ${habitacion.categoria === "departamento" ? "2xl:pe-[1rem] lg:pe-[0.5rem]" : "2xl:pe-[1rem] lg:pe-[3.8rem]"}
                   `}>
                   <p className={`text-left
                     ${habitacion.categoria === "departamento" ? "text-lg" : "2xl:text-lg text-base"}`}>{t(`${habitacion.key}.descripcion`)}</p>
