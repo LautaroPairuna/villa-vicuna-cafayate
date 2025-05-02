@@ -125,26 +125,27 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
 
             <div className="relative mt-2">
               <div className={`absolute pointer-events-none -z-10 transform -translate-x-1/2 -translate-y-1/2
-                ${habitacion.categoria === "departamento" ? "top-[80%] left-[60%] md:w-[850px] w-[350px] lg:h-[350px] md:h-[160px] h-[110px]" : "top-[65%] left-[55%] md:w-[650px] w-[350px] lg:h-[300px] md:h-[160px] h-[110px]"} 
+                ${habitacion.categoria === "departamento" ? "top-[60%] left-[70%] md:w-[850px] w-[350px] lg:h-[400px] md:h-[160px] h-[110px]" : "top-[55%] left-[60%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]"}
+                ${habitacion.key === "matrimonial" ? "top-[65%] left-[60%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]" : "top-[55%] left-[60%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]"} 
               `}>
                 <Image src="/images/fondo-carta-3.svg" alt="Fondo Carta" fill className="object-contain" />
               </div>
 
-              <div className="relative z-10 space-y-6 leading-7" style={{ whiteSpace: "pre-line" }}>
-                <div className={`space-y-6 
-                  ${habitacion.categoria === "departamento" ? "2xl:pe-[1rem] lg:pe-[0.5rem]" : "2xl:pe-[1rem] lg:pe-[3.8rem]"}
-                  `}>
+              <div className={`relative z-10 leading-7
+                ${habitacion.categoria === "departamento" ? "2xl:pe-[1rem] lg:pe-[0.5rem]" : "2xl:pe-[1rem] lg:pe-[3.8rem]"}
+                `} style={{ whiteSpace: "pre-line" }}>
+                <div className="space-y-6">
                   <p className={`text-left
                     ${habitacion.categoria === "departamento" ? "text-lg" : "2xl:text-lg text-base"}`}>{t(`${habitacion.key}.descripcion`)}</p>
                   <p className={`text-left
                     ${habitacion.categoria === "departamento" ? "text-lg" : "2xl:text-lg text-base"}`}>{t(`${habitacion.key}.parrafo_minibar`)}</p>
                 </div>
                 {/* amenities */}
-                <div className="flex flex-wrap justify-start items-center gap-4 mt-4">
+                <div className="flex flex-wrap justify-start items-center mt-28">
                   {habitacion.amenities.map((am, i) => (
                     <div
                       key={i}
-                      className="flex items-center justify-center"
+                      className="flex items-center justify-center mx-auto"
                       style={{
                         width: iconSize,
                         height: iconSize,
