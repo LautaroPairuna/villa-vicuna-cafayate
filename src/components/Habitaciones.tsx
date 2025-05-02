@@ -124,7 +124,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
             </h4>
 
             <div className="relative mt-2">
-              <div className="absolute top-[50%] left-[60%] md:w-[650px] w-[350px] lg:h-[300px] md:h-[160px] h-[110px] pointer-events-none -z-10 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="absolute top-[65%] left-[55%] md:w-[650px] w-[350px] lg:h-[300px] md:h-[160px] h-[110px] pointer-events-none -z-10 transform -translate-x-1/2 -translate-y-1/2">
                 <Image src="/images/fondo-carta-3.svg" alt="Fondo Carta" fill className="object-contain" />
               </div>
 
