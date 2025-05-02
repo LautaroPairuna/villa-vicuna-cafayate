@@ -98,7 +98,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
             relative md:absolute md:top-[10%] md:left-1/2 md:-translate-x-1/2
             leading-tight md:leading-normal uppercase z-10 w-full text-center
             md:mt-0 mt-4 font-normal
-            ${habitacion.categoria === "standard" ? "2xl:tracking-[0.62em] xl:tracking-[0.55em] tracking-[0.48em]" : "2xl:tracking-[0.72em] xl:tracking-[0.60em] tracking-[0.53em]"}
+            ${habitacion.categoria === "standard" ? "2xl:tracking-[0.62em] xl:tracking-[0.55em] tracking-[0.48em]" : "2xl:tracking-[0.72em] xl:tracking-[0.64em] tracking-[0.62em]"}
             ${habitacion.categoria === "departamento" ? "md:text-6xl text-4xl" : "text-4xl md:text-8xl"}
           `}
         >
@@ -124,14 +124,20 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
             </h4>
 
             <div className="relative mt-2">
-              <div className="absolute top-[65%] left-[55%] md:w-[650px] w-[350px] lg:h-[300px] md:h-[160px] h-[110px] pointer-events-none -z-10 transform -translate-x-1/2 -translate-y-1/2">
+              <div className={`absolute pointer-events-none -z-10 transform -translate-x-1/2 -translate-y-1/2
+                ${habitacion.categoria === "departamento" ? "top-[80%] left-[60%] md:w-[850px] w-[350px] lg:h-[350px] md:h-[160px] h-[110px]" : "top-[65%] left-[55%] md:w-[650px] w-[350px] lg:h-[300px] md:h-[160px] h-[110px]"} 
+              `}>
                 <Image src="/images/fondo-carta-3.svg" alt="Fondo Carta" fill className="object-contain" />
               </div>
 
               <div className="relative z-10 space-y-6 leading-7" style={{ whiteSpace: "pre-line" }}>
-                <div className="space-y-6 2xl:pe-[1rem] lg:pe-[3.8rem]">
-                  <p className="text-left 2xl:text-lg text-base">{t(`${habitacion.key}.descripcion`)}</p>
-                  <p className="text-left 2xl:text-lg text-base">{t(`${habitacion.key}.parrafo_minibar`)}</p>
+                <div className={`space-y-6 
+                  ${habitacion.categoria === "departamento" ? "2xl:pe-[1rem] lg:pe-[2.5rem]" : "2xl:pe-[1rem] lg:pe-[3.8rem]"}
+                  `}>
+                  <p className={`text-left
+                    ${habitacion.categoria === "departamento" ? "text-lg" : "2xl:text-lg text-base"}`}>{t(`${habitacion.key}.descripcion`)}</p>
+                  <p className={`text-left
+                    ${habitacion.categoria === "departamento" ? "text-lg" : "2xl:text-lg text-base"}`}>{t(`${habitacion.key}.parrafo_minibar`)}</p>
                 </div>
                 {/* amenities */}
                 <div className="flex flex-wrap justify-start items-center gap-4 mt-4">
@@ -159,7 +165,9 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
           </div>
 
           {/* Carrusel */}
-          <div className="relative col-span-1 lg:col-span-5 w-full aspect-[4/3] lg:aspect-[6/9] flex items-end justify-center">
+          <div className={`relative col-span-1 lg:col-span-5 w-full aspect-[4/3] lg:aspect-[6/9] flex items-end justify-center
+            ${habitacion.categoria === "departamento" ? "md:ps-12 ps-0" : "ps-0"}
+          `}>
             <div className="relative w-full h-full overflow-hidden">
               <AnimatePresence custom={direction}>
                 <motion.div
@@ -184,12 +192,16 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
             </div>
 
             {/* prev / next */}
-            <button onClick={prevImage} className="absolute left-4 top-1/2 -translate-y-1/2 text-white">
+            <button onClick={prevImage} className={`absolute top-1/2 -translate-y-1/2 text-white
+            ${habitacion.categoria === "departamento" ? "left-14" : "left-4"}
+            `}>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
-            <button onClick={nextImage} className="absolute right-4 top-1/2 -translate-y-1/2 text-white">
+            <button onClick={nextImage} className={`absolute top-1/2 -translate-y-1/2 text-white
+            ${habitacion.categoria === "departamento" ? "right-2" : "right-4"}
+            `}>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
