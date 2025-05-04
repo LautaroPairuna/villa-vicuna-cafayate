@@ -203,11 +203,11 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
           </button>
 
           <h3
-            className={`relative lg:absolute lg:top-[15%] lg:left-1/2 lg:-translate-x-1/2 uppercase z-10 w-full text-center mt-8 sm:mt-6 lg:mt-0 lg:ms-4 ms-0 text-black
+            className={`relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 uppercase z-10 w-full text-center mt-8 sm:mt-6 lg:mt-0 lg:ms-4 ms-0 text-black
               ${
                 selectedReseña.folder === "reseñas-desayuno"
-                  ? "text-3xl sm:text-4xl lg:text-8xl"  // valor para desayuno
-                  : "text-3xl sm:text-4xl lg:text-6xl"  // valor por defecto
+                  ? "lg:top-[13%] text-3xl sm:text-4xl lg:text-8xl"  // valor para desayuno
+                  : "lg:top-[15%] text-3xl sm:text-4xl lg:text-6xl"  // valor por defecto
               }`}
             style={{ letterSpacing: `${computedTracking}em` }}
           >
@@ -235,7 +235,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
                   relative z-10 text-left
                   ${
                     selectedReseña.folder === "reseñas-desayuno"
-                      ? "tracking-[0.09rem] leading-6 mt-2 lg:mt-28 text-base"  // valor para desayuno
+                      ? "tracking-[0.09rem] leading-6 mt-2 lg:mt-20 text-base"  // valor para desayuno
                       : "tracking-[0.08rem] leading-7 mt-2 lg:mt-24 text-lg"  // valor por defecto
                   }
                 `}
