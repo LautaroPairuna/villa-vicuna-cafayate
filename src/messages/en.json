@@ -1,125 +1,136 @@
 {
-    "hero": {
-      "tituloParte1": "Welcome to",
-      "tituloParte2": "Villa Vicuña",
-      "subtitulo": "Discover the unique experience at our boutique hotel.",
-      "reservar": "Book Now"
+  "hero": {
+    "tituloParte1": "Welcome to",
+    "tituloParte2": "Villa Vicuña",
+    "subtitulo": "Discover the unique experience at our boutique hotel.",
+    "reservar": "Book Now"
+  },
+  "Navbar": {
+    "roomsNavbar": "Rooms",
+    "reviewsNavbar": "Reviews",
+    "menuNavbar": "Menu",
+    "contactNavbar": "Contact Us",
+    "aboutNavbar": "About Us",
+    "bookNavbar": "Book"
+  },
+  "about_us": {
+    "titulo": "ABOUT <span>US</span>",
+    "parrafo1": "Villa Vicuña Boutique Hotel Cafayate was born from a family dream, as a cozy place to rest and enjoy the dunes, vineyards, bike rides, and unforgettable serenades.",
+    "parrafo2": "Through corridors, stairs, and vineyards unfold the 12 rooms surrounding the cobblestone patios, where starry nights become idyllic by the bonfire.",
+    "parrafo3": "A few meters from the Cafayate Cathedral stands Boutique Villa Vicuña with the typical Salteño colonial style, where polished wood and exquisite details make your stay perfect.",
+    "imagenAlt": "About us image"
+  },
+  "desayuno": {
+    "nombre": "Break<span>fast</span>",
+    "texto": "In our buffet you will find homemade delights for all tastes, because we understand the importance of a complete, healthy breakfast made with fresh, home-made products.\n\nWe offer our menus that can be consulted whenever you wish to enjoy our flavors during your stay.",
+    "reseñas": [
+      "“We really enjoyed the breakfast; the buffet is extremely varied and complete. The best... ‘poached eggs’!”",
+      "“What a pleasant morning having breakfast in the cobblestone patio; the coffee is exquisite and not to mention the pastries, we leave happy after trying ‘Argentine mate’.”",
+      "“The buffet is a delight, from English tableware to homemade sweets and the variety of cakes; as I always say, I will return to have breakfast at Villa Vicuña.”"
+    ]
+  },
+  "detalles": {
+    "nombre": "The det<span>ails</span>",
+    "texto": "Because they envelop us, disconnect us, and transport us to other times, at Villa Vicuña we pay special attention to details, creating corners for unforgettable moments.",
+    "reseñas": [
+      "“The hotel's location is unbeatable, the colonial decoration, the English touches, and the Cuzco art... a true delight.”",
+      "“Wonderful hotel, my children feel like they are in the movie ‘Encanto’, the stairs, the balconies, the beds in the suite, the best memory of Cafayate.”",
+      "“We had a comfortable stay, we were able to disconnect and relax, our rooms are true luxury, the highlight were the nights by the bonfire tasting Cafayate wines.”"
+    ]
+  },
+  "personal": {
+    "nombre": "The sta<span>ff</span>",
+    "texto": "Our team... our family, responsible for the outstanding warmth and quality of our services, whose dedication and friendliness make our guests feel at home.",
+    "reseñas": [
+      "“This is my third visit to Villa Vicuña, this time I came with friends, I am very grateful for the cordiality with which they received me and the attention that all the staff is accustomed to.”",
+      "“Everything was very pleasant, we highlight the effort of the staff in general, for making our stay enjoyable by taking care of every detail.”",
+      "“Thank you very much for the dedicated attention, from the first moment we felt at home, if we return to Cafayate without a doubt we will stay at Villa Vicuña.”"
+    ]
+  },
+  "reseñas": {
+    "titulo": "REVIEWS",
+    "descripcion": "At Villa Vicuña our guests are the main driving force behind our constant work to achieve excellence in quality and services; their reviews are what we treasure as a source of inspiration.",
+    "gracias": "Thank you for choosing us..."
+  },
+  "menu": {
+    "titulo": "OUR MENU",
+    "descripcion": "Discover the exclusive flavors of Villa Vicuña. A unique combination of local ingredients and traditional recipes.",
+    "boton": "Download Menu PDF",
+    "menu_image_left": "Left side of the menu image",
+    "menu_image_right": "Right side of the menu image"
+  },
+  "rooms": {
+    "titulo": "ROOMS",
+    "superior": "<h3>SUPER<span>IOR</span></h3>",
+    "standard": "<h3>STAND<span>ARD</span></h3>",
+    "departamento": "<h3>DEPARTM<span>ENT</span></h3>",
+    "ver_mas": "See more",
+    "twin": {
+      "nombre": "Twin",
+      "descripcion": "Facing the cobblestone patio, along the corridors surrounded by vineyards, our Twins feature two comfortable beds in the room, protected by the characteristic shutters that distinguish our hotel.\nYou can request with or without stairs access.",
+      "detalles": "2 guests / 2 beds / 1 room",
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
     },
-    "Navbar": {
-      "roomsNavbar": "Rooms",
-      "reviewsNavbar": "Reviews",
-      "aboutNavbar": "About Us",
-      "contactNavbar": "Contact us",
-      "menuNavbar": "Menu",
-      "bookNavbar": "Book"
+    "matrimonial": {
+      "nombre": "Double",
+      "descripcion": "Facing the main gallery, on the ground floor, this beautiful 28m2 room features a splendid double bed resting under polished wooden beams.",
+      "detalles": "2 guests / 1 bed / 1 room",
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
     },
-    "about_us": {
-      "titulo": "ABOUT <span>US</span>",
-      "parrafo1": "On the historic 'Corredor de la Fe', a few meters from the Cathedral, rises the Boutique Hotel Villa Vicuña, a house from the early 13th century adapted according to its style and inspired by a novel by the writer Isabel Allende.",
-      "parrafo2": "A unique place with an exquisite touch in timeless details makes the stay unforgettable.",
-      "parrafo3": "Among corridors, balconies, and palm trees, the 12 rooms that precede the garden open up, a small oasis in the middle of the city where time seems to stand still.",
-      "imagenAlt": "About us image"
+    "triple": {
+      "nombre": "Triple",
+      "descripcion": "Facing the cobblestone patio, along the corridors surrounded by vineyards, our Triple rooms accommodate three guests; one double bed and one single share the space, protected by our signature shutters.",
+      "detalles": "3 guests / 2 beds / 1 room",
+      "boton": "Book",
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
     },
-    "reseñas": {
-      "titulo": "REVIEWS",
-      "descripcion": "At Villa Vicuña our guests are the main engine that drives the constant work to achieve excellence in quality and services, it is their reviews that we treasure as a source of inspiration. Thank you for choosing us..."
+    "balcon": {
+      "nombre": "Balcony",
+      "descripcion": "Inside the mansion, with access via stairs, this magnificent room overlooks the façade.\nA spacious room for three guests, with a double bed and a single divan.",
+      "detalles": "3 guests / 1 room",
+      "boton": "Book",
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
     },
-    "desayuno": {
-      "nombre": "Breakf<span>ast</span>",
-      "texto": "At Villa Vicuña we understand the importance of a complete, healthy breakfast with fresh seasonal products made at home. On our menu you will find a selection of five dishes with different flavors and textures suggested by the chef, in addition to the buffet with other homemade delicacies. We put our menus at your disposal that can be consulted when you like to enjoy our flavors during your stay.",
-      "reseñas": [
-        "The best breakfast I've ever had.",
-        "Fresh and high-quality products.",
-        "The buffet had delicious options."
-      ]
+    "antesala": {
+      "nombre": "Antechamber",
+      "detalles": "2 guests / 1 room",
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
     },
-    "detalles": {
-      "nombre": "The Det<span>ails</span>",
-      "texto": "Because they surround us, disconnect us and transport us to other times, at Villa Vicuña we give special attention to details, creating corners for unforgettable moments.",
-      "reseñas": [
-        "Every corner is perfect for relaxing.",
-        "You can see the care in every detail.",
-        "Beautiful and cozy decoration."
-      ]
+    "antesala11": {
+      "nombre": "Antechamber 11",
+      "descripcion": "Preceded by an antechamber on the first floor, accessible by stairs, this magnificent room overlooks the façade.\nAn imposing four-poster bed rests behind a small living area.",
+      "detalles": "2 guests / 1 room",
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
     },
-    "personal": {
-      "nombre": "The St<span>aff</span>",
-      "texto": "Our team...our family, responsible for the excellent warmth and quality of our services, with their dedication and kindness make our guests feel at home.",
-      "reseñas": [
-        "The staff is very friendly and attentive.",
-        "They made me feel at home.",
-        "Exceptional and very warm service."
-      ]
+    "antesala12": {
+      "nombre": "Antechamber 12",
+      "descripcion": "Preceded by an antechamber on the first floor, accessible by stairs, this magnificent room overlooks the cobblestone patio.\nAn imposing four-poster bed rests behind a small living area.",
+      "detalles": "2 guests / 1 room",
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
     },
-    "menu": {
-      "titulo": "OUR MENU",
-      "descripcion": "Discover the exclusive flavors of Villa Vicuña. A unique combination of local ingredients and traditional recipes.",
-      "boton": "Download Menu PDF",
-      "menu_image_left": "Menu left image",
-      "menu_image_right": "Menu right image"
+    "familiar": {
+      "nombre": "Family",
+      "descripcion": "Inside the mansion with stairs access, this small suite for five guests features one room with three single beds and another with a double bed sharing a comfortable en-suite bathroom.\nAn ideal space for family sharing.",
+      "detalles": "5 guests / 4 beds / 2 rooms",
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
     },
-    "rooms": {
-        "titulo":"ROOMS",
-        "superior": "<h3>SUPER<span>IOR</span></h3",
-        "standard": "<h3>STAND<span>ARD</span></h3",
-        "twin_interna": {
-            "nombre": "Twin Interna",
-            "descripcion": "With spectacular dimensions characteristic of past centuries, this magnificent room tells its story through boiserie, pinewood flooring, and double-height shutters. Two Twin beds complement the atmosphere as if from another era, and the window faces the internal corridor.",
-            "detalles": "3 guests / 2 beds / 1 room",
-            "boton": "Book",
-            "parrafo_minibar": "Among the Amenities you will find an unloaded Mini Bar from which you can serve an infusion while you rest."
-        },
-        "matrimonial": {
-            "nombre": "Matrimonial",
-            "descripcion": "Facing the palm-lined corridor, on the first floor accessible by stairs, this beautiful 26m² room is located. Its splendid matrimonial bed rests on the characteristic hydraulic tiles that define our hotel.",
-            "detalles": "2 guests / 1 room",
-            "boton": "Book",
-            "parrafo_minibar": "Among the Amenities you will find an unloaded Mini Bar from which you can serve an infusion while you rest."
-        },
-        "triple": {
-            "nombre": "Triple",
-            "descripcion": "Facing the palm-lined corridor, on the ground floor, our 26m² Triple Standard room features two beds—a double and a single—resting on the characteristic hydraulic tiles that define our hotel.",
-            "detalles": "3 guests / 2 beds / 1 room",
-            "boton": "Book",
-            "parrafo_minibar": "Among the Amenities you will find an unloaded Mini Bar from which you can serve an infusion while you rest."
-        },
-        "balcon": {
-            "nombre": "Balcon",
-            "descripcion": "At the end of the corridor on the first floor, accessible by stairs, this beautiful 26m² room overlooks the garden. A canopy bed rests on the characteristic hydraulic tiles that define our hotel.",
-            "detalles": "2 guests / 1 room",
-            "boton": "Book",
-            "parrafo_minibar": "Among the Amenities you will find an unloaded Mini Bar from which you can serve an infusion while you rest."
-        },
-        "jardin": {
-            "nombre": "Jardin",
-            "descripcion": "At the end of the corridor on the ground floor, in what we call our 'Green Wing,' this beautiful 26m² room borders the garden. A spacious bed rests on the characteristic hydraulic tiles that define our hotel.",
-            "detalles": "2 guests / 1 room",
-            "boton": "Book",
-            "parrafo_minibar": "Among the Amenities you will find an unloaded Mini Bar from which you can serve an infusion while you rest."
-        },
-        "twin_externa": {
-            "nombre": "Twin Externa",
-            "descripcion": "With spectacular dimensions characteristic of past centuries, this magnificent room tells its story through boiserie, pinewood flooring, and double-height shutters. Two Twin beds complement the atmosphere as if from another era, and the window faces the internal garden.",
-            "detalles": "3 guests / 2 beds / 1 room",
-            "boton": "Book",
-            "parrafo_minibar": "Among the Amenities you will find an unloaded Mini Bar from which you can serve an infusion while you rest."
-        }
-    },
-    "amenities": {
-        "wifi": "WiFi",
-        "ac": "Air Conditioning",
-        "tv": "Smart TV",
-        "minibar": "Mini Bar",
-        "bath": "Private Bathroom",
-        "shower": "Shower",
-        "balcony": "Private Balcony"
-    },
-    "contact": {
-      "titulo": "<h2><span> CONT</span>ACT US</h2>",
-      "telefono": "+54 9 386 8422145",
-      "email": "salta@villavicuna.com.ar",
-      "direccion": "BELGRANO 76 - CAFAYATE",
-      "boton": "Book Now"
-    }
+    "amenities": [
+      "wifi",
+      "air conditioning",
+      "smart-tv",
+      "minibar",
+      "bathtub",
+      "shower",
+      "safe",
+      "shampoo",
+      "kettle"
+    ]
+  },
+  "contact": {
+    "titulo": "<h2>CONTACT<span>US</span></h2>",
+    "telefono": "+54 9 386 8422145",
+    "email": "info@villavicuna.com.ar",
+    "direccion": "BELGRANO 76 - CAFAYATE\nPROV. DE SALTA - ZIP 4427\nARGENTINA",
+    "boton": "Book"
   }
-  
+}
