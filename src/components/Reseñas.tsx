@@ -215,12 +215,12 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
             <span className="whitespace-nowrap lg:text-white text-black">{part2}</span>
           </h3>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 text-black">
+          <div className="grid grid-cols-1 lg:grid-cols-12 text-black gap-4">
             <div className={`flex flex-col col-span-1 lg:col-span-7 pt-2 
               ${
                 selectedReseña.folder === "reseñas-desayuno"
                   ? "lg:pt-16 relative lg:pe-[2rem]"  // valor para desayuno
-                  : "lg:pt-16 relative lg:pe-[4rem]"  // valor por defecto
+                  : "lg:pt-16 relative lg:pe-[1rem]"  // valor por defecto
               }`}>
               <div className="absolute lg:top-[78%] top-[15%] lg:-left-[5%] left-[15%] inset-0 pointer-events-none z-10 flex justify-center items-center lg:w-[800px] w-[250px] h-[250px]">
                 <Image
@@ -232,11 +232,11 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
               </div>
               <p
                 className={`
-                  relative z-10 text-left text-base
+                  relative z-10 text-left
                   ${
                     selectedReseña.folder === "reseñas-desayuno"
-                      ? "tracking-[0.09rem] leading-6 mt-2 lg:mt-24"  // valor para desayuno
-                      : "tracking-[0.08rem] leading-7 mt-2 lg:mt-16"  // valor por defecto
+                      ? "tracking-[0.09rem] leading-6 mt-2 lg:mt-28 text-base"  // valor para desayuno
+                      : "tracking-[0.08rem] leading-7 mt-2 lg:mt-24 text-lg"  // valor por defecto
                   }
                 `}
                 style={{ whiteSpace: "pre-line" }}
@@ -247,7 +247,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
                 <Slider {...commentsSliderSettings}>
                   {detalles.map((detalle, i) => (
                     <div key={i}>
-                      <div className="bg-[#f6f0e1] rounded-2xl py-4 px-2">
+                      <div className={`bg-[#f6f0e1] bg-opacity-70 rounded-2xl py-4 px-2`}>
                         <p className="text-lg leading-6 resenas-texto mb-3 text-left">
                           {tGlobal(detalle.comentarioKey)}
                         </p>
@@ -262,7 +262,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
             </div>
 
             {/* Carrusel de imágenes manual con animación */}
-            <div className="relative col-span-1 lg:col-span-5 w-full aspect-[4/3] lg:aspect-[2/3] flex items-center justify-center">
+            <div className="relative col-span-1 lg:col-span-5 w-full aspect-[4/3] lg:aspect-[6/9] flex items-center justify-center">
               <div className="relative w-full h-full overflow-hidden">
                 <AnimatePresence custom={direction}>
                   <motion.div

@@ -24,27 +24,27 @@
         "nombre": "Desay<span>uno</span>",
         "texto": "En nuestro buffete encontrara delicias caseras para todos los gustos, por que entendemos la importancia de un desayuno completo, saludable con productos frescos, realizados en casa. \n\nPonemos a su disposición nuestras cartas que podrán ser consultadas cuando guste disfrutar \nde nuestros sabores durante su estadia.",
         "reseñas": [
-        "El mejor desayuno que he probado.",
-        "Productos frescos y de gran calidad.",
-        "El buffet tenía opciones deliciosas."
+        "«-Disfrutamos mucho el desayuno; el buffet es sumamente variado y completo. Lo mejor... ¡“huevos poché”!»",
+        "« -Que agradable amanecer desayunando en el patio empedrado; el café es exquisito y ni hablar de los panificados, nos vamosfelices tras probar el ¨mate argentino¨.»",
+        "« -El buffete, un deleite, desde la vajilla inglesa los dulces caseros  y la variedad de budines, como siempre digo volveré para desayunar en Villa Vicuña¨.»"
         ]
     },
     "detalles": {
         "nombre": "Los det<span>alles</span>",
         "texto": "Porque nos envuelven, nos desconectan y trasladan a otras epocas, en Villa Vicuña les damos una atención especial a los detalles creando rincones para momentos inolvidables.",
         "reseñas": [
-        "Cada rincón es perfecto para relajarse.",
-        "Se nota el cuidado en cada detalle.",
-        "Decoración hermosa y acogedora."
+        "« -¨La ubicación del Hotel es inmejorable, la decoración colonial, los toques ingleses y el arte cuzqueño... un verdadero deleite¨.»",
+        "« -¨Maravilloso Hotel, mis hijos aseguran estar dentro de la película “Encanto”, las escaleras, los balcones, las camas del departamento, el mejor recuerdo de Cafayate¨.»",
+        "« -¨Pasamos una recofortable estadía, pudimos desconectarnos y descansar, nuestras habitaciones un verdadero lujo, lo máximo fueron las noches junto al fogón degustando vinos Cafayateños¨.»"
         ]
     },
     "personal": {
         "nombre": "El pers<span>onal</span>",
         "texto": "Nuestro equipo...nuestra familia, los responsables de la excelente calidez y calidad de nuestros servicios, con su esmero y simpatia logran que nuestros huespedes se sientan como en casa.",
         "reseñas": [
-        "Me he sentido muy a gusto, todo el personal esta atento a que vivamos una linda y cordial estadía. Excelentes desayunos y Santiago, en rescepcion, esta en todos los detalles y ayuda constante. Mi visita fue por tercera vez y volveré como siempre. ",
-        "Me hicieron sentir como en casa.",
-        "Servicio excepcional y muy cálido."
+        "« -Es mi tercera visita a Villa Vicuña, en esta oportunidad vine con amigos, estoy muy agradecida por la cordialidad con la que me recibieron y la  atencion a la que me tiene acostumbrada todo el personal¨.»",
+        "« -Todo fue muy agradable, destacamos el esfuerzo del personal en general, por hacer placentera nuestra estadía cuidando cada detalle¨.»",
+        "« -Muchas gracias la esmerada atencion, desde el primer momento nos sentimos como en casa, si volvemos a Cafayate sin duda nos hospedaremos en Villa Vicuña¨.»"
         ]
     },
     "reseñas": {
@@ -99,13 +99,13 @@
         },
         "antesala11": {
             "nombre": "Antesala 11",
-            "descripcion": "Precedida por una antesala en el primer piso, con acceso mediante escaleras, se encuentran esta magnifica habitación con vistas a la fachada. \n Una  imponente cama con dosel descansa detrás de un pequeño estar.",
+            "descripcion": "Precedida por una antesala en el primer piso, con acceso mediante escaleras, se encuentra esta magnifica habitación con vistas a la fachada. \n Una  imponente cama con dosel descansa detrás de un pequeño estar.",
             "detalles": "2 huéspedes / 1 habitación",
             "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras se relaja."
         },
         "antesala12": {
             "nombre": "Antesala 12",
-            "descripcion": "Precedida por una antesala en el primer piso, con acceso mediante escaleras, se encuentran esta magnifica habitación  balconeando al patio empedrado. \n Una  imponente cama con dosel descansa detrás de un pequeño estar.",
+            "descripcion": "Precedida por una antesala en el primer piso, con acceso mediante escaleras, se encuentra esta magnifica habitación  balconeando al patio empedrado. \n Una  imponente cama con dosel descansa detrás de un pequeño estar.",
             "detalles": "2 huéspedes / 1 habitación",
             "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras se relaja."
         },
@@ -113,7 +113,7 @@
         "familiar": {
             "nombre": "Familiar",
             "descripcion": "Dentro de la casona con  acceso mediante escaleras, se encuentra este pequeño departamento con capacidad para cinco huéspedes, un dormitorio con tres singles y otro con cama matrimonial comparten un cómodo baño en suite. \n Un recinto ideal para compartir en familia.",
-            "detalles": "5 huéspedes / 4 camas / 2 habitación",
+            "detalles": "5 huéspedes / 4 camas / 2 habitaciones",
             "parrafo_minibar": "Entre las Amenidades encontrara un Mini Bar sin cargo  del que podrá  servirse una infusión mientras se relaja."
         },
 

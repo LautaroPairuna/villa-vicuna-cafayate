@@ -43,18 +43,18 @@ export const reseñas = [
 
 export const reseñasDetalles = {
   1: [
-    { comentarioKey: "desayuno.reseñas.0", autor: "Carlos Pérez", pais: "España" },
-    { comentarioKey: "desayuno.reseñas.1", autor: "María López", pais: "Argentina" },
-    { comentarioKey: "desayuno.reseñas.2", autor: "John Doe", pais: "EE.UU." },
+    { comentarioKey: "desayuno.reseñas.0", autor: "Inés y Peter", pais: "EE.UU." },
+    { comentarioKey: "desayuno.reseñas.1", autor: "Federica y Daniel", pais: "Francia" },
+    { comentarioKey: "desayuno.reseñas.2", autor: "Isabella", pais: "Brasil" },
   ],
   2: [
-    { comentarioKey: "detalles.reseñas.0", autor: "Luciana Gómez", pais: "Chile" },
-    { comentarioKey: "detalles.reseñas.1", autor: "Fernando Costa", pais: "Brasil" },
-    { comentarioKey: "detalles.reseñas.2", autor: "Anna Smith", pais: "Canadá" },
+    { comentarioKey: "detalles.reseñas.0", autor: "Francesco y Andrea", pais: "Italia" },
+    { comentarioKey: "detalles.reseñas.1", autor: "Familia Fonzi", pais: "Argentina" },
+    { comentarioKey: "detalles.reseñas.2", autor: "Ale, Maru y Conie", pais: "Argentina" },
   ],
   3: [
-    { comentarioKey: "personal.reseñas.0", autor: "Mercedes", pais: "Argentina" },
-    { comentarioKey: "personal.reseñas.1", autor: "Laura Fernández", pais: "Colombia" },
-    { comentarioKey: "personal.reseñas.2", autor: "Emma Wilson", pais: "Reino Unido" },
+    { comentarioKey: "personal.reseñas.0", autor: "Helena", pais: "Argentina" },
+    { comentarioKey: "personal.reseñas.1", autor: "Familia Rocha", pais: "Brasil" },
+    { comentarioKey: "personal.reseñas.2", autor: "Emma y Lorenzo", pais: "Italia" },
   ],
 };
