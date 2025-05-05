@@ -183,7 +183,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
           pt-4 sm:pt-6 md:pt-8 lg:pt-10 
           pb-2 sm:pb-4 md:pb-6 lg:pb-8 
           px-4 sm:px-8 md:px-12 lg:px-14
-          w-full md:max-w-md 2xl:max-w-5xl lg:max-w-5xl 
+          w-full md:max-w-xl 2xl:max-w-5xl lg:max-w-5xl 
           relative transform overflow-hidden"
           variants={modalVariants}
           initial="hidden"
@@ -215,7 +215,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
             <span className="whitespace-nowrap lg:text-white text-black">{part2}</span>
           </h3>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 text-black gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 text-black lg:gap-4">
             <div className={`flex flex-col col-span-1 lg:col-span-7 pt-2 
               ${
                 selectedReseña.folder === "reseñas-desayuno"
