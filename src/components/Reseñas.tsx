@@ -86,6 +86,7 @@ interface ReseñasModalProps {
 function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
   const tGlobal = useTranslations() as Translations;
   const { width } = useWindowSize();
+  const locale = useLocale();
 
   const detalles: ReseñaDetalle[] = useMemo(() => {
     const data = (reseñasDetalles as Record<string, ReseñaDetalle[]>)[
@@ -101,10 +102,24 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
   const { part1, part2, full } = useMemo(() => splitTitle(rawTitle), [rawTitle]);
 
   const computedTracking = useMemo(() => {
-    const baseTracking = calculateTrackingBase(full);
-    const factor = width && width < 768 ? 0.3 : width && width < 1024 ? 0.6 : 1.15;
+    // calcula el tracking “base” según la longitud
+    let baseTracking = calculateTrackingBase(full);
+  
+    // si es desayuno y portugués, lo reducimos un poco más
+    if (locale === "pt" && selectedReseña.folder === "reseñas-desayuno") {
+      baseTracking *= 0.6;  // ajusta el factor a tu gusto
+    }
+  
+    // luego aplicas el factor según el ancho
+    const factor =
+      width && width < 768
+        ? 0.3
+        : width && width < 1024
+        ? 0.6
+        : .82;
+  
     return baseTracking * factor;
-  }, [full, width]);
+  }, [full, width, locale, selectedReseña.folder]);
 
   // Slider de comentarios (con react-slick, se deja como estaba)
   const commentsSliderSettings = useMemo(() => ({
@@ -167,6 +182,54 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
     }),
   };
 
+  const titleClassName = useMemo(() => {
+    // Clases comunes a todos los casos
+    const base = [
+      "relative",
+      "lg:absolute",
+      "lg:left-1/2",
+      "lg:-translate-x-1/2",
+      "uppercase",
+      "z-10",
+      "w-full",
+      "text-center",
+      "mt-8",
+      "sm:mt-6",
+      "lg:mt-0",
+      "lg:ms-4",
+      "ms-0",
+      "text-black",
+    ].join(" ");
+
+    // 1) Caso Portugués
+    if (locale === "pt") {
+      return `${base} lg:top-[10%] text-4xl lg:text-7xl`;
+    }
+    // 2) Caso “reseñas-desayuno”
+    if (selectedReseña.folder === "reseñas-desayuno") {
+      return `${base} lg:top-[13%] text-3xl sm:text-4xl lg:text-8xl`;
+    }
+    // 3) Por defecto
+    return `${base} lg:top-[15%] text-3xl sm:text-4xl lg:text-6xl`;
+  }, [locale, selectedReseña.folder]);
+
+  const paragraphClassName = useMemo(() => {
+    const base = ["relative", "z-10", "text-left", "mt-2"].join(" ");
+  
+    // 1) Portugués + desayuno: reducimos el margin-top en pantallas grandes
+    if (locale === "pt" && selectedReseña.folder === "reseñas-desayuno") {
+      return `${base} tracking-[0.09rem] leading-6 lg:mt-12 text-base`;
+    }
+  
+    // 2) Solo desayuno
+    if (selectedReseña.folder === "reseñas-desayuno") {
+      return `${base} tracking-[0.09rem] leading-6 lg:mt-20 text-base`;
+    }
+  
+    // 3) Por defecto
+    return `${base} tracking-[0.08rem] leading-7 lg:mt-16 text-lg`;
+  }, [locale, selectedReseña.folder]);
+
   return createPortal(
     <AnimatePresence>
       <motion.div
@@ -203,12 +266,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
           </button>
 
           <h3
-            className={`relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 uppercase z-10 w-full text-center mt-8 sm:mt-6 lg:mt-0 lg:ms-4 ms-0 text-black
-              ${
-                selectedReseña.folder === "reseñas-desayuno"
-                  ? "lg:top-[13%] text-3xl sm:text-4xl lg:text-8xl"  // valor para desayuno
-                  : "lg:top-[15%] text-3xl sm:text-4xl lg:text-6xl"  // valor por defecto
-              }`}
+            className={titleClassName}
             style={{ letterSpacing: `${computedTracking}em` }}
           >
             <span className="whitespace-nowrap">{part1}</span>
@@ -231,14 +289,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
                 />
               </div>
               <p
-                className={`
-                  relative z-10 text-left
-                  ${
-                    selectedReseña.folder === "reseñas-desayuno"
-                      ? "tracking-[0.09rem] leading-6 mt-2 lg:mt-20 text-base"  // valor para desayuno
-                      : "tracking-[0.08rem] leading-7 mt-2 lg:mt-24 text-lg"  // valor por defecto
-                  }
-                `}
+                className={paragraphClassName}
                 style={{ whiteSpace: "pre-line" }}
               >
                 {tGlobal(selectedReseña.textoKey)}

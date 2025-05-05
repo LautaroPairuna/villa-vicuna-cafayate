@@ -21,7 +21,7 @@
     "imagenAlt": "Imagem sobre nós"
   },
   "desayuno": {
-    "nombre": "Café<span>da Manhã</span>",
+    "nombre": "Café da M<span>anhã</span>",
     "texto": "Em nosso buffet você encontrará delícias caseiras para todos os gostos, pois entendemos a importância de um café da manhã completo e saudável, preparado com produtos frescos e caseiros.\n\nDisponibilizamos nossos cardápios que podem ser consultados sempre que desejar desfrutar dos nossos sabores durante a sua estadia.",
     "reseñas": [
       "“Gostamos muito do café da manhã; o buffet é extremamente variado e completo. O melhor... ‘ovos escalfados’!”",
@@ -30,7 +30,7 @@
     ]
   },
   "detalles": {
-    "nombre": "Os det<span>alhes</span>",
+    "nombre": "Os deta<span>lhes</span>",
     "texto": "Porque nos envolvem, nos desconectam e nos transportam a outras épocas, na Villa Vicuña damos atenção especial aos detalhes, criando cantinhos para momentos inesquecíveis.",
     "reseñas": [
       "“A localização do hotel é imbatível, a decoração colonial, os toques ingleses e a arte cuzqueña... um verdadeiro deleite.”",
@@ -39,7 +39,7 @@
     ]
   },
   "personal": {
-    "nombre": "A equipe<span></span>",
+    "nombre": "A equ<span>ipe</span>",
     "texto": "Nossa equipe... nossa família, responsável pelo calor humano e qualidade excepcionais dos nossos serviços, cujo esmero e simpatia fazem com que nossos hóspedes se sintam em casa.",
     "reseñas": [
       "“Esta é minha terceira visita à Villa Vicuña, desta vez vim com amigos, estou muito agradecida pela cordialidade com que fui recebida e pela atenção a que todo o pessoal já me acostumou.”",
