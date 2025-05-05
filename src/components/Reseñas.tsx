@@ -109,6 +109,14 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
     if (locale === "pt" && selectedReseña.folder === "reseñas-desayuno") {
       baseTracking *= 0.6;  // ajusta el factor a tu gusto
     }
+
+    if (locale === "en" && selectedReseña.folder === "reseñas-detalles") {
+      baseTracking *= 1;  // ajusta el factor a tu gusto
+    }
+
+    if (locale === "en" && selectedReseña.folder === "reseñas-desayuno") {
+      baseTracking *= 0.85;  // ajusta el factor a tu gusto
+    }
   
     // luego aplicas el factor según el ancho
     const factor =
