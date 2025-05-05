@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import { createPortal } from "react-dom";
 import Slider from "react-slick";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { reseñas, reseñasDetalles } from "../lib/reseñas";
 import { motion, AnimatePresence } from "framer-motion";
 import { ImageWithFallback } from "@/components/ImageWithFallback";
@@ -183,7 +183,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
           pt-4 sm:pt-6 md:pt-8 lg:pt-10 
           pb-2 sm:pb-4 md:pb-6 lg:pb-8 
           px-4 sm:px-8 md:px-12 lg:px-14
-          w-full 2xl:max-w-5xl lg:max-w-5xl 
+          w-full md:max-w-md 2xl:max-w-5xl lg:max-w-5xl 
           relative transform overflow-hidden"
           variants={modalVariants}
           initial="hidden"
@@ -397,15 +397,16 @@ function ReseñaCard({ reseña, onClick }: ReseñaCardProps) {
 // -----------------------------------------------------------------------------
 export default function ReseñasSection() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
-  const [mounted, setMounted] = useState<boolean>(false);
+  const [mounted, setMounted] = useState(false);
   const tReseñas = useTranslations("reseñas");
+  const locale = useLocale(); // <-- aquí capturas el idioma actual
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   const selectedReseña = useMemo(
-    () => reseñas.find((item: ReseñaItem) => item.id === selectedId),
+    () => reseñas.find(item => item.id === selectedId) ?? null,
     [selectedId]
   );
 
@@ -416,6 +417,16 @@ export default function ReseñasSection() {
   const handleCloseModal = useCallback(() => {
     setSelectedId(null);
   }, []);
+
+  // Computamos clases condicionales según locale
+  const titleClassName = useMemo(() => {
+    const base = "mb-8 ms-5 font-base text-center";
+    if (locale === "pt") {
+      return `${base} text-4xl lg:text-8xl 2xl:text-9xl tracking-[0.3em]`;
+    }
+    // por defecto
+    return `${base} text-4xl lg:text-8xl 2xl:text-9xl tracking-[0.60em]`;
+  }, [locale]);
 
   return (
     <section id="reviews" className="relative lg:pt-36 pt-10 pb-10 px-5 bg-white text-black">
@@ -428,17 +439,18 @@ export default function ReseñasSection() {
             className="object-contain"
           />
         </div>
-        <h2 className="xl:text-9xl lg:text-8xl md:text-6xl text-4xl mb-8 md:tracking-[.60em] tracking-[0.1em] text-center ms-5">
+        <h2 className={titleClassName}>
           {tReseñas("titulo")}
         </h2>
         <p className="text-xl leading-7 tracking-[0.03em]">{tReseñas("descripcion")}</p>
         <p className="text-xl leading-7 tracking-[0.03em]">{tReseñas("gracias")}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-5">
-          {reseñas.map((reseña: ReseñaItem) => (
+          {reseñas.map(reseña => (
             <ReseñaCard key={reseña.id} reseña={reseña} onClick={handleCardClick} />
           ))}
         </div>
       </div>
+
       <AnimatePresence>
         {mounted && selectedReseña && (
           <ReseñasModal selectedReseña={selectedReseña} onClose={handleCloseModal} />
