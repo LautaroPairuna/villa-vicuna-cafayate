@@ -171,7 +171,7 @@ export default function Contacto() {
                       width={24}
                       height={24} 
                     /> 
-                    villavicuñacafayate
+                    villavicunacafayate
                   </a>
                   <a
                     href="https://facebook.com/villavicuñacafayate"
@@ -185,7 +185,7 @@ export default function Contacto() {
                       width={24}
                       height={24} 
                     /> 
-                    villa vicuña cafayate
+                    villa vicuna cafayate
                   </a>
                 </div>
               </div>

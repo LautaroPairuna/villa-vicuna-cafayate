@@ -124,7 +124,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
             </h4>
 
             <div className="relative mt-2">
-              <div className={`absolute pointer-events-none z-10 transform -translate-x-1/2 -translate-y-1/2
+              <div className={`absolute pointer-events-none z-10 transform -translate-x-1/2 -translate-y-1/2 opacity-55
                 ${habitacion.categoria === "departamento" ? "top-[60%] left-[70%] md:w-[850px] w-[350px] lg:h-[400px] md:h-[160px] h-[110px]" : "top-[55%] left-[60%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]"}
                 ${habitacion.key === "matrimonial" ? "top-[55%] left-[60%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]" : "top-[55%] left-[60%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]"} 
               `}>

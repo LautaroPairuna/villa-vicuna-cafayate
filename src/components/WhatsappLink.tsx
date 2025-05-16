@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const WhatsappLink: React.FC = () => {
-  const phoneNumber: string = "5493874649748";
+  const phoneNumber: string = "5493876835535";
   const customMessage: string = encodeURIComponent("¡Hola! Me interesa Villa Vicuña, Hotel en Salta. ¿Podrían brindarme más información?");
   const whatsappUrl: string = `https://wa.me/${phoneNumber}?text=${customMessage}`;
 

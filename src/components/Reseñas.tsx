@@ -124,7 +124,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
         ? 0.3
         : width && width < 1024
         ? 0.6
-        : .82;
+        : 1.15;
   
     return baseTracking * factor;
   }, [full, width, locale, selectedReseña.folder]);
