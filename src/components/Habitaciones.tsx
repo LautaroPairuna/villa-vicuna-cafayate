@@ -302,14 +302,17 @@ export default function HabitacionesComponent() {
 
                   {hab.variantes?.length ? (
                     <div className="flex flex-wrap items-center p-0 m-0">
-                      {hab.variantes.map((v) => (
+                      {(hab.key === "antesala"
+                        ? hab.variantes.filter((v) => v.key === "antesala11")
+                        : hab.variantes
+                      ).map((v) => (
                         <button
                           key={v.key}
                           className={`
                             pt-2 text-base titulo-habitaciones relative
                             after:content-['/'] after:mx-3 after:text-black
                             after:inline-block after:align-middle
-                            last:after:content-none   /* quita la barra en el último */
+                            last:after:content-none
                           `}
                           onClick={() => handleSelect(hab.id, v.key)}
                         >
