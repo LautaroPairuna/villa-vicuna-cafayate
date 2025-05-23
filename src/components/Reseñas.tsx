@@ -290,7 +290,18 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
                   ? "lg:pt-16 relative lg:pe-[2rem]"  // valor para desayuno
                   : "lg:pt-16 relative lg:pe-[1rem]"  // valor por defecto
               }`}>
-              <div className="absolute lg:top-[78%] top-[15%] lg:-left-[5%] left-[15%] inset-0 pointer-events-none z-10 flex justify-center items-center lg:w-[800px] w-[250px] h-[250px]">
+              <div className={`absolute  inset-0 pointer-events-none z-10 flex justify-center items-center lg:w-[800px] w-[250px] h-[250px]
+                  ${
+                    selectedReseña.folder === "reseñas-desayuno"
+                      ? "lg:top-[78%] top-[35%] lg:-left-[5%] left-[15%]"  // valor para desayuno
+                      : "lg:top-[78%] top-[15%] lg:-left-[5%] left-[20%]"  // valor por defecto
+                  }
+                  ${
+                    selectedReseña.folder === "reseñas-personal"
+                      ? "lg:top-[78%] top-[20%] lg:-left-[5%] left-[15%]"  // valor para desayuno
+                      : "lg:top-[78%] top-[15%] lg:-left-[5%] left-[15%]"  // valor por defecto
+                  }
+                `}>
                 <Image
                   src="/images/fondo-carta-5.svg"
                   alt="Personal Review Background"

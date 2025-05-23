@@ -95,7 +95,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
             relative md:absolute md:top-[10%] md:left-1/2 md:-translate-x-1/2
             leading-tight md:leading-normal uppercase z-10 w-full text-center
             lg:mt-2 mt-6 font-normal
-            ${habitacion.categoria === "standard" ? "2xl:tracking-[0.62em] xl:tracking-[0.55em] lg:tracking-[0.48em] tracking-[0.18em]" : "2xl:tracking-[0.72em] xl:tracking-[0.64em] lg:tracking-[0.62em] tracking-[0.23em]"}
+            ${habitacion.categoria === "standard" ? "2xl:tracking-[0.62em] xl:tracking-[0.55em] lg:tracking-[0.48em] tracking-[0.18em]" : "2xl:tracking-[0.72em] xl:tracking-[0.64em] lg:tracking-[0.62em] tracking-[0.10em]"}
             ${habitacion.categoria === "departamento" ? "md:text-6xl text-4xl" : "text-4xl md:text-8xl"}
           `}
         >
@@ -122,8 +122,8 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
 
             <div className="relative mt-2">
               <div className={`absolute pointer-events-none z-10 transform -translate-x-1/2 -translate-y-1/2 opacity-35
-                ${habitacion.categoria === "departamento" ? "top-[60%] left-[70%] md:w-[850px] w-[350px] lg:h-[400px] md:h-[160px] h-[110px]" : "top-[55%] left-[60%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]"}
-                ${habitacion.key === "matrimonial" ? "top-[55%] lg:left-[60%] left-[45%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]" : "top-[55%] lg:left-[60%] left-[45%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]"} 
+                ${habitacion.categoria === "departamento" ? "top-[60%] lg:left-[70%] left-[50%] md:w-[850px] w-[350px] lg:h-[400px] md:h-[160px] h-[110px]" : "top-[55%] lg:left-[60%] left-[50%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]"}
+                ${habitacion.key === "matrimonial" ? "top-[55%] lg:left-[60%] left-[50%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]" : "top-[55%] lg:left-[60%] left-[50%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]"} 
               `}>
                 <Image src="/images/fondo-carta-3.svg" alt="Fondo Carta" fill className="object-contain" />
               </div>
@@ -133,9 +133,9 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
                 `} style={{ whiteSpace: "pre-line" }}>
                 <div className="space-y-6">
                   <p className={`text-left
-                    ${habitacion.categoria === "departamento" ? "text-lg" : "2xl:text-lg text-base"}`}>{t(`${habitacion.key}.descripcion`)}</p>
+                    ${habitacion.categoria === "departamento" ? "lg:text-lg text-base" : "2xl:text-lg text-base"}`}>{t(`${habitacion.key}.descripcion`)}</p>
                   <p className={`text-left
-                    ${habitacion.categoria === "departamento" ? "text-lg" : "2xl:text-lg text-base"}`}>{t(`${habitacion.key}.parrafo_minibar`)}</p>
+                    ${habitacion.categoria === "departamento" ? "lg:text-lg text-base" : "2xl:text-lg text-base"}`}>{t(`${habitacion.key}.parrafo_minibar`)}</p>
                 </div>
                 {/* amenities */}
                 <div className={`flex flex-wrap justify-start items-center
