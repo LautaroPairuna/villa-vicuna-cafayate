@@ -1,12 +1,9 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { memo } from "react";
 
 const Hero = memo(() => {
-  // const t = useTranslations("hero");
-
   return (
     <section
       className="relative w-screen h-screen"
