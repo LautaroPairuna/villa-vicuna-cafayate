@@ -26,11 +26,7 @@ interface HabitacionModalProps {
 
 function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
   const { width: windowWidth } = useWindowSize();
-  const amenCount = habitacion.amenities.length;
-  const iconSize = Math.max(
-    40,
-    Math.min(42, Math.floor((windowWidth - 32) / amenCount))
-  );
+  const iconSize = windowWidth && windowWidth >= 1024 ? 42 : 32;
   const { categoriaBlack, categoriaWhite } = useMemo(() => {
     const categoriaHTML = t.raw(habitacion.categoria);
     const regex = /<h3>(.*?)<span>(.*?)<\/span><\/h3>?/;
@@ -98,7 +94,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
           className={`
             relative md:absolute md:top-[10%] md:left-1/2 md:-translate-x-1/2
             leading-tight md:leading-normal uppercase z-10 w-full text-center
-            mt-8 font-normal
+            lg:mt-2 mt-6 font-normal
             ${habitacion.categoria === "standard" ? "2xl:tracking-[0.62em] xl:tracking-[0.55em] lg:tracking-[0.48em] tracking-[0.18em]" : "2xl:tracking-[0.72em] xl:tracking-[0.64em] lg:tracking-[0.62em] tracking-[0.23em]"}
             ${habitacion.categoria === "departamento" ? "md:text-6xl text-4xl" : "text-4xl md:text-8xl"}
           `}
@@ -113,7 +109,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
           <div className={`col-span-1 md:col-span-7 relative 
             ${habitacion.categoria === "departamento" ? "pt-2 lg:pt-24" : "pt-2 lg:pt-36"}
           `}>
-            <h4 className={`text-2xl uppercase text-gray-700 z-10 w-full text-center lg:mt-4 mt-0 titulo-habitaciones-nombre
+            <h4 className={`text-2xl uppercase text-gray-700 z-10 w-full text-center lg:mt-4 titulo-habitaciones-nombre
               ${habitacion.key === "antesala11" ? "2xl:tracking-[1.45em] lg:tracking-[1.05em] tracking-[.5em]" : "tracking-[.65em]"}
               ${habitacion.key === "antesala12" ? "2xl:tracking-[1.45em] tracking-[1.05em]" : "tracking-[.65em]"}
               ${habitacion.key === "balcon" ? "md:tracking-[2.25em] tracking-[.5em]" : "md:tracking-[.65em] tracking-[.5em]"}
