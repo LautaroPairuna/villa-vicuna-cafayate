@@ -316,7 +316,7 @@ export default function HabitacionesComponent() {
                           `}
                           onClick={() => handleSelect(hab.id, v.key)}
                         >
-                          {`Ver ${t(`${v.key}.nombre`)}`}
+                          {`Ver más`}
                         </button>
                       ))}
                     </div>
