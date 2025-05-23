@@ -294,7 +294,7 @@ export default function HabitacionesComponent() {
                 <div className="py-4 text-left">
                   <p className="text-xs text-gray-600">{t(`${hab.key}.detalles`, { default: "" })}</p>
                   <h3 className="text-base mt-2 titulo-habitaciones capitalize tracking-widest">
-                    {hab.categoria} {t(`${hab.key}.nombre`, { default: hab.key })} {hab.cantidad}
+                    {hab.cantidad} {hab.categoria} {t(`${hab.key}.nombre`, { default: hab.key })}
                   </h3>
 
                   {hab.variantes?.length ? (
