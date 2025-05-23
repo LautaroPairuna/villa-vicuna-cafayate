@@ -263,7 +263,7 @@ export default function HabitacionesComponent() {
             alt="Fondo Carta"
             width={250}
             height={250}
-            className="absolute top-[75%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 object-contain lg:hidden"
+            className="absolute top-[-15%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 object-contain lg:hidden"
           />
           <h2 className="relative text-4xl text-center mt-16">{t("titulo")}</h2>
         </div>
