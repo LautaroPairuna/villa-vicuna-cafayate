@@ -77,14 +77,15 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
         px-4 sm:px-8 md:px-12 xl:px-10 2xl:px-20 
         pe-4 sm:pe-6 md:pe-10 lg:pe-16 
         w-full 2xl:max-w-6xl lg:max-w-5xl 
-        relative transform transition-transform duration-300 scale-95 animate-fadeIn max-h-screen 
+        relative transform transition-transform duration-300 scale-95 animate-fadeIn 
         mt-8 md:mt-0 
-        overflow-y-auto md:overflow-visible"
+        overflow-y-auto md:overflow-visible
+        max-h-[95vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* --- Cerrar --- */}
         <button
-          className="absolute md:top-6 top-1 left-0 text-xl sm:text-2xl md:text-4xl text-white bg-[#941104] rounded-tr-full rounded-br-full md:px-4 px-2 md:py-3 py-2 flex items-center"
+          className="fixed md:top-6 top-1 left-0 text-xl sm:text-2xl md:text-4xl text-white bg-[#941104] rounded-tr-full rounded-br-full md:px-4 px-2 md:py-3 py-2 flex items-center"
           onClick={onClose}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -97,8 +98,8 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
           className={`
             relative md:absolute md:top-[10%] md:left-1/2 md:-translate-x-1/2
             leading-tight md:leading-normal uppercase z-10 w-full text-center
-            md:mt-0 mt-4 font-normal
-            ${habitacion.categoria === "standard" ? "2xl:tracking-[0.62em] xl:tracking-[0.55em] tracking-[0.48em]" : "2xl:tracking-[0.72em] xl:tracking-[0.64em] tracking-[0.62em]"}
+            mt-8 font-normal
+            ${habitacion.categoria === "standard" ? "2xl:tracking-[0.62em] xl:tracking-[0.55em] lg:tracking-[0.48em] tracking-[0.18em]" : "2xl:tracking-[0.72em] xl:tracking-[0.64em] lg:tracking-[0.62em] tracking-[0.23em]"}
             ${habitacion.categoria === "departamento" ? "md:text-6xl text-4xl" : "text-4xl md:text-8xl"}
           `}
         >
@@ -112,21 +113,21 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
           <div className={`col-span-1 md:col-span-7 relative 
             ${habitacion.categoria === "departamento" ? "pt-2 lg:pt-24" : "pt-2 lg:pt-36"}
           `}>
-            <h4 className={`text-2xl uppercase text-gray-700 z-10 w-full text-center mt-4 titulo-habitaciones-nombre
-              ${habitacion.key === "antesala11" ? "2xl:tracking-[1.45em] tracking-[1.05em]" : "tracking-[.65em]"}
+            <h4 className={`text-2xl uppercase text-gray-700 z-10 w-full text-center lg:mt-4 mt-0 titulo-habitaciones-nombre
+              ${habitacion.key === "antesala11" ? "2xl:tracking-[1.45em] lg:tracking-[1.05em] tracking-[.5em]" : "tracking-[.65em]"}
               ${habitacion.key === "antesala12" ? "2xl:tracking-[1.45em] tracking-[1.05em]" : "tracking-[.65em]"}
-              ${habitacion.key === "balcon" ? "tracking-[2.25em]" : "tracking-[.65em]"}
-              ${habitacion.key === "triple" ? "tracking-[1.45em]" : "tracking-[.65em]"}
-              ${habitacion.key === "twin" ? "tracking-[1.85em]" : "tracking-[.65em]"}
-              ${habitacion.key === "familiar" ? "tracking-[1em]" : "tracking-[.65em]"}
+              ${habitacion.key === "balcon" ? "md:tracking-[2.25em] tracking-[.5em]" : "md:tracking-[.65em] tracking-[.5em]"}
+              ${habitacion.key === "triple" ? "md:tracking-[1.45em] tracking-[.5em]" : "md:tracking-[.65em] tracking-[.5em]"}
+              ${habitacion.key === "twin" ? "md:tracking-[1.85em] tracking-[.5em]" : "md:tracking-[.65em] tracking-[.5em]"}
+              ${habitacion.key === "familiar" ? "md:tracking-[1em] tracking-[.5em]" : "md:tracking-[.65em] tracking-[.5em]"}
             `}>
               {t(`${habitacion.key}.nombre`)}
             </h4>
 
             <div className="relative mt-2">
-              <div className={`absolute pointer-events-none z-10 transform -translate-x-1/2 -translate-y-1/2 opacity-55
+              <div className={`absolute pointer-events-none z-10 transform -translate-x-1/2 -translate-y-1/2 opacity-35
                 ${habitacion.categoria === "departamento" ? "top-[60%] left-[70%] md:w-[850px] w-[350px] lg:h-[400px] md:h-[160px] h-[110px]" : "top-[55%] left-[60%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]"}
-                ${habitacion.key === "matrimonial" ? "top-[55%] left-[60%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]" : "top-[55%] left-[60%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]"} 
+                ${habitacion.key === "matrimonial" ? "top-[55%] lg:left-[60%] left-[45%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]" : "top-[55%] lg:left-[60%] left-[45%] md:w-[750px] w-[350px] lg:h-[375px] md:h-[160px] h-[110px]"} 
               `}>
                 <Image src="/images/fondo-carta-3.svg" alt="Fondo Carta" fill className="object-contain" />
               </div>
@@ -142,7 +143,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
                 </div>
                 {/* amenities */}
                 <div className={`flex flex-wrap justify-start items-center
-                  ${habitacion.key === "matrimonial" ? "mt-40" : "mt-28"}`}>
+                  ${habitacion.key === "matrimonial" ? "md:mt-40 mt-5" : "md:mt-28 mt-5"}`}>
                   {habitacion.amenities.map((am, i) => (
                     <div
                       key={i}
@@ -297,7 +298,7 @@ export default function HabitacionesComponent() {
                 <div className="py-4 text-left">
                   <p className="text-xs text-gray-600">{t(`${hab.key}.detalles`, { default: "" })}</p>
                   <h3 className="text-base mt-2 titulo-habitaciones capitalize tracking-widest">
-                    {hab.categoria} {t(`${hab.key}.nombre`, { default: hab.key })}
+                    {hab.categoria} {t(`${hab.key}.nombre`, { default: hab.key })} {hab.cantidad}
                   </h3>
 
                   {hab.variantes?.length ? (

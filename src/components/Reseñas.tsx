@@ -235,13 +235,13 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
     }
   
     // 3) Por defecto
-    return `${base} tracking-[0.08rem] leading-7 lg:mt-16 text-lg`;
+    return `${base} tracking-[0.08rem] leading-7 lg:mt-16 lg:text-lg text-base`;
   }, [locale, selectedReseña.folder]);
 
   return createPortal(
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[9999] px-4 overflow-y-auto"
+        className="fixed inset-0 z-[9999] bg-black/80 flex items-center justify-center px-4"
         variants={overlayVariants}
         initial="hidden"
         animate="visible"
@@ -254,7 +254,9 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
           pt-4 sm:pt-6 md:pt-8 lg:pt-10 
           pb-2 sm:pb-4 md:pb-6 lg:pb-8 
           px-4 sm:px-8 md:px-12 lg:px-14
-          w-full md:max-w-xl 2xl:max-w-5xl lg:max-w-5xl 
+          max-w-md lg:max-w-5xl 
+          overflow-y-auto
+          max-h-[90vh]
           relative transform overflow-hidden"
           variants={modalVariants}
           initial="hidden"

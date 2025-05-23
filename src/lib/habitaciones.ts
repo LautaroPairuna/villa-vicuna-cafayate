@@ -20,6 +20,7 @@ export interface SubHabitacion {
 
 export interface Habitacion {
   id: number;
+  cantidad: string;
   categoria: string;   // standard | superior | departamento…
   key: string;         // clave base (para la tarjeta)
   imagen: string;      // thumb mostrado en el grid
@@ -36,6 +37,7 @@ export function Habitaciones(): Habitacion[] {
     {
       id: 1,
       categoria: "standard",
+      cantidad: "(2)",
       key: "matrimonial",
       imagen: "standard-matrimonial.jpeg",
       folder: "habitaciones-matrimonial",
@@ -54,6 +56,7 @@ export function Habitaciones(): Habitacion[] {
     {
       id: 2,
       categoria: "standard",
+      cantidad: "(4)",
       key: "twin",
       imagen: "standard-thin.jpg",
       folder: "habitaciones-thin",
@@ -72,6 +75,7 @@ export function Habitaciones(): Habitacion[] {
     {
       id: 3,
       categoria: "standard",
+      cantidad: "(2)",
       key: "triple",
       imagen: "standard-mat-triple.jpg",
       folder: "habitaciones-triple",
@@ -90,6 +94,7 @@ export function Habitaciones(): Habitacion[] {
     {
       id: 4,
       categoria: "superior",
+      cantidad: "(2)",
       key: "antesala",                     // SEGUIRÁ SIENDO EL TEXTO DE LA CARD
       imagen: "superior-antesala.jpg",
       folder: "habitaciones-antesala",     // thumb genérico (opcional)
@@ -135,6 +140,7 @@ export function Habitaciones(): Habitacion[] {
     {
       id: 5,
       categoria: "superior",
+      cantidad: "(1)",
       key: "balcon",
       imagen: "superior-balcon.jpeg",
       folder: "habitaciones-balcon",
@@ -154,6 +160,7 @@ export function Habitaciones(): Habitacion[] {
     {
       id: 6,
       categoria: "departamento",
+      cantidad: "(1)",
       key: "familiar",
       imagen: "departamento.jpg",
       folder: "habitaciones-departamento",

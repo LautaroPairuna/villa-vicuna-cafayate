@@ -50,7 +50,7 @@ export default function Menu() {
   }, []);
 
   return (
-    <section id="menu" className="relative bg-white text-black md:py-8 md:px-12 xl:py-16 xl:px-16">
+    <section id="menu" className="relative bg-white text-black py-8 md:py-16 md:px-12 xl:py-16 xl:px-16">
       <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center justify-center">
         {/* Título vertical en Desktop */}
         <div className="hidden lg:flex w-1/6 items-center justify-center relative">
@@ -93,7 +93,7 @@ export default function Menu() {
 
         {/* Versión móvil */}
         <div className="lg:hidden flex flex-col items-center text-center w-full mt-6 space-y-4 relative">
-          <div className="absolute left-[55%] -top-[130%] -translate-x-1/2 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] opacity-87 pointer-events-none z-0">
+          <div className="absolute left-[55%] -top-[120%] -translate-x-1/2 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] opacity-87 pointer-events-none z-0">
             <Image
               src="/images/fondo-carta-1.svg"
               alt="Fondo Cartaa"
