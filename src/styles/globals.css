@@ -1,8 +1,7 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
 @import url("slick-carousel/slick/slick.css");
 @import url("slick-carousel/slick/slick-theme.css");
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 /* Variables globales y modo oscuro */
 :root {
