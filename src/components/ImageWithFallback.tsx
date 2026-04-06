@@ -15,6 +15,7 @@ export function ImageWithFallback({
   src,
   fallbackSrc = "/images/placeholder.jpg",
   alt,
+  sizes,
   ...rest
 }: Props) {
   const [imgSrc, setImgSrc] = useState(src);
@@ -24,6 +25,7 @@ export function ImageWithFallback({
       {...rest}
       src={imgSrc}
       alt={alt}
+      sizes={sizes}
       onError={() => {
         if (imgSrc !== fallbackSrc) {
           setImgSrc(fallbackSrc);

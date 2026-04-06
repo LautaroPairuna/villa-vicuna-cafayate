@@ -526,8 +526,8 @@ export default function ReseñasSection() {
         <h2 className={titleClassName}>
           {tReseñas("titulo")}
         </h2>
-        <p className="text-xl leading-7 tracking-[0.03em]">{tReseñas("descripcion")}</p>
-        <p className="text-xl leading-7 tracking-[0.03em]">{tReseñas("gracias")}</p>
+        <p className="text-lg leading-7 tracking-[0.03em]">{tReseñas("descripcion")}</p>
+        <p className="text-lg leading-7 tracking-[0.03em]">{tReseñas("gracias")}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-5">
           {reseñas.map(reseña => (
             <ReseñaCard key={reseña.id} reseña={reseña} onClick={handleCardClick} />

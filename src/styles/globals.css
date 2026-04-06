@@ -24,7 +24,6 @@ h1, h2, h3, h4, h5, h6 {
 p, a, li {
   font-family: var(--font-montserrat), sans-serif;
   font-weight: 400;
-  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
   line-height: 1.55;
   font-optical-sizing: none;
 }
@@ -32,6 +31,8 @@ p, a, li {
 
 .titulo-habitaciones {
   font-family: var(--font-montserrat), sans-serif;
+  font-size: 1rem !important;
+  font-weight: 500;
 }
 
 .titulo-habitaciones-nombre {
@@ -459,7 +460,7 @@ footer {
   /* Estilos específicos para botones Cloudbeds en móvil - igualar a los enlaces */
   .cb-link-btn.cb-link-btn--nav {
     font-size: 1.25rem !important;        /* text-xl igual que los enlaces */
-    font-weight: 600 !important;          /* font-semibold igual que los enlaces */
+    font-weight: 500 !important;          /* font-medium igual que los enlaces */
     margin: 0 !important;
     padding: 0 !important;                /* Sin padding extra para igualar */
     line-height: 1.5 !important;         /* line-height consistente */
@@ -501,7 +502,7 @@ footer {
   /* Estilos específicos para botones Cloudbeds en móvil - igualar a los enlaces */
   .cb-link-btn.cb-link-btn--nav {
     font-size: 1.25rem !important;        /* text-xl igual que los enlaces */
-    font-weight: 600 !important;          /* font-semibold igual que los enlaces */
+    font-weight: 500 !important;          /* font-medium igual que los enlaces */
     margin: 0 !important;
     padding: 0 !important;                /* Sin padding extra para igualar */
     line-height: 1.5 !important;         /* line-height consistente */

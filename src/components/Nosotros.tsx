@@ -94,20 +94,21 @@ export default function Nosotros() {
           </div>
 
           <div className="text-left">
-            <p className="text-xl leading-7 tracking-[0.12em] relative z-10 break-words">{t("parrafo1")}</p>
-            <p className="text-xl leading-7 tracking-[0.12em] mt-8 relative z-10 break-words">{t("parrafo2")}</p>
-            <p className="text-xl leading-7 tracking-[0.12em] mt-8 relative z-10 break-words">{t("parrafo3")}</p>
+            <p className="text-lg leading-7 tracking-[0.12em] relative z-10 break-words">{t("parrafo1")}</p>
+            <p className="text-lg leading-7 tracking-[0.12em] mt-8 relative z-10 break-words">{t("parrafo2")}</p>
+            <p className="text-lg leading-7 tracking-[0.12em] mt-8 relative z-10 break-words">{t("parrafo3")}</p>
           </div>
         </div>
 
         {/* Imagen */}
         <div className="relative lg:col-span-6 col-span-12 h-[650px] sm:h-[600px] md:h-[725px] w-full lg:ms-12">
           <Image
-            src="/images/nosotros.jpg"
-            alt={t("imagenAlt")}
-            fill
-            className="object-cover"
-          />
+              src="/images/nosotros.jpg"
+              alt={t("imagenAlt")}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
         </div>
       </div>
     </section>

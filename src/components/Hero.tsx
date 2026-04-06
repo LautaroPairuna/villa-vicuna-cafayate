@@ -2,39 +2,9 @@
 "use client";
 
 import Image from "next/image";
-import React, { memo, useRef } from "react";
+import React, { memo } from "react";
 
-interface HeroProps {
-  onLoaded?: () => void;
-}
-
-const Hero = memo(({ onLoaded }: HeroProps) => {
-  const videoReadyRef = useRef(false);
-  const logoReadyRef = useRef(false);
-  const notifiedRef = useRef(false);
-
-  const tryNotifyLoaded = () => {
-    if (!notifiedRef.current && videoReadyRef.current && logoReadyRef.current) {
-      notifiedRef.current = true;
-      onLoaded?.();
-    }
-  };
-
-  const handleVideoEvent = (event: React.SyntheticEvent<HTMLVideoElement>) => {
-    const video = event.currentTarget;
-
-    // 3 = HAVE_FUTURE_DATA, 4 = HAVE_ENOUGH_DATA
-    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
-      videoReadyRef.current = true;
-      tryNotifyLoaded();
-    }
-  };
-
-  const handleLogoLoad = () => {
-    logoReadyRef.current = true;
-    tryNotifyLoaded();
-  };
-
+const Hero = memo(() => {
   return (
     <section
       className="relative w-full min-h-dvh"
@@ -50,8 +20,6 @@ const Hero = memo(({ onLoaded }: HeroProps) => {
           playsInline
           preload="metadata"
           poster="/images/hero-poster.webp"
-          onLoadedData={handleVideoEvent}
-          onCanPlayThrough={handleVideoEvent}
         >
           {/* Versión WebM (más eficiente) */}
           <source src="/videos/video-home.webm" type="video/webm" />
@@ -71,7 +39,6 @@ const Hero = memo(({ onLoaded }: HeroProps) => {
             width={120}
             height={120}
             priority
-            onLoad={handleLogoLoad}
           />
         </div>
       </div>

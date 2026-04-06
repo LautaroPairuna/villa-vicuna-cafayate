@@ -111,11 +111,11 @@ export default async function LocaleLayout({
         />
 
         {/* Preload crítico (solo lo realmente above-the-fold) */}
-        <link rel="preload" as="image" href="/images/hero-poster.jpg" />
+        <link rel="preload" as="image" href="/images/hero-poster.webp" fetchPriority="high" />
         <link
           rel="preload"
           as="image"
-          href="/images/logo-villa-vicuna-2.svg"
+          href="/images/logo-villa-vicuna-3.svg"
           fetchPriority="high"
         />
         {/* Si usás estas mismas fuentes en Cafayate */}

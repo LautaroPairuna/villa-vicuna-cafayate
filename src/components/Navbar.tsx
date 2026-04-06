@@ -194,7 +194,7 @@ export default function Navbar({ onCloudbedsLoaded, isCloudbedsReady = false, }:
                       href={item.href}
                       target={isExternal(item.href) ? "_blank" : undefined}
                       rel={isExternal(item.href) ? "noopener noreferrer" : undefined}
-                      className="relative group font-semibold transition-colors duration-300 hover:text-gray-800 uppercase"
+                      className="relative group font-normal transition-colors duration-300 hover:text-gray-800 uppercase"
                       onClick={() => setMenuOpen(false)}
                     >
                       {item.label}
