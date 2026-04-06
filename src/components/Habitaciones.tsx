@@ -15,6 +15,9 @@ import dynamic from "next/dynamic";
 
 const CLOUDBEDS_PROPERTY_CODE = "pY5HV6";
 
+const toUppercaseHabitacionesPath = (src: string) =>
+  src.replace("/images/habitaciones/", "/images/Habitaciones/");
+
 // CloudbedsBookNow como en Salta: import dinámico y sin SSR
 const CloudbedsBookNow = dynamic(
   () => import("./CloudbedsBookNow"),
@@ -295,7 +298,9 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
                     alt={`Imagen ${currentImage + 1}`}
                     fill
                     className="object-cover"
-                    fallbackSrc="/images/placeholder.jpg"
+                    fallbackSrc={toUppercaseHabitacionesPath(
+                      `/images/habitaciones/${habitacion.folder}/${habitacion.carrusel[currentImage]}`
+                    )}
                   />
                 </motion.div>
               </AnimatePresence>
@@ -432,11 +437,14 @@ export default function HabitacionesComponent() {
                     className="relative 2xl:w-[300px] 2xl:h-[300px] sm:w-[250px] sm:h-[250px] w-[300px] h-[300px] overflow-hidden mx-auto group cursor-pointer"
                     onClick={() => handleSelect(hab.id, defaultVariantKey)}
                   >
-                    <Image
+                    <ImageWithFallback
                       src={`/images/habitaciones/${hab.imagen}`}
                       alt={t(`${hab.key}.nombre`)}
                       fill
                       className="object-cover transition-opacity duration-300 group-hover:opacity-80"
+                      fallbackSrc={toUppercaseHabitacionesPath(
+                        `/images/habitaciones/${hab.imagen}`
+                      )}
                     />
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/35 flex items-center justify-center text-white">
                       <div className="flex items-center gap-2 uppercase tracking-widest">

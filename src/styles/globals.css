@@ -24,7 +24,8 @@ h1, h2, h3, h4, h5, h6 {
 p, a, li {
   font-family: var(--font-montserrat), sans-serif;
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
+  line-height: 1.55;
   font-optical-sizing: none;
 }
 
