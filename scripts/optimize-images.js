@@ -8,11 +8,11 @@ const outDir = path.resolve(ROOT, 'out');
 const outImages = path.resolve(outDir, 'images');
 const publicImages = path.resolve(ROOT, 'public', 'images');
 
-// Si ya existe out/images, optimizamos ahí (post-export).
-// Si no, caemos a public/images (útil en dev o pre-export).
-const baseDir = fs.existsSync(outImages)
-  ? outImages
-  : (fs.existsSync(publicImages) ? publicImages : null);
+// Siempre priorizamos public/images para que el resultado quede en el origen del proyecto.
+// Solo usamos out/images como fallback si public/images no existe.
+const baseDir = fs.existsSync(publicImages)
+  ? publicImages
+  : (fs.existsSync(outImages) ? outImages : null);
 
 if (!baseDir) {
   process.exit(0);
@@ -27,17 +27,22 @@ const deleteAllowed = (p) => {
   return rel.startsWith('habitaciones/') || rel.startsWith('reseñas/');
 };
 
-const walk = (dir) => {
+const stats = { scanned: 0, written: 0, errors: 0 };
+
+const walk = async (dir) => {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
-  entries.forEach((entry) => {
+  for (const entry of entries) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      walk(full);
+      await walk(full);
     } else {
       const ext = path.extname(entry.name).toLowerCase();
-      if (exts.has(ext)) optimize(full, ext);
+      if (exts.has(ext)) {
+        stats.scanned += 1;
+        await optimize(full, ext);
+      }
     }
-  });
+  }
 };
 
 // Config de tamaños máximos
@@ -94,6 +99,7 @@ const optimize = async (filePath, ext) => {
 
     if (buf && buf.length > 0) {
       fs.writeFileSync(webpOut, buf);
+      stats.written += 1;
 
       // Si estamos en out/images y el original es JPG/PNG y está en carpetas permitidas, lo borramos
       if (
@@ -107,15 +113,13 @@ const optimize = async (filePath, ext) => {
       }
     }
   } catch (err) {
+    stats.errors += 1;
     console.error('Error optimizing', filePath, err);
   }
 };
 
-walk(baseDir);
-
-// ───────────────────── .htaccess para cache ─────────────────────
-// Aquí ya no dependemos de baseDir === outImages, sino de que exista out/
-if (fs.existsSync(outDir)) {
+const writeHtaccess = () => {
+  if (!fs.existsSync(outDir)) return;
   try {
     const htaccessPath = path.join(outDir, '.htaccess');
     const content = `
@@ -156,4 +160,16 @@ if (fs.existsSync(outDir)) {
 `;
     fs.writeFileSync(htaccessPath, content, 'utf8');
   } catch (_) {}
-}
+};
+
+const run = async () => {
+  console.log(`Image optimization target: ${baseDir}`);
+  await walk(baseDir);
+  writeHtaccess();
+  console.log(`Image optimization done. scanned=${stats.scanned} written=${stats.written} errors=${stats.errors}`);
+};
+
+run().catch((err) => {
+  console.error('Error running image optimization', err);
+  process.exitCode = 1;
+});

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap && node scripts/optimize-images.js",
+    "postbuild": "node scripts/optimize-images.js && next-sitemap",
     "preview": "npx serve out",
     "start": "next start",
     "lint": "next lint"
