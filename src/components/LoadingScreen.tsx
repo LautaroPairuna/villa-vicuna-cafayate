@@ -25,6 +25,8 @@ export default function LoadingScreen({ isVisible = true }: LoadingScreenProps) 
           alt="Villa Vicuña"
           width={200}
           height={200}
+          priority
+          fetchPriority="high"
           className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48"
         />
       </div>

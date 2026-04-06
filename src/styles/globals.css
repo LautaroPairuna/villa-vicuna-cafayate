@@ -1,7 +1,5 @@
 @import "tailwindcss";
 @config "../../tailwind.config.ts";
-@import url("slick-carousel/slick/slick.css");
-@import url("slick-carousel/slick/slick-theme.css");
 
 /* Variables globales y modo oscuro */
 :root {
@@ -16,49 +14,15 @@
   }
 }
 
-/* Fuentes personalizadas */
-@font-face {
-  font-family: "Cinzel";
-  src: url("/fonts/cinzel.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url("/fonts/montserrat.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Monotype Corsiva";
-  src: url("/fonts/monotype-cursiva.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Migra ExtraLigth";
-  src: url("/fonts/migra.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Aplicar fuentes y suavizado */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Cinzel", serif;
+  font-family: var(--font-cinzel), serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 p, a, li {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-weight: 100;
   font-size: 1.25rem;
   font-optical-sizing: none;
@@ -66,26 +30,26 @@ p, a, li {
 
 
 .titulo-habitaciones {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
 }
 
 .titulo-habitaciones-nombre {
-  font-family: "Migra ExtraLigth", sans-serif;
+  font-family: var(--font-migra), serif;
 }
 
 .titulo-menu {
-  font-family: "Migra ExtraLigth", sans-serif;
+  font-family: var(--font-migra), serif;
 }
 
 .resenas-texto {
-  font-family: "Monotype Corsiva", cursive;
+  font-family: var(--font-monotype-corsiva), cursive;
 }
 
 /* Estilos base del body y scroll */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
 }
 
 html, body {

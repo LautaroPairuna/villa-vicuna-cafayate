@@ -471,10 +471,22 @@ export default function ReseñasSection() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
   const tReseñas = useTranslations("reseñas");
-  const locale = useLocale(); // <-- aquí capturas el idioma actual
+  const locale = useLocale();
 
   useEffect(() => {
     setMounted(true);
+
+    const ensureStylesheet = (id: string, href: string) => {
+      if (document.getElementById(id)) return;
+      const link = document.createElement("link");
+      link.id = id;
+      link.rel = "stylesheet";
+      link.href = href;
+      document.head.appendChild(link);
+    };
+
+    ensureStylesheet("slick-base-css", "/slick/slick.css");
+    ensureStylesheet("slick-theme-css", "/slick/slick-theme.css");
   }, []);
 
   const selectedReseña = useMemo(

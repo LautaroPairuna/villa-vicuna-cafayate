@@ -3,6 +3,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale, getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { Cinzel, Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import SwRegister from "@/components/SwRegister";
 import "../../styles/globals.css";
@@ -21,6 +23,32 @@ export const metadata: Metadata = {
   title: SITE_TITLE,
   description: SITE_DESCRIPTION,
 };
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-cinzel",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const monotype = localFont({
+  src: "../../../public/fonts/monotype-cursiva.woff2",
+  variable: "--font-monotype-corsiva",
+  display: "swap",
+  weight: "400",
+});
+
+const migra = localFont({
+  src: "../../../public/fonts/migra.woff2",
+  variable: "--font-migra",
+  display: "swap",
+  weight: "400",
+});
 
 /*─── LAYOUT ─────────────────────────────────────────────────*/
 export default async function LocaleLayout({
@@ -44,7 +72,7 @@ export default async function LocaleLayout({
   const description = SITE_DESCRIPTION;
 
   const hrefLangs = Object.fromEntries(
-    LOCALES.map((l) => [l, `${BASE_URL}/${l}`]),
+    LOCALES.map((l) => [l, `${BASE_URL}/${l}/`]),
   ) as Record<(typeof LOCALES)[number], string>;
 
   return (
@@ -54,7 +82,7 @@ export default async function LocaleLayout({
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="canonical" href={`${BASE_URL}/${locale}`} />
+        <link rel="canonical" href={`${BASE_URL}/${locale}/`} />
         {Object.entries(hrefLangs).map(([lang, url]) => (
           <link key={lang} rel="alternate" hrefLang={lang} href={url} />
         ))}
@@ -71,7 +99,7 @@ export default async function LocaleLayout({
         <meta property="og:site_name" content="Hotel Villa Vicuña" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:url" content={`${BASE_URL}/${locale}`} />
+        <meta property="og:url" content={`${BASE_URL}/${locale}/`} />
         <meta property="og:locale" content={locale} />
         <meta property="og:image" content={`${BASE_URL}/opengraph.jpg`} />
 
@@ -90,20 +118,6 @@ export default async function LocaleLayout({
           fetchPriority="high"
         />
         {/* Si usás estas mismas fuentes en Cafayate */}
-        <link
-          rel="preload"
-          as="font"
-          href="/fonts/cinzel.woff2"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          as="font"
-          href="/fonts/montserrat.woff2"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
         <link
           rel="preload"
           as="font"
@@ -133,9 +147,9 @@ export default async function LocaleLayout({
         <Script
           id="ga4-external-cafayate"
           src="https://www.googletagmanager.com/gtag/js?id=G-0M5ME9D4YS"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga4-inline-cafayate" strategy="afterInteractive">
+        <Script id="ga4-inline-cafayate" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -173,7 +187,9 @@ export default async function LocaleLayout({
         </Script>
       </head>
 
-      <body>
+      <body
+        className={`${cinzel.variable} ${montserrat.variable} ${monotype.variable} ${migra.variable}`}
+      >
         {/* Facebook Pixel (noscript): <img> simple */}
         <noscript>
           <img
