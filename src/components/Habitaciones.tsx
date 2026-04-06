@@ -77,7 +77,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 px-4 overflow-y-auto md:overflow-visible"
+      className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4 overflow-y-auto md:overflow-visible"
       onClick={onClose}
     >
       <div
@@ -183,7 +183,7 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
 
             <div className="relative mt-2">
               <div
-                className={`absolute pointer-events-none z-10 transform -translate-x-1/2 -translate-y-1/2 opacity-35
+                className={`absolute pointer-events-none z-10 transform -translate-x-1/2 -translate-y-1/2 opacity-[0.35]
                 ${
                   habitacion.categoria === "departamento"
                     ? "top-[60%] lg:left-[70%] left-[50%] md:w-[850px] w-[350px] lg:h-[400px] md:h-[160px] h-[110px]"

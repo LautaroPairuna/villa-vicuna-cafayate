@@ -39,9 +39,9 @@ export function Habitaciones(): Habitacion[] {
       categoria: "standard",
       cantidad: "2",
       key: "matrimonial",
-      imagen: "standard-matrimonial.webp",
+      imagen: "standard-matrimonial.jpeg",
       folder: "habitaciones-matrimonial",
-      carrusel: ["matrimonial-1.webp", "matrimonial-2.webp", "matrimonial-3.webp"],
+      carrusel: ["matrimonial-1.jpeg", "matrimonial-2.jpeg", "matrimonial-3.jpg"],
       amenities: [
         { nombre: "wifi", icono: "ico-wifi.svg" },
         { nombre: "shampoo", icono: "ico-shampoo.svg" },
@@ -58,9 +58,9 @@ export function Habitaciones(): Habitacion[] {
       categoria: "standard",
       cantidad: "4",
       key: "twin",
-      imagen: "standard-thin.webp",
+      imagen: "standard-thin.jpg",
       folder: "habitaciones-thin",
-      carrusel: ["thin-1.webp", "thin-2.webp", "thin-3.webp"],
+      carrusel: ["thin-1.jpg", "thin-2.jpg", "thin-3.jpg"],
       amenities: [
         { nombre: "wifi", icono: "ico-wifi.svg" },
         { nombre: "aire", icono: "ico-aire.svg" },
@@ -77,9 +77,9 @@ export function Habitaciones(): Habitacion[] {
       categoria: "standard",
       cantidad: "2",
       key: "triple",
-      imagen: "standard-mat-triple.webp",
+      imagen: "standard-mat-triple.jpg",
       folder: "habitaciones-triple",
-      carrusel: ["triple-1.webp", "triple-2.webp", "triple-3.webp"],
+      carrusel: ["triple-1.jpg", "triple-2.jpg", "triple-3.jpg"],
       amenities: [
         { nombre: "wifi", icono: "ico-wifi.svg" },
         { nombre: "aire", icono: "ico-aire.svg" },
@@ -96,7 +96,7 @@ export function Habitaciones(): Habitacion[] {
       categoria: "superior",
       cantidad: "2",
       key: "antesala",                     // SEGUIRÁ SIENDO EL TEXTO DE LA CARD
-      imagen: "superior-antesala.webp",
+      imagen: "superior-antesala.jpg",
       folder: "habitaciones-antesala",     // thumb genérico (opcional)
       carrusel: [],                        // puede dejarse vacío
       amenities: [],                       // idem
@@ -105,7 +105,7 @@ export function Habitaciones(): Habitacion[] {
           slug: "11",
           key: "antesala11",
           folder: "antesala-11",
-          carrusel: ["11-1.webp", "11-2.webp", "11-3.webp", "11-4.webp"],
+          carrusel: ["11-1.jpg", "11-2.jpg", "11-3.jpg", "11-4.jpg"],
           amenities: [
             { nombre: "wifi", icono: "ico-wifi.svg" },
             { nombre: "aire", icono: "ico-aire.svg" },
@@ -122,7 +122,7 @@ export function Habitaciones(): Habitacion[] {
           slug: "12",
           key: "antesala12",
           folder: "antesala-12",
-          carrusel: ["12-1.webp", "12-2.webp", "12-3.webp", "12-4.webp"],
+          carrusel: ["12-1.jpg", "12-2.jpg", "12-3.jpg", "12-4.jpg"],
           amenities: [
             { nombre: "wifi", icono: "ico-wifi.svg" },
             { nombre: "aire", icono: "ico-aire.svg" },
@@ -142,9 +142,9 @@ export function Habitaciones(): Habitacion[] {
       categoria: "superior",
       cantidad: "1",
       key: "balcon",
-      imagen: "superior-balcon.webp",
+      imagen: "superior-balcon.jpeg",
       folder: "habitaciones-balcon",
-      carrusel: ["balcon-1.webp", "balcon-2.webp", "balcon-3.webp", "balcon-4.webp"],
+      carrusel: ["balcon-1.jpeg", "balcon-2.jpeg", "balcon-3.jpeg", "balcon-4.jpg"],
       amenities: [
         { nombre: "wifi", icono: "ico-wifi.svg" },
         { nombre: "aire", icono: "ico-aire.svg" },
@@ -162,9 +162,9 @@ export function Habitaciones(): Habitacion[] {
       categoria: "departamento",
       cantidad: "1",
       key: "familiar",
-      imagen: "departamento.webp",
+      imagen: "departamento.jpg",
       folder: "habitaciones-departamento",
-      carrusel: ["departamento-1.webp", "departamento-2.webp", "departamento-3.webp", "departamento-4.webp"],
+      carrusel: ["departamento-1.jpg", "departamento-2.jpeg", "departamento-3.jpeg", "departamento-4.jpeg"],
       amenities: [
         { nombre: "wifi", icono: "ico-wifi.svg" },
         { nombre: "aire", icono: "ico-aire.svg" },

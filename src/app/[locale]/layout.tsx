@@ -3,7 +3,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale, getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { Cinzel, Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import Script from "next/script";
 import SwRegister from "@/components/SwRegister";
@@ -24,16 +23,18 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
 };
 
-const cinzel = Cinzel({
-  subsets: ["latin"],
+const cinzel = localFont({
+  src: "../../../public/fonts/cinzel.woff2",
   variable: "--font-cinzel",
   display: "swap",
+  weight: "400",
 });
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
+const montserrat = localFont({
+  src: "../../../public/fonts/montserrat.woff2",
   variable: "--font-montserrat",
   display: "swap",
+  weight: "400",
 });
 
 const monotype = localFont({
