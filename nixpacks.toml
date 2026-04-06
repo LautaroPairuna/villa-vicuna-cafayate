@@ -4,7 +4,7 @@
 nixPkgs = ["nodejs_24"]
 
 [phases.install]
-cmds = ["npx pnpm@10.29.3 install --frozen-lockfile"]
+cmds = ["npm install"]
 
 [phases.build]
 cmds = ["npm run build"]
