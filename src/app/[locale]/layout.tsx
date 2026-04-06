@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
 import SwRegister from "@/components/SwRegister";
+import ThirdPartyScripts from "@/components/ThirdPartyScripts";
 import "../../styles/globals.css";
 
 /*─── CONFIG GENERAL ───────────────────────────────────────────*/
@@ -139,53 +140,14 @@ export default async function LocaleLayout({
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.facebook.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
 
         {/* ─────────────────────────────────────────────
-            ANALYTICS SIN PARTYTOWN, OPTIMIZADO
+            ANALYTICS OPTIMIZADO - CARGA DIFERIDA
            ───────────────────────────────────────────── */}
-
-        {/* Google Analytics (GA4) – Cafayate */}
-        <Script
-          id="ga4-external-cafayate"
-          src="https://www.googletagmanager.com/gtag/js?id=G-0M5ME9D4YS"
-          strategy="lazyOnload"
-        />
-        <Script id="ga4-inline-cafayate" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-0M5ME9D4YS', { cookie_domain: 'villavicunacafayate.com.ar' });
-          `}
-        </Script>
-
-        {/* Clarity – Cafayate (snippet oficial) */}
-        <Script id="ms-clarity-cafayate" strategy="lazyOnload">
-          {`
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "u84orfztgs");
-          `}
-        </Script>
-
-        {/* Facebook Pixel – Cafayate (snippet oficial, lazyOnload) */}
-        <Script id="fb-pixel-cafayate" strategy="lazyOnload">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-
-            fbq('init', '1303096650960204');
-            fbq('track', 'PageView');
-          `}
-        </Script>
+        <ThirdPartyScripts />
       </head>
 
       <body

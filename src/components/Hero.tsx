@@ -24,7 +24,7 @@ const Hero = memo(() => {
           {/* Versión WebM (más eficiente) */}
           <source src="/videos/video-home.webm" type="video/webm" />
           {/* Fallback MP4 */}
-          <source src="/videos/video-home.mp4" type="video/mp4" />
+          <source src="/videos/video-home-opt.mp4" type="video/mp4" />
           Tu navegador no soporta videos en HTML5.
         </video>
         <div className="absolute inset-0 bg-black/10" />
