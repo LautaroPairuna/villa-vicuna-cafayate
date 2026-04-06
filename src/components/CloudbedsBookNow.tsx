@@ -90,21 +90,8 @@ async function ensureCloudbedsLoaded(ms: number = 5000): Promise<boolean> {
     s.setAttribute("data-domain", "villavicunacafayate.com.ar");
 
     cloudbedsScriptPromise = new Promise<void>((resolve, reject) => {
-      s.onload = () => {
-        // Doble verificación: esperar a que el Custom Element esté realmente registrado
-        if ("customElements" in window) {
-          window.customElements.whenDefined("cb-book-now-button").then(() => {
-            resolve();
-          }).catch(() => resolve()); // Fallback si falla el whenDefined
-        } else {
-          resolve();
-        }
-      };
-      s.onerror = () => {
-        cloudbedsLoadStarted = false; // Permitir reintento si falla
-        (globalThis as unknown as { __cbLoadStarted?: boolean }).__cbLoadStarted = false;
-        reject(new Error("cloudbeds script error"));
-      };
+      s.onload = () => resolve();
+      s.onerror = () => reject(new Error("cloudbeds script error"));
     });
 
     (globalThis as unknown as { __cbScriptPromise?: Promise<void> }).__cbScriptPromise =
@@ -211,37 +198,6 @@ export default function CloudbedsBookNow({
 }: CloudbedsBookNowProps) {
   const [isComponentReady, setIsComponentReady] = useState(false);
 
-  // Carga proactiva al montar el primer componente
-  useEffect(() => {
-    const triggerLoad = () => {
-      void ensureCloudbedsLoaded(timeout);
-      window.removeEventListener("scroll", triggerLoad);
-      window.removeEventListener("mousemove", triggerLoad);
-      window.removeEventListener("touchstart", triggerLoad);
-    };
-
-    // Delay de 2s para no interferir con el LCP/FCP inicial
-    const idleTimer = setTimeout(() => {
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(() => void ensureCloudbedsLoaded(timeout));
-      } else {
-        void ensureCloudbedsLoaded(timeout);
-      }
-    }, 2000);
-
-    // O en la primera interacción (scroll, mousemove, touch)
-    window.addEventListener("scroll", triggerLoad, { once: true, passive: true });
-    window.addEventListener("mousemove", triggerLoad, { once: true, passive: true });
-    window.addEventListener("touchstart", triggerLoad, { once: true, passive: true });
-
-    return () => {
-      clearTimeout(idleTimer);
-      window.removeEventListener("scroll", triggerLoad);
-      window.removeEventListener("mousemove", triggerLoad);
-      window.removeEventListener("touchstart", triggerLoad);
-    };
-  }, [timeout]);
-
   const fallbackUrl =
     directUrlFallback || `https://hotels.cloudbeds.com/${propertyCode}`;
 
@@ -345,13 +301,6 @@ export default function CloudbedsBookNow({
   /*──────────────── NAV ────────────────*/
   if (variant === "nav") {
     try {
-      // Intentar forzar carga al montar el componente si no está listo
-      useEffect(() => {
-        if (!isComponentReady) {
-          void ensureCloudbedsLoaded(timeout);
-        }
-      }, [isComponentReady, timeout]);
-
       const componentRegistered =
         typeof window !== "undefined" &&
         "customElements" in window &&

@@ -137,8 +137,6 @@ export default async function LocaleLayout({
 
         <link rel="dns-prefetch" href="https://static1.cloudbeds.com" />
         <link rel="dns-prefetch" href="https://hotels.cloudbeds.com" />
-        <link rel="preconnect" href="https://static1.cloudbeds.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://hotels.cloudbeds.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
