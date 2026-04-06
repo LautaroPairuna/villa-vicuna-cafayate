@@ -1,0 +1,17 @@
+# nixpacks.toml
+
+[phases.setup]
+nixPkgs = ["nodejs_24"]
+
+[phases.install]
+cmds = ["npx pnpm@10.29.3 install --frozen-lockfile"]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "npm start"
+
+[variables]
+NODE_ENV = "production"
+NIXPACKS_NODE_VERSION = "24"
