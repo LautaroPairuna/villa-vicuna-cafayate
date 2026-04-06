@@ -1,7 +1,7 @@
 // src/components/PageWithLoading.tsx
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import LoadingScreen from "./LoadingScreen";
 import Navbar from "./Navbar";
@@ -14,9 +14,33 @@ const Reseñas = dynamic(() => import("./Reseñas"), { ssr: false });
 const Menu = dynamic(() => import("./Menu"), { ssr: false });
 const Habitaciones = dynamic(() => import("./Habitaciones"), { ssr: false });
 
+function DeferredSection({ children }: { children: React.ReactNode }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px 0px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return <div ref={ref}>{isVisible ? children : null}</div>;
+}
+
 export default function PageWithLoading() {
   const [isHeroLoaded, setIsHeroLoaded] = useState(false);
-  const [isCloudbedsLoaded, setIsCloudbedsLoaded] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [isLoadingVisible, setIsLoadingVisible] = useState(true);
 
@@ -35,7 +59,6 @@ export default function PageWithLoading() {
   // Timeout de seguridad (6s) para evitar pantalla infinita
   useEffect(() => {
     const safetyTimer = setTimeout(() => {
-      console.log("🚨 Timeout de seguridad activado - revelando sitio");
       setIsHeroLoaded(true);
       setIsLoadingVisible(false);
       setTimeout(() => setShowContent(true), 200);
@@ -46,37 +69,19 @@ export default function PageWithLoading() {
 
   // Cuando Hero está listo + tiempo mínimo cumplido → revelar sitio
   useEffect(() => {
-    const state = {
-      isHeroLoaded,
-      isCloudbedsLoaded,
-      minLoadingTime,
-      allReady: isHeroLoaded && minLoadingTime,
-    };
-
-    console.log("📊 Estado de carga:", state);
-
     if (isHeroLoaded && minLoadingTime) {
-      console.log("✅ Hero listo + tiempo mínimo cumplido - iniciando revelación");
-
       setIsLoadingVisible(false);
 
       const contentTimer = setTimeout(() => {
         setShowContent(true);
-        console.log("🎉 Sitio revelado completamente");
       }, 200);
 
       return () => clearTimeout(contentTimer);
     }
-  }, [isHeroLoaded, minLoadingTime, isCloudbedsLoaded]);
+  }, [isHeroLoaded, minLoadingTime]);
 
   const handleHeroLoaded = () => {
-    console.log("🎬 Hero cargado (video + logo listos)");
     setIsHeroLoaded(true);
-  };
-
-  const handleCloudbedsLoaded = () => {
-    console.log("☁️ Cloudbeds cargado");
-    setIsCloudbedsLoaded(true);
   };
 
   return (
@@ -88,15 +93,23 @@ export default function PageWithLoading() {
         }`}
       >
         <header>
-          <Navbar onCloudbedsLoaded={handleCloudbedsLoaded} />
+          <Navbar />
         </header>
 
         <main>
           <Hero onLoaded={handleHeroLoaded} />
-          <Nosotros />
-          <Reseñas />
-          <Menu />
-          <Habitaciones />
+          <DeferredSection>
+            <Nosotros />
+          </DeferredSection>
+          <DeferredSection>
+            <Reseñas />
+          </DeferredSection>
+          <DeferredSection>
+            <Menu />
+          </DeferredSection>
+          <DeferredSection>
+            <Habitaciones />
+          </DeferredSection>
         </main>
 
         <WhatsappLink />

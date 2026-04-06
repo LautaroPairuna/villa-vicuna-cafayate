@@ -2,6 +2,7 @@
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale, getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Script from "next/script";
 import SwRegister from "@/components/SwRegister";
 import "../../styles/globals.css";
@@ -10,8 +11,16 @@ import "../../styles/globals.css";
 export const dynamic = "force-static"; // compatible con output:export
 
 const BASE_URL = "https://www.villavicunacafayate.com.ar";
-const FAV_VERSION = "20250730"; // cambia al actualizar favicon
+const FAV_VERSION = "20250730";
 const LOCALES = ["es", "en", "pt"] as const;
+const SITE_TITLE = "Villa Vicuña | Cafayate, Argentina";
+const SITE_DESCRIPTION =
+  "Hotel boutique a 50 m de la plaza principal de Cafayate. 12 habitaciones de estilo español, desayuno casero y atención personalizada.";
+
+export const metadata: Metadata = {
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+};
 
 /*─── LAYOUT ─────────────────────────────────────────────────*/
 export default async function LocaleLayout({
@@ -31,9 +40,8 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   const messages = await getMessages({ locale });
 
-  const title = "Villa Vicuña | Cafayate, Argentina";
-  const description =
-    "Hotel boutique a 50 m de la plaza principal de Cafayate. 12 habitaciones de estilo español, desayuno casero y atención personalizada.";
+  const title = SITE_TITLE;
+  const description = SITE_DESCRIPTION;
 
   const hrefLangs = Object.fromEntries(
     LOCALES.map((l) => [l, `${BASE_URL}/${l}`]),
@@ -46,9 +54,6 @@ export default async function LocaleLayout({
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {/* SEO */}
-        <title>{title}</title>
-        <meta name="description" content={description} />
         <link rel="canonical" href={`${BASE_URL}/${locale}`} />
         {Object.entries(hrefLangs).map(([lang, url]) => (
           <link key={lang} rel="alternate" hrefLang={lang} href={url} />
@@ -114,49 +119,11 @@ export default async function LocaleLayout({
           crossOrigin="anonymous"
         />
 
-        {/* Preconexiones para reducir latencia de terceros críticos */}
-        <link
-          rel="preconnect"
-          href="https://static1.cloudbeds.com"
-          crossOrigin="anonymous"
-        />
         <link rel="dns-prefetch" href="https://static1.cloudbeds.com" />
-        <link
-          rel="preconnect"
-          href="https://hotels.cloudbeds.com"
-          crossOrigin="anonymous"
-        />
         <link rel="dns-prefetch" href="https://hotels.cloudbeds.com" />
-        <link
-          rel="preconnect"
-          href="https://clientstream.launchdarkly.com"
-          crossOrigin="anonymous"
-        />
-        <link rel="dns-prefetch" href="https://clientstream.launchdarkly.com" />
-        <link
-          rel="preconnect"
-          href="https://clientsdk.launchdarkly.com"
-          crossOrigin="anonymous"
-        />
-        <link rel="dns-prefetch" href="https://clientsdk.launchdarkly.com" />
-        <link
-          rel="preconnect"
-          href="https://www.clarity.ms"
-          crossOrigin="anonymous"
-        />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
-        <link
-          rel="preconnect"
-          href="https://www.googletagmanager.com"
-          crossOrigin="anonymous"
-        />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
-        {/*
-          IMPORTANTE:
-          - No cargamos Cloudbeds aquí.
-          - Solo preconnect; el script se inyecta on-demand en CloudbedsBookNow.
-        */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
 
         {/* ─────────────────────────────────────────────
             ANALYTICS SIN PARTYTOWN, OPTIMIZADO

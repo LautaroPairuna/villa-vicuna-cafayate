@@ -48,40 +48,6 @@ export default function Navbar({ onCloudbedsLoaded, isCloudbedsReady = false, }:
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Detectar cuando Cloudbeds está listo
-  useEffect(() => {
-    const checkCloudbedsReady = () => {
-      // Verificar si el script de Cloudbeds está cargado
-      if (window.CloudbedsBookNow || document.querySelector('script[src*="cloudbeds"]')) {
-        console.log("☁️ Cloudbeds detectado como listo");
-        onCloudbedsLoaded?.();
-        return true;
-      }
-      return false;
-    };
-
-    // Verificar inmediatamente
-    if (checkCloudbedsReady()) return;
-
-    // Si no está listo, verificar periódicamente
-    const interval = setInterval(() => {
-      if (checkCloudbedsReady()) {
-        clearInterval(interval);
-      }
-    }, 100);
-
-    // Timeout de seguridad
-    const timeout = setTimeout(() => {
-      console.log("☁️ Timeout de Cloudbeds - asumiendo que está listo");
-      clearInterval(interval);
-      onCloudbedsLoaded?.();
-    }, 3000);
-
-    return () => {
-      clearInterval(interval);
-      clearTimeout(timeout);
-    };
-  }, [onCloudbedsLoaded]);
 
   // Quita el segmento del idioma (es|en|pt)
   const getPathWithoutLocale = (path: string) => path.replace(/^\/(es|en|pt)/, "");
