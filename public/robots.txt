@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://villavicunacafayate.com.ar
+
+# Sitemaps
+Sitemap: https://villavicunacafayate.com.ar/sitemap.xml

@@ -4,39 +4,39 @@ export const reseñas = [
     nombreKey: "desayuno.nombre",
     textoKey: "desayuno.texto",
     // Imagen principal
-    imagen: "el-desayuno.jpg",
+    imagen: "el-desayuno.webp",
     // Carpeta donde se encuentran las imágenes para esta reseña
     folder: "reseñas-desayuno",
     // Array de imágenes para el carrusel (sin incluir la carpeta)
     carrusel: [
-      "desayuno-1.jpg",
-      "desayuno-2.jpg",
-      "desayuno-3.jpg",
+      "desayuno-1.webp",
+      "desayuno-2.webp",
+      "desayuno-3.webp",
     ],
   },
   {
     id: 2,
     nombreKey: "detalles.nombre",
     textoKey: "detalles.texto",
-    imagen: "los-detalles.jpg",
+    imagen: "los-detalles.webp",
     folder: "reseñas-detalles",
     carrusel: [
-      "detalles-1.jpg",
-      "detalles-2.jpg",
-      "detalles-3.jpg",
+      "detalles-1.webp",
+      "detalles-2.webp",
+      "detalles-3.webp",
     ],
   },
   {
     id: 3,
     nombreKey: "personal.nombre",
     textoKey: "personal.texto",
-    imagen: "el-personal.jpg",
+    imagen: "el-personal.webp",
     folder: "reseñas-personal",
     carrusel: [
-      "personal-1.jpg",
-      "personal-2.jpg",
-      "personal-3.jpg",
-      "personal-4.jpg",
+      "personal-1.webp",
+      "personal-2.webp",
+      "personal-3.webp",
+      "personal-4.webp",
     ],
   },
 ];

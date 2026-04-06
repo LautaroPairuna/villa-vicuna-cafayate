@@ -104,7 +104,7 @@ export default function Menu() {
           <h2 className="text-4xl whitespace-nowrap relative z-10">{t("titulo")}</h2>
           <a
             href="/menu.pdf"
-            download="menu-villa-vicuna.pdf"
+            download="menu.pdf"
             className="bg-[#e1cd9b] black px-6 py-3 rounded-md shadow-md text-lg relative z-10"
           >
             {t("boton")}

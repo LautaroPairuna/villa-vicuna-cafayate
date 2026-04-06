@@ -1,64 +1,37 @@
 // src/app/[locale]/page.tsx
-import { setRequestLocale } from 'next-intl/server';
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Nosotros from "@/components/Nosotros";
-import Reseñas from "@/components/Reseñas";
-import Menu from "@/components/Menu";
-import Habitaciones from "@/components/Habitaciones";
-import Contacto from "@/components/ContactoClient";
-import WhatsappLink from '@/components/WhatsappLink';
+import { setRequestLocale } from "next-intl/server";
+import PageWithLoading from "@/components/PageWithLoading";
 
+/* Viewport sin cambios */
+export const viewport = { width: "device-width", initialScale: 1 };
+
+/* Metadata global mejorada (solo actualiza canonical) */
 export const metadata = {
   title: "Villa Vicuña | Cafayate, Argentina",
-  description: "Hotel Villa Vicuña Cafayate es un encantador hotel boutique en una casona colonial restaurada, ubicado en el corazón de la ciudad. Disfruta de elegantes habitaciones, un jardín pintoresco y una atención cálida para una estancia inolvidable.",
+  description:
+    "El Hotel Villa Vicuña de Cafayate se encuentra a 50 metros de la plaza principal y cuenta con 12 habitaciones decoradas con un elegante estilo español.",
   alternates: {
-    canonical: "https://tusitio.com",
+    canonical: "https://www.villavicunacafayate.com.ar",
   },
-};  
-
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
 };
 
-// Definimos que params es una Promise que se resuelve con un objeto que contiene locale
 interface LocalePageProps {
   params: Promise<{ locale: string }>;
 }
 
 export default async function LocalePage({ params }: LocalePageProps) {
-  // Esperamos a que params se resuelva para obtener el locale
   const { locale } = await params;
-
-  // Habilitamos el renderizado estático configurando el locale
   setRequestLocale(locale);
 
-  return (
-    <>
-      <header>
-        <Navbar />
-      </header>
-      <main>
-        <Hero />
-        <Nosotros />
-        <Reseñas />
-        <Menu />
-        <Habitaciones />
-      </main>
-      <WhatsappLink />
-      <footer>
-        <Contacto />
-      </footer>
-    </>
-  );
+  return <PageWithLoading />;
 }
 
-// Genera los parámetros estáticos para que Next.js sepa qué rutas generar en build
+/* Static params (sin cambios) */
 export function generateStaticParams() {
   return [
     { locale: "es" },
     { locale: "en" },
-    { locale: "pt" }
+    { locale: "pt" },
   ];
 }
+

@@ -5,6 +5,9 @@
     "subtitulo": "Descubre la experiencia única en nuestro hotel boutique.",
     "reservar": "Reservar Ahora"
   },
+  "loading": {
+    "preparando": "Preparando su experiencia..."
+  },
   "Navbar": {
     "roomsNavbar": "Habitaciones",
     "reviewsNavbar": "Reseñas",
@@ -21,7 +24,7 @@
     "imagenAlt": "Imagen de nosotros"
   },
   "desayuno": {
-    "nombre": "Desay<span>uno</span>",
+    "nombre": "El desa<span>yuno</span>",
     "texto": "En nuestro buffet encontrará delicias caseras para todos los gustos, porque entendemos la importancia de un desayuno completo, saludable, con productos frescos, elaborados en casa.\n\nPonemos a su disposición nuestra carta que podrá ser consultada cuando guste disfrutar de nuestro sabor durante su estadía.",
     "reseñas": [
       "«Disfrutamos mucho el desayuno; el buffet es sumamente variado y completo. Lo mejor... ¡huevos poché!»",
@@ -65,16 +68,19 @@
     "standard": "<h3>STAND<span>ARD</span></h3>",
     "departamento": "<h3>DEPARTAM<span>ENTO</span></h3>",
     "ver_mas": "Ver más",
+    "reservar": "Reservar",
     "twin": {
       "nombre": "Twin",
       "descripcion": "Frente al patio empedrado, sobre los corredores rodeados de viñas se encuentran nuestras Twin, dos confortables camas comparten la habitación resguardadas por los ya característicos postigones que distinguen nuestro hotel.\nPuede solicitarse con o sin acceso mediante escaleras.",
       "detalles": "2 huéspedes / 2 camas / 1 habitación",
+      "boton": "Reservar",
       "parrafo_minibar": "Entre las amenidades encontrará un minibar sin cargo del que podrá servirse una infusión mientras se relaja."
     },
     "matrimonial": {
       "nombre": "Matrimonial",
       "descripcion": "Frente a la galería principal, en la planta baja, se encuentra este precioso recinto de 28 m². Su espléndida cama matrimonial descansa bajo las cabriadas de madera lustrada.",
       "detalles": "2 huéspedes / 1 cama / 1 habitación",
+      "boton": "Reservar",
       "parrafo_minibar": "Entre las amenidades encontrará un minibar sin cargo del que podrá servirse una infusión mientras se relaja."
     },
     "triple": {
@@ -94,24 +100,28 @@
     "antesala": {
       "nombre": "Antesala",
       "detalles": "2 huéspedes / 1 habitación",
+      "boton": "Reservar",
       "parrafo_minibar": "Entre las amenidades encontrará un minibar sin cargo del que podrá servirse una infusión mientras se relaja."
     },
     "antesala11": {
       "nombre": "Antesala",
       "descripcion": "Precedida por una antesala en el primer piso, con acceso mediante escaleras, se encuentra esta magnífica habitación con vistas a la fachada.\nUna imponente cama con dosel descansa detrás de un pequeño estar.",
       "detalles": "2 huéspedes / 1 habitación",
+      "boton": "Reservar",
       "parrafo_minibar": "Entre las amenidades encontrará un minibar sin cargo del que podrá servirse una infusión mientras se relaja."
     },
     "antesala12": {
       "nombre": "Antesala 12",
       "descripcion": "Precedida por una antesala en el primer piso, con acceso mediante escaleras, se encuentra esta magnífica habitación balconeando al patio empedrado.\nUna imponente cama con dosel descansa detrás de un pequeño estar.",
       "detalles": "2 huéspedes / 1 habitación",
+      "boton": "Reservar",
       "parrafo_minibar": "Entre las amenidades encontrará un minibar sin cargo del que podrá servirse una infusión mientras se relaja."
     },
     "familiar": {
       "nombre": "Familiar",
       "descripcion": "Dentro de la casona, con acceso mediante escaleras, se encuentra este pequeño departamento con capacidad para cinco huéspedes; un dormitorio con tres singles y otro con cama matrimonial comparten un cómodo baño en suite.\nUn recinto ideal para compartir en familia.",
       "detalles": "5 huéspedes / 4 camas / 2 habitaciones",
+      "boton": "Reservar",
       "parrafo_minibar": "Entre las amenidades encontrará un minibar sin cargo del que podrá servirse una infusión mientras se relaja."
     },
     "amenities": [

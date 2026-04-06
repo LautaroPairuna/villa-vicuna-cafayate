@@ -211,11 +211,11 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
 
     // 1) Caso Portugués
     if (locale === "pt") {
-      return `${base} lg:top-[10%] text-4xl lg:text-7xl`;
+      return `${base} lg:top-[13%] text-4xl lg:text-[3.9rem]`;
     }
     // 2) Caso “reseñas-desayuno”
     if (selectedReseña.folder === "reseñas-desayuno") {
-      return `${base} lg:top-[13%] text-3xl sm:text-4xl lg:text-8xl`;
+      return `${base} lg:top-[15%] text-3xl sm:text-4xl lg:text-6xl`;
     }
     // 3) Por defecto
     return `${base} lg:top-[15%] text-3xl sm:text-4xl lg:text-6xl`;
@@ -226,12 +226,12 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
   
     // 1) Portugués + desayuno: reducimos el margin-top en pantallas grandes
     if (locale === "pt" && selectedReseña.folder === "reseñas-desayuno") {
-      return `${base} tracking-[0.09rem] leading-6 lg:mt-12 text-base`;
+      return `${base} tracking-[0.08rem] leading-6 lg:mt-12 text-base`;
     }
   
     // 2) Solo desayuno
     if (selectedReseña.folder === "reseñas-desayuno") {
-      return `${base} tracking-[0.09rem] leading-6 lg:mt-20 text-base`;
+      return `${base} tracking-[0.08rem] leading-7 lg:mt-20 text-base`;
     }
   
     // 3) Por defecto
@@ -257,7 +257,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
           max-w-md lg:max-w-5xl 
           overflow-y-auto
           max-h-[90vh]
-          relative transform overflow-hidden"
+          relative transform lg:overflow-hidden"
           variants={modalVariants}
           initial="hidden"
           animate="visible"
@@ -293,7 +293,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
               <div className={`absolute  inset-0 pointer-events-none z-10 flex justify-center items-center lg:w-[800px] w-[250px] h-[250px]
                   ${
                     selectedReseña.folder === "reseñas-desayuno"
-                      ? "lg:top-[78%] top-[35%] lg:-left-[5%] left-[15%]"  // valor para desayuno
+                      ? "lg:top-[78%] top-[12%] lg:-left-[5%] left-[15%]"  // valor para desayuno
                       : "lg:top-[78%] top-[15%] lg:-left-[5%] left-[20%]"  // valor por defecto
                   }
                   ${
@@ -364,7 +364,7 @@ function ReseñasModal({ selectedReseña, onClose }: ReseñasModalProps) {
             </div>
 
             {/* Carrusel de imágenes manual con animación */}
-            <div className="relative col-span-1 lg:col-span-5 w-full aspect-[4/3] lg:aspect-[6/9] flex items-center justify-center">
+            <div className="relative col-span-1 lg:col-span-5 w-full aspect-[3/4] lg:aspect-[6/9] flex items-center justify-center">
               <div className="relative w-full h-full overflow-hidden">
                 <AnimatePresence custom={direction}>
                   <motion.div
@@ -494,10 +494,10 @@ export default function ReseñasSection() {
   const titleClassName = useMemo(() => {
     const base = "mb-8 ms-5 font-base text-center";
     if (locale === "pt") {
-      return `${base} text-4xl lg:text-8xl 2xl:text-9xl tracking-[0.3em]`;
+      return `${base} text-4xl lg:text-6xl 2xl:text-6xl tracking-[0.3em]`;
     }
     // por defecto
-    return `${base} text-4xl lg:text-8xl 2xl:text-9xl tracking-[0.60em]`;
+    return `${base} text-4xl lg:text-6xl 2xl:text-6xl tracking-[0.60em]`;
   }, [locale]);
 
   return (

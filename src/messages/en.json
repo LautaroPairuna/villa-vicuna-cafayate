@@ -5,6 +5,9 @@
     "subtitulo": "Discover the unique experience at our boutique hotel.",
     "reservar": "Book Now"
   },
+  "loading": {
+    "preparando": "Preparing your experience..."
+  },
   "Navbar": {
     "roomsNavbar": "Rooms",
     "reviewsNavbar": "Reviews",
@@ -21,7 +24,7 @@
     "imagenAlt": "About us image"
   },
   "desayuno": {
-    "nombre": "Break<span>fast</span>",
+    "nombre": "The brea<span>kfast</span>",
     "texto": "In our buffet you will find homemade delights for all tastes, because we understand the importance of a complete, healthy breakfast made with fresh, home-made products.\n\nWe offer our menus that can be consulted whenever you wish to enjoy our flavors during your stay.",
     "reseñas": [
       "“We really enjoyed the breakfast; the buffet is extremely varied and complete. The best... ‘poached eggs’!”",
@@ -65,17 +68,20 @@
     "standard": "<h3>STAND<span>ARD</span></h3>",
     "departamento": "<h3>DEPARTM<span>ENT</span></h3>",
     "ver_mas": "See more",
+    "reservar": "Book",
     "twin": {
       "nombre": "Twin",
       "descripcion": "Facing the cobblestone patio, along the corridors surrounded by vineyards, our Twins feature two comfortable beds in the room, protected by the characteristic shutters that distinguish our hotel.\nYou can request with or without stairs access.",
       "detalles": "2 guests / 2 beds / 1 room",
-      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax.",
+      "boton": "Book"
     },
     "matrimonial": {
       "nombre": "Double",
       "descripcion": "Facing the main gallery, on the ground floor, this beautiful 28m2 room features a splendid double bed resting under polished wooden beams.",
       "detalles": "2 guests / 1 bed / 1 room",
-      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax.",
+      "boton": "Book"
     },
     "triple": {
       "nombre": "Triple",
@@ -94,25 +100,29 @@
     "antesala": {
       "nombre": "Antechamber",
       "detalles": "2 guests / 1 room",
-      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax.",
+      "boton": "Book"
     },
     "antesala11": {
-      "nombre": "Antechamber 11",
+      "nombre": "Antechamber",
       "descripcion": "Preceded by an antechamber on the first floor, accessible by stairs, this magnificent room overlooks the façade.\nAn imposing four-poster bed rests behind a small living area.",
       "detalles": "2 guests / 1 room",
-      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax.",
+      "boton": "Book"
     },
     "antesala12": {
       "nombre": "Antechamber 12",
       "descripcion": "Preceded by an antechamber on the first floor, accessible by stairs, this magnificent room overlooks the cobblestone patio.\nAn imposing four-poster bed rests behind a small living area.",
       "detalles": "2 guests / 1 room",
-      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax.",
+      "boton": "Book"
     },
     "familiar": {
       "nombre": "Family",
       "descripcion": "Inside the mansion with stairs access, this small suite for five guests features one room with three single beds and another with a double bed sharing a comfortable en-suite bathroom.\nAn ideal space for family sharing.",
       "detalles": "5 guests / 4 beds / 2 rooms",
-      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax."
+      "parrafo_minibar": "Among the amenities you will find a complimentary minibar where you can serve yourself a drink while you relax.",
+      "boton": "Book"
     },
     "amenities": [
       "wifi",

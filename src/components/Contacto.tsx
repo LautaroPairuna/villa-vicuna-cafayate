@@ -3,6 +3,14 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const CLOUDBEDS_PROPERTY_CODE = "pY5HV6";
+
+const CloudbedsBookNow = dynamic(() => import("./CloudbedsBookNow"), {
+  ssr: false,
+  loading: () => null, // acá no hace falta mostrar nada mientras carga
+});
 
 export default function Contacto() {
   const t = useTranslations("contact");
@@ -69,7 +77,7 @@ export default function Contacto() {
 
         {/* Título desktop */}
         <h2
-          className={`hidden lg:block absolute top-[10%] left-1/2 -translate-x-1/2 text-[2.25em] lg:text-[4.8em] uppercase text-center z-10 w-full ${calculateTracking(
+          className={`hidden lg:block absolute top-[10%] left-1/2 -translate-x-1/2 text-[2.25em] lg:text-[3.8em] xl:text-[4.8em] uppercase text-center z-10 w-full ${calculateTracking(
             tituloCompleto
           )}`}
         >
@@ -94,26 +102,29 @@ export default function Contacto() {
               </div>
               <div className="relative w-[300px] h-[200px] mx-auto opacity-85">
                 <Image
-                  src="/images/fondo-carta-4.svg"
-                  alt="Fondo Carta 4"
+                  src="/images/fondo-carta-6.svg"
+                  alt="Fondo Carta 6"
                   fill
                   className="object-contain"
                 />
               </div>
-              <button className="bg-[#e1cd9b] text-black p-4 text-lg hover:bg-[#d6c3a2] transition-all rounded-full mt-4">
-                <a
-                  href="https://goo.su/4Nkqe"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image 
-                    src="/images/icons/ico-reservar.svg" 
-                    alt=""
-                    width={64}
-                    height={64} 
-                  />
-                </a>
-              </button>
+              <CloudbedsBookNow
+                propertyCode={CLOUDBEDS_PROPERTY_CODE}
+                variant="contact"
+                // TU diseño del botón visible (idéntico a la versión original)
+                contactButtonClassName="bg-[#e3d6b5] text-black p-4 text-lg hover:bg-[#d6c3a2] transition-all rounded-full mt-4"
+                contactIconSrc="/images/icons/ico-reservar.svg"
+                contactIconSize={64}
+                contactAriaLabel="Reservar ahora"
+                // Motor
+                mode="popup"
+                width="90vw"
+                height="90vh"
+                lang="auto"
+                timeout={5000}
+                // Reset/animaciones del wc (si querés sumar)
+                buttonClassName="cb-link-btn"
+              />
             </div>
 
             {/* Información de contacto */}
@@ -149,17 +160,23 @@ export default function Contacto() {
                     />
                     {t("email")}
                   </p>
-                  <p className="flex items-start gap-3" style={{ whiteSpace: "pre-line" }}>
+                  <a
+                    href="https://maps.app.goo.gl/XQzTWx83Ep5vpbN37"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 hover:text-gray-500 transition"
+                    style={{ whiteSpace: "pre-line" }}
+                  >
                     <Image
-                      src="/images/icons/ico-ubicacion.svg" 
+                      src="/images/icons/ico-ubicacion.svg"
                       alt=""
                       width={24}
-                      height={24} 
+                      height={24}
                     />
                     {t("direccion")}
-                  </p>
+                  </a>
                   <a
-                    href="https://instagram.com/villavicuñacafayate"
+                    href="https://instagram.com/villavicunacafayate"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 hover:text-gray-500 transition"
@@ -173,7 +190,7 @@ export default function Contacto() {
                     villavicunacafayate
                   </a>
                   <a
-                    href="https://facebook.com/villavicuñacafayate"
+                    href="https://facebook.com/villavicunacafayate"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 hover:text-gray-500 transition"
@@ -203,31 +220,34 @@ export default function Contacto() {
         </div>
 
         {/* Fondo carta (desktop) */}
-        <div className="hidden lg:block absolute bottom-[15%] xl:left-[56.5%] 2xl:left-[58%] -translate-x-1/2 w-[300px] h-[200px] lg:w-[600px] lg:h-[450px] opacity-55 z-20">
+        <div className="hidden lg:block absolute bottom-[15%] lg:left-[56.5%] 2xl:left-[58%] -translate-x-1/2 w-[300px] h-[200px] lg:w-[600px] lg:h-[450px] opacity-55 z-20">
           <Image
-            src="/images/fondo-carta-4.svg"
-            alt="Fondo Carta 4"
+            src="/images/fondo-carta-6.svg"
+            alt="Fondo Carta 6"
             fill
             className="object-contain"
           />
         </div>
 
         {/* Botón desktop */}
-        <div className="hidden lg:block absolute bottom-[5%] xl:left-[53%] 2xl:left-[54%] -translate-x-1/2 z-30">
-          <button className="bg-[#e1cd9b] text-black p-4 text-xl font-semibold shadow-md hover:bg-[#d6c3a2] transition-all rounded-full">
-            <a
-              href="https://goo.su/W7nPtu"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image 
-                src="/images/icons/ico-reservar.svg" 
-                alt=""
-                width={64}
-                height={64} 
-              />
-            </a>
-          </button>
+        <div className="hidden lg:block absolute bottom-[5%] lg:left-[51%] 2xl:left-[54%] -translate-x-1/2 z-30">
+          <CloudbedsBookNow
+            propertyCode={CLOUDBEDS_PROPERTY_CODE}
+            variant="contact"
+            // TU diseño del botón visible (idéntico a la versión original)
+            contactButtonClassName="bg-[#e3d6b5] text-black p-4 text-lg hover:bg-[#d6c3a2] transition-all rounded-full mt-4"
+            contactIconSrc="/images/icons/ico-reservar.svg"
+            contactIconSize={64}
+            contactAriaLabel="Reservar ahora"
+            // Motor
+            mode="popup"
+            width="90vw"
+            height="90vh"
+            lang="auto"
+            timeout={5000}
+            // Reset/animaciones del wc (si querés sumar)
+            buttonClassName="cb-link-btn"
+          />
         </div>
       </div>
     </section>

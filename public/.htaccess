@@ -1,0 +1,61 @@
+# public/.htaccess - Villa Vicuña Cafayate
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 0) Forzar siempre https://www.villavicunacafayate.com.ar
+  RewriteCond %{HTTP_HOST} !^www\.villavicunacafayate\.com\.ar$ [NC]
+  RewriteRule ^(.*)$ https://www.villavicunacafayate.com.ar/$1 [R=301,L]
+
+  RewriteBase /
+
+  # ──────────────────────────────────────────────
+  # 1) Redirección según idioma del navegador
+  #    (sólo cuando la petición ORIGINAL es "/")
+  # ──────────────────────────────────────────────
+
+  # No tocar si ya está en /es, /en o /pt
+  RewriteCond %{REQUEST_URI} !^/(es|en|pt)(/|$) [NC]
+
+  # Sólo cuando el navegador pidió literalmente "/"
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(\?[^\ ]*)?\ HTTP/
+
+  # ---- Inglés ----
+  RewriteCond %{HTTP:Accept-Language} ^(en|en-[a-zA-Z]{2}).* [NC]
+  RewriteRule ^$ /en/ [R=302,L]
+
+  # ---- Portugués ----
+  RewriteCond %{HTTP:Accept-Language} ^(pt|pt-[a-zA-Z]{2}).* [NC]
+  RewriteRule ^$ /pt/ [R=302,L]
+
+  # ---- Fallback a español ----
+  RewriteCond %{REQUEST_URI} ^/?$ [NC]
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(\?[^\ ]*)?\ HTTP/
+  RewriteRule ^$ /es/ [R=302,L]
+
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Fuentes (woff/woff2/ttf/otf/eot) con CORS + cache largo
+  <FilesMatch "\.(woff2?|ttf|otf|eot)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Cache-Control "public, max-age=31536000, immutable"
+
+    <If "%{REQUEST_URI} =~ /\.woff2$/">
+      Header set Content-Type "font/woff2"
+    </If>
+    <If "%{REQUEST_URI} =~ /\.woff$/">
+      Header set Content-Type "font/woff"
+    </If>
+  </FilesMatch>
+
+  # Imágenes (incluye webp/avif)
+  <FilesMatch "\.(png|jpe?g|gif|svg|webp|avif)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # JS/CSS estáticos desde /public
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>

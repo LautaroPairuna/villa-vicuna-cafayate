@@ -5,6 +5,9 @@
     "subtitulo": "Descubra a experiência única em nosso hotel boutique.",
     "reservar": "Reservar Agora"
   },
+  "loading": {
+    "preparando": "Preparando sua experiência..."
+  },
   "Navbar": {
     "roomsNavbar": "Quartos",
     "reviewsNavbar": "Avaliações",
@@ -65,16 +68,19 @@
     "standard": "<h3>STAND<span>ARD</span></h3>",
     "departamento": "<h3>APARTA<span>MENT</span></h3>",
     "ver_mas": "Ver mais",
+    "reservar": "Reservar",
     "twin": {
       "nombre": "Twin",
       "descripcion": "De frente para o pátio de pedras, pelos corredores rodeados de vinhedos, nossas Twins têm duas camas confortáveis no quarto, protegidas pelas venezianas características do hotel.\nVocê pode solicitar com ou sem acesso por escadas.",
       "detalles": "2 hóspedes / 2 camas / 1 quarto",
+      "boton": "Reservar",
       "parrafo_minibar": "Entre as comodidades, encontrará um minibar cortesia onde poderá servir-se de uma bebida enquanto relaxa."
     },
     "matrimonial": {
       "nombre": "Duplo",
       "descripcion": "De frente para a galeria principal, no térreo, este lindo quarto de 28m² dispõe de uma esplêndida cama de casal sob vigas de madeira envernizada.",
       "detalles": "2 hóspedes / 1 cama / 1 quarto",
+      "boton": "Reservar",
       "parrafo_minibar": "Entre as comodidades, encontrará um minibar cortesia onde poderá servir-se de uma bebida enquanto relaxa."
     },
     "triple": {
@@ -94,24 +100,28 @@
     "antesala": {
       "nombre": "Antecâmara",
       "detalles": "2 hóspedes / 1 quarto",
+      "boton": "Reservar",
       "parrafo_minibar": "Entre as comodidades, encontrará um minibar cortesia onde poderá servir-se de uma bebida enquanto relaxa."
     },
     "antesala11": {
-      "nombre": "Antecâmara 11",
+      "nombre": "Antecâmara",
       "descripcion": "Antecedido por uma antecâmara no primeiro andar, acessível por escadas, este magnífico quarto faz varanda para a fachada.\nUma imponente cama de dossel descansa atrás de uma pequena área de estar.",
       "detalles": "2 hóspedes / 1 quarto",
+      "boton": "Reservar",
       "parrafo_minibar": "Entre as comodidades, encontrará um minibar cortesia onde poderá servir-se de uma bebida enquanto relaxa."
     },
     "antesala12": {
       "nombre": "Antecâmara 12",
       "descripcion": "Antecedido por uma antecâmara no primeiro andar, acessível por escadas, este magnífico quarto faz varanda para o pátio de pedras.\nUma imponente cama de dossel descansa atrás de uma pequena área de estar.",
       "detalles": "2 hóspedes / 1 quarto",
+      "boton": "Reservar",
       "parrafo_minibar": "Entre as comodidades, encontrará um minibar cortesia onde poderá servir-se de uma bebida enquanto relaxa."
     },
     "familiar": {
       "nombre": "Familiar",
       "descripcion": "Dentro da mansão com acesso por escadas, esta pequena suíte para cinco hóspedes possui um quarto com três camas de solteiro e outro com cama de casal, compartilhando um banheiro confortável em suíte.\nUm ambiente ideal para compartilhar em família.",
       "detalles": "5 hóspedes / 4 camas / 2 quartos",
+      "boton": "Reservar",
       "parrafo_minibar": "Entre as comodidades, encontrará um minibar cortesia onde poderá servir-se de uma bebida enquanto relaxa."
     },
     "amenities": [
