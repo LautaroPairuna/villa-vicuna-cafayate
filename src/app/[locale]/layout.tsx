@@ -4,7 +4,6 @@ import { setRequestLocale, getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Script from "next/script";
 import SwRegister from "@/components/SwRegister";
 import ThirdPartyScripts from "@/components/ThirdPartyScripts";
 import "../../styles/globals.css";
@@ -115,13 +114,6 @@ export default async function LocaleLayout({
         <link rel="preload" as="image" href="/images/hero-poster.webp" fetchPriority="high" />
         <link
           rel="preload"
-          as="image"
-          href="/images/logo-villa-vicuna-3.svg"
-          fetchPriority="high"
-        />
-        {/* Si usás estas mismas fuentes en Cafayate */}
-        <link
-          rel="preload"
           as="font"
           href="/fonts/monotype-cursiva.woff2"
           type="font/woff2"
@@ -141,8 +133,8 @@ export default async function LocaleLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.facebook.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://static1.cloudbeds.com" crossOrigin="anonymous" />
 
         {/* ─────────────────────────────────────────────
             ANALYTICS OPTIMIZADO - CARGA DIFERIDA
