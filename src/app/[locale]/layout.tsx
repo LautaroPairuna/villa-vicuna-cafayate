@@ -143,16 +143,6 @@ export default async function LocaleLayout({
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
 
-        {/* 
-          Preconnect SOLO para el recurso más crítico de terceros (Widget de reservas).
-          Usamos crossOrigin porque es un recurso CORS.
-        */}
-        <link rel="preconnect" href="https://static1.cloudbeds.com" crossOrigin="anonymous" />
-
-        {/* ─────────────────────────────────────────────
-            ANALYTICS OPTIMIZADO - CARGA DIFERIDA
-           ───────────────────────────────────────────── */}
-        <ThirdPartyScripts />
       </head>
 
       <body
@@ -175,6 +165,7 @@ export default async function LocaleLayout({
 
         {/* Registro del Service Worker */}
         <SwRegister />
+        <ThirdPartyScripts />
       </body>
     </html>
   );

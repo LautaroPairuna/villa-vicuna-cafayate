@@ -8,7 +8,6 @@ import {
 } from "@/lib/habitaciones";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import { ImageWithFallback } from "@/components/ImageWithFallback";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -290,12 +289,12 @@ function HabitacionModal({ habitacion, onClose, t }: HabitacionModalProps) {
                   exit="exit"
                   transition={{ duration: 0.5 }}
                 >
-                  <ImageWithFallback
+                  <Image
                     src={`/images/habitaciones/${habitacion.folder}/${habitacion.carrusel[currentImage]}`}
                     alt={`Imagen ${currentImage + 1}`}
                     fill
                     className="object-cover"
-                    fallbackSrc="/images/placeholder.jpg"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
                   />
                 </motion.div>
               </AnimatePresence>

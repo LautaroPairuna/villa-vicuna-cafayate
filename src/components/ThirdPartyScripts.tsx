@@ -1,42 +1,55 @@
 "use client";
 
 import Script from "next/script";
-import { useState, useEffect } from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { useEffect, useRef, useState } from "react";
 
 export default function ThirdPartyScripts() {
   const [shouldLoad, setShouldLoad] = useState(false);
+  const loadedRef = useRef(false);
 
   useEffect(() => {
-    // Si el navegador soporta requestIdleCallback, úsalo para cargar cuando el CPU esté libre
-    // De lo contrario, usa un delay de 4 segundos o espera a la primera interacción
-    const triggerLoad = () => {
+    if (loadedRef.current) return;
+
+    let timerId: ReturnType<typeof setTimeout> | null = null;
+    let idleId: number | null = null;
+
+    const load = () => {
+      if (loadedRef.current) return;
+      loadedRef.current = true;
       setShouldLoad(true);
-      window.removeEventListener("scroll", triggerLoad);
-      window.removeEventListener("click", triggerLoad);
-      window.removeEventListener("mousemove", triggerLoad);
-      window.removeEventListener("touchstart", triggerLoad);
+
+      window.removeEventListener("pointerdown", load);
+      window.removeEventListener("scroll", load);
+      window.removeEventListener("keydown", load);
+      window.removeEventListener("touchstart", load);
     };
 
-    const timer = setTimeout(() => {
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(() => setShouldLoad(true));
+    timerId = setTimeout(() => {
+      if ("requestIdleCallback" in window && window.requestIdleCallback) {
+        idleId = window.requestIdleCallback(
+          () => load(),
+          { timeout: 2000 },
+        );
       } else {
-        setShouldLoad(true);
+        load();
       }
-    }, 4000); // 4 segundos de delay base
+    }, 4000);
 
-    // También cargar si el usuario interactúa antes
-    window.addEventListener("scroll", triggerLoad, { once: true, passive: true });
-    window.addEventListener("click", triggerLoad, { once: true, passive: true });
-    window.addEventListener("mousemove", triggerLoad, { once: true, passive: true });
-    window.addEventListener("touchstart", triggerLoad, { once: true, passive: true });
+    window.addEventListener("pointerdown", load, { once: true, passive: true });
+    window.addEventListener("scroll", load, { once: true, passive: true });
+    window.addEventListener("keydown", load, { once: true });
+    window.addEventListener("touchstart", load, { once: true, passive: true });
 
     return () => {
-      clearTimeout(timer);
-      window.removeEventListener("scroll", triggerLoad);
-      window.removeEventListener("click", triggerLoad);
-      window.removeEventListener("mousemove", triggerLoad);
-      window.removeEventListener("touchstart", triggerLoad);
+      if (timerId) clearTimeout(timerId);
+      if (idleId && window.cancelIdleCallback) {
+        window.cancelIdleCallback(idleId);
+      }
+      window.removeEventListener("pointerdown", load);
+      window.removeEventListener("scroll", load);
+      window.removeEventListener("keydown", load);
+      window.removeEventListener("touchstart", load);
     };
   }, []);
 
@@ -44,23 +57,9 @@ export default function ThirdPartyScripts() {
 
   return (
     <>
-      {/* Google Analytics (GA4) – Cafayate */}
-      <Script
-        id="ga4-external-cafayate"
-        src="https://www.googletagmanager.com/gtag/js?id=G-0M5ME9D4YS"
-        strategy="afterInteractive"
-      />
-      <Script id="ga4-inline-cafayate" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-0M5ME9D4YS', { cookie_domain: 'villavicunacafayate.com.ar' });
-        `}
-      </Script>
+      <GoogleAnalytics gaId="G-0M5ME9D4YS" />
 
-      {/* Clarity – Cafayate */}
-      <Script id="ms-clarity-cafayate" strategy="afterInteractive">
+      <Script id="ms-clarity-cafayate" strategy="lazyOnload">
         {`
           (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -70,8 +69,7 @@ export default function ThirdPartyScripts() {
         `}
       </Script>
 
-      {/* Facebook Pixel – Cafayate */}
-      <Script id="fb-pixel-cafayate" strategy="afterInteractive">
+      <Script id="fb-pixel-cafayate" strategy="lazyOnload">
         {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
