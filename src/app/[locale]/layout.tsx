@@ -111,7 +111,14 @@ export default async function LocaleLayout({
         />
 
         {/* Preload crítico (solo lo realmente above-the-fold) */}
-        <link rel="preload" as="image" href="/images/hero-poster.webp" fetchPriority="high" />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/logo-villa-vicuna-3.svg"
+          type="image/svg+xml"
+          fetchPriority="high"
+        />
+        <link rel="preload" as="image" href="/images/hero-poster.webp" />
         <link
           rel="preload"
           as="font"
@@ -127,13 +134,19 @@ export default async function LocaleLayout({
           crossOrigin="anonymous"
         />
 
+        {/* 
+          DNS Prefetch para recursos externos que se cargarán luego.
+          Evitamos 'preconnect' para no desperdiciar ciclos de conexión en el inicio.
+        */}
         <link rel="dns-prefetch" href="https://static1.cloudbeds.com" />
-        <link rel="dns-prefetch" href="https://hotels.cloudbeds.com" />
-        <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.facebook.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+
+        {/* 
+          Preconnect SOLO para el recurso más crítico de terceros (Widget de reservas).
+          Usamos crossOrigin porque es un recurso CORS.
+        */}
         <link rel="preconnect" href="https://static1.cloudbeds.com" crossOrigin="anonymous" />
 
         {/* ─────────────────────────────────────────────
